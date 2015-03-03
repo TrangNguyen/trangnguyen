@@ -1,0 +1,16 @@
+node_modules
+bower_components
+target
+/WebChronikNg/nbproject/private/
+/nbproject/private/npm-debug.log
+.idea
+*.iml
+
+# Ignore docs files
+.sass-cache
+.sass-cache/*
+*.scssc
+src/main/css/app.css
+src/main/css/app.css
+
+*.scssc
