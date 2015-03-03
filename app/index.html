@@ -1,0 +1,49 @@
+<!doctype html>
+<!--build:[manifest] trangnguyen.manifest>-->
+	<html xmlns="http://www.w3.org/1999/html">
+<!--/build-->
+		<head>
+		  <meta charset="utf-8">
+			<meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+		  <title>Trang Nguyen</title>
+		  <meta name="description" content="Trang Nguyen web development's portfolio" />
+		  <meta name="author" content="Design by Berliner Süden. Development by  Trang Nguyen" />
+		  <!-- build:css css/trangnguyen.css>-->
+			 <link rel="stylesheet" href="css/app.css">
+			<!-- /build -->
+		</head>
+		<body ng-app="trangApp">
+		<div class="wrap" ng-controller="AppController">
+		  <nav>
+		    <ul>
+		      <li><a href="#me" du-smooth-scroll du-scrollspy>Who is Trang Nguyen?</a></li>
+          <li ng-repeat="project in projects track by $index"><a href="#{{project.scrollId}}" du-smooth-scroll du-scrollspy>{{project.title}}</a></li>
+        </ul>
+      </nav>
+      
+      <h1>Site Content</h1>
+      
+      <section id="me">
+        <h3>I'm a fullstack developer in Berlin, Germany.</h3>
+        <p>I build <span ng-repeat="thing in things" ng-bind="thing"></span> apps.</p>
+        <p>Hire me for your next project! </p>
+      </section>
+      
+      <section ng-repeat="project in projects track by $index" id="{{project.scrollId}}">
+        <h2>{{project.title}}</h2>
+        <p>{{project.abstract}}</p>
+        <img ng-src="{{project.media}}" alt="" />
+        <a href="{{project.url}}">Visit project's site</a>
+      </section>
+
+		</div>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- load all libs and vendors here-->
+		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>
+		<!-- build:js modules/main.js -->
+		<script src="modules/main.js "></script>
+		<!-- /build -->
+		
+		</body>
+	</html>
