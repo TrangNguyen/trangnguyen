@@ -24,14 +24,13 @@
       <section id="me">
         <h3>I'm a fullstack developer in Berlin, Germany.</h3>
         <p>I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps.</p>
-        <p>Hire me for your next <span ng-bind="thing"></span> project! </p>
+        <p><a href="#contact" du-smooth-scroll du-scrollspy>Hire me </a>for your next project!</p>
       </section>
       
-      <section id="very-ink" ng-controller="VideoController">
+      <section id="very-ink">
         <h3>Very.ink</h3>
-        <p>A web app for collaborative sketching. Built on Nodejs, MongoDb, <button ng-click="seekAndPlay(7, 'veryInk-video')">Angularjs,</button> Raphael.js and <button ng-click="seekAndPlay(20, 'veryInk-video')">Requirejs.</button> </p>      
-        <div class="videogular-container">
- 
+        <p>A web app for collaborative sketching. Built on Nodejs, MongoDb, <button ng-click="seekAndPlay(3, 'veryInk-video')">Angularjs,</button> Raphael.js and <button ng-click="seekAndPlay(7, 'veryInk-video')">Requirejs.</button> </p>      
+        <div class="videogular-container"> 
           <videogular  vg-player-ready="onPlayerReady($API)"
                   vg-complete="onCompleteVideo()"
                   vg-error="onError($event)"
@@ -41,7 +40,8 @@
                   vg-theme="config.theme.url"
                   vg-auto-play="config.autoPlay"
                   vg-plays-inline="config.playsInline">
-            <vg-media id="veryInk-video" vg-src="config.sources"
+            <vg-media id="veryInk-video" 
+                      vg-src="config.sources"
                       vg-tracks="config.tracks"
                       vg-loop="config.loop"
                       vg-preload="config.preload"
@@ -62,9 +62,29 @@
             </vg-controls>
           </videogular>
         </div>
+        <div class="row">
+      		<div class="col-6 col-sm-4 col-lg-4">
+      			<div>Theme: {{config.theme.url}}</div>
+      			<div>Poster image: {{config.plugins.poster.url}}</div>
+      			<div>AutoPlay: {{config.autoPlay}}</div>
+      		</div>
+      		<div class="col-6 col-sm-4 col-lg-4">
+      			<div>AutoHide: {{config.autoHide}}</div>
+      			<div>Responsive: {{config.responsive}}</div>
+      			<div>State: {{state}}</div>
+      			<div>Time: {{currentTime}} / {{totalTime || 0}}</div>
+      			<div>Volume: {{volume}}</div>
+      			<div>Completed: {{isCompleted}}</div>
+      		</div>    		
+      	</div>
+      </section>
+      
+      <section id="contact">
+        <h2>Contact me for your next project </h2>
+        <p><a href="mailto: <mymail>">MAIL</a></p>
+        <p><a href="skype://<myskype>?chat">SKYPE</a></p>
       </section>
 		</div>
-		<script src="http://localhost:35729/livereload.js"></script>
 		<!-- load all libs and vendors here-->
 		<script src="../bower_components/angular/angular.min.js"></script>
 		<script src="../bower_components/angular-animate/angular-animate.min.js"></script>

@@ -102,7 +102,8 @@ span.my-thing[class*="-add"] {
   background-color: yellow;
 }
 
-/* line 76, ../scss/app.scss */
+/* videgular styling */
+/* line 77, ../scss/app.scss */
 videogular {
   width: 100%;
   height: 100%;
@@ -118,19 +119,19 @@ videogular {
   user-select: none;
 }
 
-/* line 92, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 videogular button {
   cursor: pointer;
 }
 
-/* line 96, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 videogular.fullscreen {
   position: fixed;
   left: 0;
   top: 0;
 }
 
-/* line 102, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 videogular vg-media {
   width: 100%;
   height: 100%;
@@ -139,7 +140,7 @@ videogular vg-media {
   display: block;
 }
 
-/* line 111, ../scss/app.scss */
+/* line 112, ../scss/app.scss */
 videogular video {
   width: 100%;
   height: 100%;
@@ -147,7 +148,7 @@ videogular video {
   max-height: 100%;
 }
 
-/* line 118, ../scss/app.scss */
+/* line 119, ../scss/app.scss */
 videogular .iconButton {
   color: #FFFFFF;
   font-family: 'videogular';
@@ -163,7 +164,7 @@ videogular .iconButton {
   border: none;
 }
 
-/* line 134, ../scss/app.scss */
+/* line 135, ../scss/app.scss */
 videogular .iconButton:focus {
   border: 1px solid white;
 }
@@ -171,7 +172,7 @@ videogular .iconButton:focus {
 /*********************/
 /* Controlbar plugin */
 /*********************/
-/* line 140, ../scss/app.scss */
+/* line 141, ../scss/app.scss */
 videogular vg-controls {
   width: 100%;
   height: 50px;
@@ -181,7 +182,7 @@ videogular vg-controls {
   top: calc(100% - 50px);
 }
 
-/* line 149, ../scss/app.scss */
+/* line 150, ../scss/app.scss */
 videogular vg-controls .controls-container {
   width: 100%;
   height: 50px;
@@ -191,7 +192,7 @@ videogular vg-controls .controls-container {
   zoom: 1;
 }
 
-/* line 159, ../scss/app.scss */
+/* line 160, ../scss/app.scss */
 videogular vg-play-pause-button {
   display: table-cell;
   width: 50px;
@@ -200,7 +201,7 @@ videogular vg-play-pause-button {
   cursor: pointer;
 }
 
-/* line 167, ../scss/app.scss */
+/* line 168, ../scss/app.scss */
 videogular vg-time-display {
   color: #FFFFFF;
   display: table-cell;
@@ -212,7 +213,7 @@ videogular vg-time-display {
   cursor: default;
 }
 
-/* line 178, ../scss/app.scss */
+/* line 179, ../scss/app.scss */
 videogular .vgTimeDisplay {
   display: table-cell;
   font-family: Arial;
@@ -220,7 +221,7 @@ videogular .vgTimeDisplay {
   width: auto;
 }
 
-/* line 185, ../scss/app.scss */
+/* line 186, ../scss/app.scss */
 videogular vg-scrub-bar {
   width: auto;
   display: table-cell;
@@ -228,7 +229,7 @@ videogular vg-scrub-bar {
   vertical-align: middle;
 }
 
-/* line 192, ../scss/app.scss */
+/* line 193, ../scss/app.scss */
 videogular vg-scrub-bar [role=slider] {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -236,12 +237,12 @@ videogular vg-scrub-bar [role=slider] {
   background-color: black;
 }
 
-/* line 199, ../scss/app.scss */
+/* line 200, ../scss/app.scss */
 videogular vg-scrub-bar :focus vg-scrub-bar-current-time {
   border-right: 6px black groove;
 }
 
-/* line 203, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 videogular vg-scrub-bar-current-time {
   background-color: #FFFFFF;
   width: 100%;
@@ -250,7 +251,7 @@ videogular vg-scrub-bar-current-time {
   cursor: pointer;
 }
 
-/* line 211, ../scss/app.scss */
+/* line 212, ../scss/app.scss */
 videogular vg-volume {
   display: table-cell;
   width: 50px;
@@ -259,7 +260,7 @@ videogular vg-volume {
   cursor: pointer;
 }
 
-/* line 219, ../scss/app.scss */
+/* line 220, ../scss/app.scss */
 videogular vg-volume-bar {
   width: 50px;
   height: 100px;
@@ -272,53 +273,120 @@ videogular vg-volume-bar {
 }
 
 /* Controlbar icons */
-/* line 230, ../scss/app.scss */
+/* line 231, ../scss/app.scss */
 videogular vg-play-pause-button .play:before {
   content: "\e000";
 }
 
-/* line 234, ../scss/app.scss */
+/* line 235, ../scss/app.scss */
 videogular vg-play-pause-button .pause:before {
   content: "\e001";
 }
 
-/* line 238, ../scss/app.scss */
+/* line 239, ../scss/app.scss */
 videogular vg-mute-button {
   width: 50px;
   display: block;
 }
 
-/* line 243, ../scss/app.scss */
+/* line 244, ../scss/app.scss */
 videogular vg-mute-button .level3:before {
   content: "\e002";
 }
 
-/* line 247, ../scss/app.scss */
+/* line 248, ../scss/app.scss */
 videogular vg-mute-button .level2:before {
   content: "\e003";
 }
 
-/* line 251, ../scss/app.scss */
+/* line 252, ../scss/app.scss */
 videogular vg-mute-button .level1:before {
   content: "\e004";
 }
 
-/* line 255, ../scss/app.scss */
+/* line 256, ../scss/app.scss */
 videogular vg-mute-button .level0:before {
   content: "\e005";
 }
 
-/* line 259, ../scss/app.scss */
+/* line 260, ../scss/app.scss */
 videogular vg-mute-button .mute:before {
   content: "\e006";
 }
 
-/* line 263, ../scss/app.scss */
+/* line 264, ../scss/app.scss */
 videogular vg-fullscreen-button .enter:before {
   content: "\e007";
 }
 
-/* line 267, ../scss/app.scss */
+/* line 268, ../scss/app.scss */
 videogular vg-fullscreen-button .exit:before {
   content: "\e008";
+}
+
+/* line 287, ../scss/app.scss */
+.videogular-container {
+  width: 100%;
+  height: 320px;
+  margin: auto;
+}
+/* line 292, ../scss/app.scss */
+.videogular-container .skipButton {
+  position: absolute;
+  padding: 10px;
+  top: 10px;
+  right: 10px;
+  z-index: 99999;
+  color: white;
+  cursor: pointer;
+  background-color: #666666;
+  border: 2px #FFFFFF solid;
+  display: none;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 306, ../scss/app.scss */
+.videogular-container.audio {
+  width: 100%;
+  height: 50px;
+  margin: auto;
+}
+
+@media (min-width: 1200px) {
+  /* line 314, ../scss/app.scss */
+  .videogular-container {
+    width: 1170px;
+    height: 658.125px;
+  }
+  /* line 318, ../scss/app.scss */
+  .videogular-container.audio {
+    width: 1170px;
+    height: 50px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* line 326, ../scss/app.scss */
+  .videogular-container {
+    width: 940px;
+    height: 528.75px;
+  }
+  /* line 330, ../scss/app.scss */
+  .videogular-container.audio {
+    width: 940px;
+    height: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 338, ../scss/app.scss */
+  .videogular-container {
+    width: 728px;
+    height: 409.5px;
+  }
+  /* line 342, ../scss/app.scss */
+  .videogular-container.audio {
+    width: 728px;
+    height: 50px;
+  }
 }
