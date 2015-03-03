@@ -157,12 +157,12 @@ module.exports = function (grunt) {
 				files: ['<%=pkg.folders.testRoot + "**/*.js" %>'],
 				tasks: ['jshint', 'karma:development:run']
 			},
-			connect: {
-			  options: {
-			    livereload: true
-			  },
-			  tasks: ['connect:server']
-			}
+//			connect: {
+//			  options: {
+//			    livereload: true
+//			  },
+//			  tasks: ['connect:server']
+//			}
 		},
 		/*options for karma tasks */
 		karma: {

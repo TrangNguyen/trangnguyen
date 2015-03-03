@@ -89,3 +89,236 @@ button {
   color: #fff;
   cursor: pointer;
 }
+
+/* line 66, ../scss/app.scss */
+span.my-thing {
+  display: inline-block;
+  padding: 0 3px;
+  background-color: white;
+  transition: background-color 0.26s linear 0s;
+}
+/* line 71, ../scss/app.scss */
+span.my-thing[class*="-add"] {
+  background-color: yellow;
+}
+
+/* line 76, ../scss/app.scss */
+videogular {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #000000;
+  display: block;
+  flex-direction: column;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 92, ../scss/app.scss */
+videogular button {
+  cursor: pointer;
+}
+
+/* line 96, ../scss/app.scss */
+videogular.fullscreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* line 102, ../scss/app.scss */
+videogular vg-media {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* line 111, ../scss/app.scss */
+videogular video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 118, ../scss/app.scss */
+videogular .iconButton {
+  color: #FFFFFF;
+  font-family: 'videogular';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  background: none;
+  padding: 6px;
+  border: none;
+}
+
+/* line 134, ../scss/app.scss */
+videogular .iconButton:focus {
+  border: 1px solid white;
+}
+
+/*********************/
+/* Controlbar plugin */
+/*********************/
+/* line 140, ../scss/app.scss */
+videogular vg-controls {
+  width: 100%;
+  height: 50px;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: calc(100% - 50px);
+}
+
+/* line 149, ../scss/app.scss */
+videogular vg-controls .controls-container {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: table;
+  zoom: 1;
+}
+
+/* line 159, ../scss/app.scss */
+videogular vg-play-pause-button {
+  display: table-cell;
+  width: 50px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 167, ../scss/app.scss */
+videogular vg-time-display {
+  color: #FFFFFF;
+  display: table-cell;
+  font-family: Arial;
+  font-size: 18px;
+  width: 75px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: default;
+}
+
+/* line 178, ../scss/app.scss */
+videogular .vgTimeDisplay {
+  display: table-cell;
+  font-family: Arial;
+  font-size: 18px;
+  width: auto;
+}
+
+/* line 185, ../scss/app.scss */
+videogular vg-scrub-bar {
+  width: auto;
+  display: table-cell;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* line 192, ../scss/app.scss */
+videogular vg-scrub-bar [role=slider] {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  height: 2px;
+  background-color: black;
+}
+
+/* line 199, ../scss/app.scss */
+videogular vg-scrub-bar :focus vg-scrub-bar-current-time {
+  border-right: 6px black groove;
+}
+
+/* line 203, ../scss/app.scss */
+videogular vg-scrub-bar-current-time {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+/* line 211, ../scss/app.scss */
+videogular vg-volume {
+  display: table-cell;
+  width: 50px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 219, ../scss/app.scss */
+videogular vg-volume-bar {
+  width: 50px;
+  height: 100px;
+  top: -100px;
+  margin-left: -25px;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Controlbar icons */
+/* line 230, ../scss/app.scss */
+videogular vg-play-pause-button .play:before {
+  content: "\e000";
+}
+
+/* line 234, ../scss/app.scss */
+videogular vg-play-pause-button .pause:before {
+  content: "\e001";
+}
+
+/* line 238, ../scss/app.scss */
+videogular vg-mute-button {
+  width: 50px;
+  display: block;
+}
+
+/* line 243, ../scss/app.scss */
+videogular vg-mute-button .level3:before {
+  content: "\e002";
+}
+
+/* line 247, ../scss/app.scss */
+videogular vg-mute-button .level2:before {
+  content: "\e003";
+}
+
+/* line 251, ../scss/app.scss */
+videogular vg-mute-button .level1:before {
+  content: "\e004";
+}
+
+/* line 255, ../scss/app.scss */
+videogular vg-mute-button .level0:before {
+  content: "\e005";
+}
+
+/* line 259, ../scss/app.scss */
+videogular vg-mute-button .mute:before {
+  content: "\e006";
+}
+
+/* line 263, ../scss/app.scss */
+videogular vg-fullscreen-button .enter:before {
+  content: "\e007";
+}
+
+/* line 267, ../scss/app.scss */
+videogular vg-fullscreen-button .exit:before {
+  content: "\e008";
+}

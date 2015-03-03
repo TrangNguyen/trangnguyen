@@ -3,7 +3,11 @@
 
 //declare our app with its module dependencies
 angular.module("trangApp", [
-  'duScroll'
+  'duScroll',
+  'ngAnimate',
+  "ngSanitize",
+	"com.2fdevs.videogular",
+	"com.2fdevs.videogular.plugins.controls"
 ]);
   
 angular.module("trangApp")
@@ -22,9 +26,82 @@ angular.module("trangApp")
   });
 });
 
-//controller
+//Videogular controller
+
+angular.module("trangApp").controller('VideoController', [ '$scope', '$document', '$sce',   
+  //test videogular
+  function ($scope, $document, $sce) {
+		$scope.currentTime = 0;
+		$scope.totalTime = 0;
+		$scope.state = null;
+		$scope.volume = 1;
+		$scope.isCompleted = false;
+		$scope.API = null;
+    
+    // make API accessible to the template.
+		$scope.onPlayerReady = function (API) {
+			$scope.API = API;
+		};
+    
+    // my custom function to seek and play using API
+    $scope.seekAndPlay = function(second, id) {
+      var video = angular.element(document.getElementById(id));
+      $scope.API.seekTime(second, false);//this work but doesn't play
+      $scope.API.play();
+      $document.scrollTo(video);
+    };
+    
+		$scope.onError = function (event) {
+      console.log("VIDEOGULAR ERROR EVENT");
+			console.log(event);
+		};
+
+		$scope.onCompleteVideo = function () {
+			$scope.isCompleted = true;
+		};
+
+		$scope.onUpdateState = function (state) {
+			$scope.state = state;
+		};
+
+		$scope.onUpdateTime = function (currentTime, totalTime) {
+			$scope.currentTime = currentTime;
+			$scope.totalTime = totalTime;
+		};
+
+		$scope.onUpdateVolume = function (newVol) {
+			$scope.volume = newVol;
+		};
+
+		$scope.media = [
+			{
+        sources: [
+          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.mp4"), type: "video/mp4"},
+          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.webm"), type: "video/webm"},
+          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.ogv"), type: "video/ogg"}
+//          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
+        ]
+      }
+    ];
+
+    $scope.config = {
+			playsInline: false,
+			autoHide: false,
+			autoHideTime: 3000,
+			autoPlay: false,
+			sources: $scope.media[0].sources,
+			tracks: $scope.media[0].tracks,
+			loop: false,
+			preload: "auto",
+			controls: false,
+			theme: {
+				url: "css/app.css"
+			}
+		};
+}])
+
 angular.module("trangApp").controller('AppController', ['$scope', '$location', '$document', '$timeout', function($scope, $location, $document, $timeout) {
-  
+
   //check location.hash and scroll to section
   $timeout(function() {
     if($location.hash()) {
@@ -34,6 +111,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     }
   },300);
   
+  // to chang words on me section.
   $scope.things = [
     "web",
     "realtime",
@@ -42,24 +120,20 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     "responsive"
   ];
   
-  $scope.projects = [
-    { title: 'Very Ink',
-      scrollId: 'very-ink',
-      abstract: 'Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.',
-      url: 'http://very.ink',
-      media: 'http://lorempixel.com/1000/500/'
-    },
-    { title: 'Levin Monsigny Landscape Architects',
-      scrollId: 'lml',
-      abstract: 'Shank fatback pastrami short loin, turkey jowl kielbasa ribeye chicken jerky drumstick flank ham. Swine shankle pork belly kielbasa shoulder flank jowl, sirloin doner. Kevin tri-tip bresaola leberkas. Swine ball tip cow strip steak. Ham filet mignon pork chop, pork fatback andouille pork loin shoulder jowl swine strip steak turducken prosciutto rump.',
-      url: 'http://levin-monsigny.eu/app',
-      media: 'http://lorempixel.com/1000/600/'
-    },
-    { title: 'City & Home',
-      scrollId: 'city-and-home',
-      abstract: 'Bacon strip steak ground round, tongue pastrami short ribs pork chop venison turducken sausage sirloin. Flank chicken pork chop capicola turkey turducken cow pork loin biltong meatball drumstick pancetta filet mignon ground round fatback. Ham hock jerky short ribs brisket. Meatloaf shoulder pork chop capicola, sirloin swine pig pork. Jerky ribeye hamburger pork loin sirloin kevin bresaola boudin chuck flank. Ham hock pork belly chicken jerky rump bresaola.',
-      url: 'http://city-and-home.de/',
-      media: 'http://lorempixel.com/1000/400/'
-    }
-  ];
+  function changeWord(i) {
+    if(i <$scope.things.length) {   
+      $scope.thing = $scope.things[i];
+      i++;    
+      $timeout(function() {
+        changeWord(i);
+      }, 1000);
+    } else {
+      i = 0;
+      $timeout(function() {
+        changeWord(i);
+      }, 1000);
+    }    
+  }
+  changeWord(0);
+  
 }]).value('duScrollOffset', 30);
