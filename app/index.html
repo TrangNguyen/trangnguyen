@@ -18,6 +18,7 @@
 		    <ul>
 		      <li><a href="#me" du-smooth-scroll du-scrollspy>Who is Trang Nguyen?</a></li>
 		      <li><a href="#very-ink" du-smooth-scroll du-scrollspy>Very.ink</a></li>
+		      <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>
         </ul>
       </nav>
       
@@ -27,29 +28,15 @@
         <p><a href="#contact" du-smooth-scroll du-scrollspy>Hire me </a>for your next project!</p>
       </section>
       
-      <section id="very-ink">
-        <h3>Very.ink</h3>
-        <!--<p>A web app for collaborative sketching. Built on Nodejs, MongoDb, <button ng-click="seekAndPlay(3, 'veryInk-video')">Angularjs,</button> Raphael.js and <button ng-click="seekAndPlay(7, 'veryInk-video')">Requirejs.</button> </p>-->      
-        <div class="videogular-container" id="veryInk-video"> 
+      <section ng-repeat="project in projects" id="{{project.id}}">
+        <div> 
           <trang-videogular config="config"
-                            filmclip="filmclips[0]">
+                            filmclip="project">
           </trang-videogular>
           
         </div>
       </section>
-      
-      <section id="lml">
-        <h3>Digital Portfolio for Levin-Monsigny Landscape Architects</h3>
-        <!--<p>showcasing the French-German firm's works in searchable categories. A complete custom CMS built in Angularjs pulling <button ng-click="seekAndPlay(2, 'lml-video')">WordPress JSON API</button> topped with Isotope for masonry effects and with Pascal Precht's translation module for <button ng-click="seekAndPlay(3, 'lml-video')">bilingual features.</button> </p>  -->    
-        <div class="videogular-container" id="lml-video"> 
-          <trang-videogular config="config"                            
-                            filmclip="filmclips[1]"
-                            abstract="filmclips[1].abstract">
-          </trang-videogular>
-        </div>
-      </section>
-      
-      
+            
       <section id="contact">
         <h2>Contact me for your next project </h2>
         <p><a href="mailto: <mymail>">MAIL</a></p>
