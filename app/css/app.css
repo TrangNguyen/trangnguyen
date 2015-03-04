@@ -90,6 +90,7 @@ button {
   cursor: pointer;
 }
 
+/* animation on text switch */
 /* line 66, ../scss/app.scss */
 span.my-thing {
   display: inline-block;
@@ -102,8 +103,12 @@ span.my-thing[class*="-add"] {
   background-color: yellow;
 }
 
-/* videgular styling */
-/* line 77, ../scss/app.scss */
+/**
+ * @license Videogular v1.0.1 http://videogular.com
+ * Two Fucking Developers http://twofuckingdevelopers.com
+ * License: MIT
+ */
+/* line 82, ../scss/app.scss */
 videogular {
   width: 100%;
   height: 100%;
@@ -119,19 +124,19 @@ videogular {
   user-select: none;
 }
 
-/* line 93, ../scss/app.scss */
+/* line 98, ../scss/app.scss */
 videogular button {
   cursor: pointer;
 }
 
-/* line 97, ../scss/app.scss */
+/* line 102, ../scss/app.scss */
 videogular.fullscreen {
   position: fixed;
   left: 0;
   top: 0;
 }
 
-/* line 103, ../scss/app.scss */
+/* line 108, ../scss/app.scss */
 videogular vg-media {
   width: 100%;
   height: 100%;
@@ -140,7 +145,7 @@ videogular vg-media {
   display: block;
 }
 
-/* line 112, ../scss/app.scss */
+/* line 117, ../scss/app.scss */
 videogular video {
   width: 100%;
   height: 100%;
@@ -148,7 +153,7 @@ videogular video {
   max-height: 100%;
 }
 
-/* line 119, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 videogular .iconButton {
   color: #FFFFFF;
   font-family: 'videogular';
@@ -164,15 +169,96 @@ videogular .iconButton {
   border: none;
 }
 
-/* line 135, ../scss/app.scss */
+/* line 140, ../scss/app.scss */
 videogular .iconButton:focus {
   border: 1px solid white;
+}
+
+/*****************/
+/* Poster plugin */
+/*****************/
+/* line 147, ../scss/app.scss */
+videogular vg-poster {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 0;
+}
+
+/* line 158, ../scss/app.scss */
+videogular vg-poster img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
+
+/* line 172, ../scss/app.scss */
+videogular vg-poster img.pause,
+videogular vg-poster img.play {
+  display: none;
+}
+
+/* line 177, ../scss/app.scss */
+videogular vg-poster img.stop {
+  display: block;
+}
+
+/**********************/
+/* OverlayPlay plugin */
+/**********************/
+/* line 184, ../scss/app.scss */
+videogular vg-overlay-play {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+/* line 194, ../scss/app.scss */
+videogular vg-overlay-play .play:before {
+  content: "\e000";
+}
+
+/* line 198, ../scss/app.scss */
+videogular vg-overlay-play .overlayPlayContainer {
+  font-size: 100px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  display: table;
+  cursor: pointer;
+  zoom: 1;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+
+/* line 213, ../scss/app.scss */
+videogular vg-overlay-play .overlayPlayContainer div {
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
 }
 
 /*********************/
 /* Controlbar plugin */
 /*********************/
-/* line 141, ../scss/app.scss */
+/* line 222, ../scss/app.scss */
 videogular vg-controls {
   width: 100%;
   height: 50px;
@@ -182,7 +268,7 @@ videogular vg-controls {
   top: calc(100% - 50px);
 }
 
-/* line 150, ../scss/app.scss */
+/* line 231, ../scss/app.scss */
 videogular vg-controls .controls-container {
   width: 100%;
   height: 50px;
@@ -192,7 +278,7 @@ videogular vg-controls .controls-container {
   zoom: 1;
 }
 
-/* line 160, ../scss/app.scss */
+/* line 241, ../scss/app.scss */
 videogular vg-play-pause-button {
   display: table-cell;
   width: 50px;
@@ -201,7 +287,7 @@ videogular vg-play-pause-button {
   cursor: pointer;
 }
 
-/* line 168, ../scss/app.scss */
+/* line 249, ../scss/app.scss */
 videogular vg-time-display {
   color: #FFFFFF;
   display: table-cell;
@@ -213,7 +299,7 @@ videogular vg-time-display {
   cursor: default;
 }
 
-/* line 179, ../scss/app.scss */
+/* line 260, ../scss/app.scss */
 videogular .vgTimeDisplay {
   display: table-cell;
   font-family: Arial;
@@ -221,7 +307,7 @@ videogular .vgTimeDisplay {
   width: auto;
 }
 
-/* line 186, ../scss/app.scss */
+/* line 267, ../scss/app.scss */
 videogular vg-scrub-bar {
   width: auto;
   display: table-cell;
@@ -229,7 +315,7 @@ videogular vg-scrub-bar {
   vertical-align: middle;
 }
 
-/* line 193, ../scss/app.scss */
+/* line 274, ../scss/app.scss */
 videogular vg-scrub-bar [role=slider] {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -237,12 +323,12 @@ videogular vg-scrub-bar [role=slider] {
   background-color: black;
 }
 
-/* line 200, ../scss/app.scss */
+/* line 281, ../scss/app.scss */
 videogular vg-scrub-bar :focus vg-scrub-bar-current-time {
   border-right: 6px black groove;
 }
 
-/* line 204, ../scss/app.scss */
+/* line 285, ../scss/app.scss */
 videogular vg-scrub-bar-current-time {
   background-color: #FFFFFF;
   width: 100%;
@@ -251,7 +337,7 @@ videogular vg-scrub-bar-current-time {
   cursor: pointer;
 }
 
-/* line 212, ../scss/app.scss */
+/* line 293, ../scss/app.scss */
 videogular vg-volume {
   display: table-cell;
   width: 50px;
@@ -260,7 +346,7 @@ videogular vg-volume {
   cursor: pointer;
 }
 
-/* line 220, ../scss/app.scss */
+/* line 301, ../scss/app.scss */
 videogular vg-volume-bar {
   width: 50px;
   height: 100px;
@@ -272,121 +358,369 @@ videogular vg-volume-bar {
   cursor: pointer;
 }
 
+/* IE10 hack */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* line 314, ../scss/app.scss */
+  videogular vg-volume-bar {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+}
+/* line 321, ../scss/app.scss */
+videogular vg-fullscreen-button {
+  display: table-cell;
+  width: 50px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 329, ../scss/app.scss */
+videogular vg-volume-bar .verticalVolumeBar {
+  width: 50px;
+  height: 100px;
+  background-color: #000000;
+  position: absolute;
+}
+
+/* line 336, ../scss/app.scss */
+videogular vg-volume-bar .volumeBackground {
+  width: 20px;
+  height: 70px;
+  left: 15px;
+  top: 15px;
+  background-color: #222222;
+  position: absolute;
+}
+
+/* line 345, ../scss/app.scss */
+videogular vg-volume-bar .volumeValue {
+  width: 20px;
+  height: 100%;
+  background-color: #FFFFFF;
+  position: absolute;
+}
+
+/* line 352, ../scss/app.scss */
+videogular vg-volume-bar .volumeClickArea {
+  width: 20px;
+  height: 100%;
+  position: absolute;
+}
+
+/* line 358, ../scss/app.scss */
+videogular vg-controls .hide-animation {
+  animation: hideControlsAnimationFrames ease-out 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /*when the spec is finished*/
+  -webkit-animation: hideControlsAnimationFrames ease-out 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  /*Chrome 16+, Safari 4+*/
+  -moz-animation: hideControlsAnimationFrames ease-out 0.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  /*FF 5+*/
+  -o-animation: hideControlsAnimationFrames ease-out 0.5s;
+  -o-animation-iteration-count: 1;
+  -o-animation-fill-mode: forwards;
+  /*Not implemented yet*/
+  -ms-animation: hideControlsAnimationFrames ease-out 0.5s;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-fill-mode: forwards;
+  /*IE 10+*/
+}
+
+@keyframes hideControlsAnimationFrames {
+  /* line 377, ../scss/app.scss */
+  0% {
+    opacity: 0.5;
+  }
+
+  /* line 380, ../scss/app.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes hideControlsAnimationFrames {
+  /* line 386, ../scss/app.scss */
+  0% {
+    opacity: 0.5;
+  }
+
+  /* line 389, ../scss/app.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideControlsAnimationFrames {
+  /* line 395, ../scss/app.scss */
+  0% {
+    opacity: 0.5;
+  }
+
+  /* line 398, ../scss/app.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes hideControlsAnimationFrames {
+  /* line 404, ../scss/app.scss */
+  0% {
+    opacity: 0.5;
+  }
+
+  /* line 407, ../scss/app.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes hideControlsAnimationFrames {
+  /* line 413, ../scss/app.scss */
+  0% {
+    opacity: 0.5;
+  }
+
+  /* line 416, ../scss/app.scss */
+  100% {
+    opacity: 0;
+  }
+}
+/* line 421, ../scss/app.scss */
+videogular vg-controls .show-animation {
+  animation: showControlsAnimationFrames ease-out 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /*when the spec is finished*/
+  -webkit-animation: showControlsAnimationFrames ease-out 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  /*Chrome 16+, Safari 4+*/
+  -moz-animation: showControlsAnimationFrames ease-out 0.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+  /*FF 5+*/
+  -o-animation: showControlsAnimationFrames ease-out 0.5s;
+  -o-animation-iteration-count: 1;
+  -o-animation-fill-mode: forwards;
+  /*Not implemented yet*/
+  -ms-animation: showControlsAnimationFrames ease-out 0.5s;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-fill-mode: forwards;
+  /*IE 10+*/
+}
+
+@keyframes showControlsAnimationFrames {
+  /* line 440, ../scss/app.scss */
+  0% {
+    background-color: transparent;
+  }
+
+  /* line 443, ../scss/app.scss */
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@-moz-keyframes showControlsAnimationFrames {
+  /* line 449, ../scss/app.scss */
+  0% {
+    background-color: transparent;
+  }
+
+  /* line 452, ../scss/app.scss */
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@-webkit-keyframes showControlsAnimationFrames {
+  /* line 458, ../scss/app.scss */
+  0% {
+    background-color: transparent;
+  }
+
+  /* line 461, ../scss/app.scss */
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@-o-keyframes showControlsAnimationFrames {
+  /* line 467, ../scss/app.scss */
+  0% {
+    background-color: transparent;
+  }
+
+  /* line 470, ../scss/app.scss */
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@-ms-keyframes showControlsAnimationFrames {
+  /* line 476, ../scss/app.scss */
+  0% {
+    background-color: transparent;
+  }
+
+  /* line 479, ../scss/app.scss */
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
 /* Controlbar icons */
-/* line 231, ../scss/app.scss */
+/* line 485, ../scss/app.scss */
 videogular vg-play-pause-button .play:before {
   content: "\e000";
 }
 
-/* line 235, ../scss/app.scss */
+/* line 489, ../scss/app.scss */
 videogular vg-play-pause-button .pause:before {
   content: "\e001";
 }
 
-/* line 239, ../scss/app.scss */
+/* line 493, ../scss/app.scss */
 videogular vg-mute-button {
   width: 50px;
   display: block;
 }
 
-/* line 244, ../scss/app.scss */
+/* line 498, ../scss/app.scss */
 videogular vg-mute-button .level3:before {
   content: "\e002";
 }
 
-/* line 248, ../scss/app.scss */
+/* line 502, ../scss/app.scss */
 videogular vg-mute-button .level2:before {
   content: "\e003";
 }
 
-/* line 252, ../scss/app.scss */
+/* line 506, ../scss/app.scss */
 videogular vg-mute-button .level1:before {
   content: "\e004";
 }
 
-/* line 256, ../scss/app.scss */
+/* line 510, ../scss/app.scss */
 videogular vg-mute-button .level0:before {
   content: "\e005";
 }
 
-/* line 260, ../scss/app.scss */
+/* line 514, ../scss/app.scss */
 videogular vg-mute-button .mute:before {
   content: "\e006";
 }
 
-/* line 264, ../scss/app.scss */
+/* line 518, ../scss/app.scss */
 videogular vg-fullscreen-button .enter:before {
   content: "\e007";
 }
 
-/* line 268, ../scss/app.scss */
+/* line 522, ../scss/app.scss */
 videogular vg-fullscreen-button .exit:before {
   content: "\e008";
 }
 
-/* line 287, ../scss/app.scss */
-.videogular-container {
+/********************/
+/* Buffering plugin */
+/********************/
+/* line 529, ../scss/app.scss */
+videogular vg-buffering {
   width: 100%;
-  height: 320px;
-  margin: auto;
-}
-/* line 292, ../scss/app.scss */
-.videogular-container .skipButton {
+  height: 100%;
   position: absolute;
-  padding: 10px;
-  top: 10px;
-  right: 10px;
-  z-index: 99999;
-  color: white;
-  cursor: pointer;
-  background-color: #666666;
-  border: 2px #FFFFFF solid;
-  display: none;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-}
-/* line 306, ../scss/app.scss */
-.videogular-container.audio {
-  width: 100%;
-  height: 50px;
-  margin: auto;
+  z-index: 4;
+  top: 0;
 }
 
-@media (min-width: 1200px) {
-  /* line 314, ../scss/app.scss */
-  .videogular-container {
-    width: 1170px;
-    height: 658.125px;
+/* line 537, ../scss/app.scss */
+videogular vg-buffering .bufferingContainer {
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  margin-top: -50px;
+  zoom: 1;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+
+/* Loading Spinner
+ * http://www.alessioatzeni.com/blog/css3-loading-animation-loop/
+ */
+/* line 552, ../scss/app.scss */
+videogular vg-buffering .loadingSpinner {
+  background-color: transparent;
+  border: 5px solid white;
+  opacity: .9;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-radius: 50px;
+  box-shadow: 0 0 35px #FFFFFF;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  -moz-animation: spin .5s infinite linear;
+  -webkit-animation: spin .5s infinite linear;
+}
+
+/* line 567, ../scss/app.scss */
+videogular vg-buffering .loadingSpinner .stop {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+}
+
+@-moz-keyframes spin {
+  /* line 573, ../scss/app.scss */
+  0% {
+    -moz-transform: rotate(0deg);
   }
-  /* line 318, ../scss/app.scss */
-  .videogular-container.audio {
-    width: 1170px;
-    height: 50px;
+
+  /* line 576, ../scss/app.scss */
+  100% {
+    -moz-transform: rotate(360deg);
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* line 326, ../scss/app.scss */
-  .videogular-container {
-    width: 940px;
-    height: 528.75px;
+@-moz-keyframes spinoff {
+  /* line 582, ../scss/app.scss */
+  0% {
+    -moz-transform: rotate(0deg);
   }
-  /* line 330, ../scss/app.scss */
-  .videogular-container.audio {
-    width: 940px;
-    height: 50px;
+
+  /* line 585, ../scss/app.scss */
+  100% {
+    -moz-transform: rotate(-360deg);
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  /* line 338, ../scss/app.scss */
-  .videogular-container {
-    width: 728px;
-    height: 409.5px;
+@-webkit-keyframes spin {
+  /* line 591, ../scss/app.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  /* line 342, ../scss/app.scss */
-  .videogular-container.audio {
-    width: 728px;
-    height: 50px;
+
+  /* line 594, ../scss/app.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
   }
+}
+@-webkit-keyframes spinoff {
+  /* line 600, ../scss/app.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 603, ../scss/app.scss */
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+/**********************/
+/* IMA ads plugin */
+/**********************/
+/* line 611, ../scss/app.scss */
+videogular vg-ima-ads {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  display: none;
 }

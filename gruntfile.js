@@ -153,6 +153,12 @@ module.exports = function (grunt) {
 					livereload: false
 				}
 			},
+			media: {
+				files: ['<%=pkg.folders.wwwRoot %>' + 'media/*'],
+				options: {
+					livereload: false
+				}
+			},
 			karma: {
 				files: ['<%=pkg.folders.testRoot + "**/*.js" %>'],
 				tasks: ['jshint', 'karma:development:run']
@@ -228,6 +234,14 @@ module.exports = function (grunt) {
 					dest: '<%= outputDir %>/images/build/',
 					src: ['**', "!**/README"],
 					cwd: '<%= pkg.folders.wwwRoot%>images/build/'
+				}]
+			},
+			media: {
+				files: [{
+					expand: true,
+					dest: '<%= outputDir %>/media/build/',
+					src: ['**', "!**/README"],
+					cwd: '<%= pkg.folders.wwwRoot%>media/build/'
 				}]
 			},
 			fonts: {
@@ -319,6 +333,7 @@ module.exports = function (grunt) {
 			grunt.task.run("cssmin");
 			grunt.task.run("autoprefixer:production");
 			grunt.task.run("copy:images");
+			grunt.task.run("copy:media");
 			grunt.task.run("copy:fonts");
 			grunt.task.run("copy:htaccess");
 			grunt.task.run("copy:translations");

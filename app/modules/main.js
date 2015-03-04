@@ -60,147 +60,71 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   }
   changeWord(0);
   
-  //videogular stuff
-  $scope.currentTime = 0;
-	$scope.totalTime = 0;
-	$scope.state = null;
-	$scope.volume = 1;
-	$scope.isCompleted = false;
-	$scope.API = null;
+  /* Videogular stuff */
   
-  // make API accessible to the template.
-	$scope.onPlayerReady = function (API) {
-		$scope.API = API;
-	};
-  
-  // my custom function to seek and play using API
+  /* custom function to seek and play using API */
   $scope.seekAndPlay = function(second, id) {
     var video = angular.element(document.getElementById(id));
-    $scope.API.seekTime(second, false);//this work but doesn't play
-    $scope.API.play();
     $document.scrollTo(video);
+    //TODO: find the scope.
+    var thing = angular.element(document.getElementsByName('vg-controls')).scope();
+    console.log(thing);
+//    $scope.API.seekTime(second, false);    
+//    $scope.API.play();
   };
   
-	$scope.onError = function (event) {
-    console.log("VIDEOGULAR ERROR EVENT");
-		console.log(event);
-	};
-
-	$scope.onCompleteVideo = function () {
-		$scope.isCompleted = true;
-	};
-
-	$scope.onUpdateState = function (state) {
-		$scope.state = state;
-	};
-
-	$scope.onUpdateTime = function (currentTime, totalTime) {
-		$scope.currentTime = currentTime;
-		$scope.totalTime = totalTime;
-	};
-
-	$scope.onUpdateVolume = function (newVol) {
-		$scope.volume = newVol;
-	};
-
-	$scope.media = 
+	//media to be passed onto custom directive wrapping videogular
+	$scope.filmclips = [
 		{
+		  abtract: '<p> A web app for collaborative sketching. Built on Nodejs, MongoDb,<button ng-click="seekAndPlay(3, \'veryInk-video\')">Angularjs,</button> Raphael.js and <button ng-click="seekAndPlay(7, \'veryInk-video\')">Requirejs.</button></p>',
       sources: [
-//        {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.mp4"), type: "video/mp4"},
-//        {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.webm"), type: "video/webm"},
-//        {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.ogv"), type: "video/ogg"}
+//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
+//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
+//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
           {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
       ]
-    };
-
+    },    
+    {
+		  abstract: '<p>showcasing the French-German firm\'s works in searchable categories. A complete custom CMS built in Angularjs pulling <button ng-click="seekAndPlay(2, \'lml-video\')">WordPress JSON API</button> topped with Isotope for masonry effects and with Pascal Precht\'s translation module for <button ng-click="seekAndPlay(3, \'lml-video\')">bilingual features.</button> </p>',
+      sources: [
+//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
+//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
+        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
+//          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/stockholm-vfr.ogg"), type: "video/ogg"}
+      ]
+    }
+  ];
+  
+  // player configuration for videgular
   $scope.config = {
 		playsInline: false,
 		autoHide: false,
 		autoHideTime: 3000,
 		autoPlay: false,
-		sources: $scope.media.sources,
-//		tracks: $scope.media[0].tracks,
+		responsive: true,
 		loop: false,
 		preload: "auto",
-		controls: false,
 		theme: {
 			url: "css/app.css"
 		}
 	};
-  
-  
 }]);
 
-//Videogular controller
-//
-//angular.module("trangApp").controller('VideoController', [ '$scope', '$document', '$sce',   
-//  test videogular
-//  function ($scope, $document, $sce) {
-//		$scope.currentTime = 0;
-//		$scope.totalTime = 0;
-//		$scope.state = null;
-//		$scope.volume = 1;
-//		$scope.isCompleted = false;
-//		$scope.API = null;
-//    
-//     make API accessible to the template.
-//		$scope.onPlayerReady = function (API) {
-//			$scope.API = API;
-//		};
-//    
-//     my custom function to seek and play using API
-//    $scope.seekAndPlay = function(second, id) {
-//      var video = angular.element(document.getElementById(id));
-//      $scope.API.seekTime(second, false);this work but doesn't play
-//      $scope.API.play();
-//      $document.scrollTo(video);
-//    };
-//    
-//		$scope.onError = function (event) {
-//      console.log("VIDEOGULAR ERROR EVENT");
-//			console.log(event);
-//		};
-//
-//		$scope.onCompleteVideo = function () {
-//			$scope.isCompleted = true;
-//		};
-//
-//		$scope.onUpdateState = function (state) {
-//			$scope.state = state;
-//		};
-//
-//		$scope.onUpdateTime = function (currentTime, totalTime) {
-//			$scope.currentTime = currentTime;
-//			$scope.totalTime = totalTime;
-//		};
-//
-//		$scope.onUpdateVolume = function (newVol) {
-//			$scope.volume = newVol;
-//		};
-//
-//		$scope.media = [
-//			{
-//        sources: [
-//          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.mp4"), type: "video/mp4"},
-//          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.webm"), type: "video/webm"},
-//          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.ogv"), type: "video/ogg"}
-//          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
-//        ]
-//      }
-//    ];
-//
-//    $scope.config = {
-//			playsInline: false,
-//			autoHide: false,
-//			autoHideTime: 3000,
-//			autoPlay: false,
-//			sources: $scope.media[0].sources,
-//			tracks: $scope.media[0].tracks,
-//			loop: false,
-//			preload: "auto",
-//			controls: false,
-//			theme: {
-//				url: "css/app.css"
-//			}
-//		};
-//}]);
+angular.module("trangApp").directive('trangVideogular', function(){
+  return {
+    restrict: 'E',
+    scope: {
+      filmclip:'=',//vg-src and abstract
+      config:'=',//player config,
+      abstract:'='
+    },
+    templateUrl: 'modules/templates/trang-videogular-directive.html',
+    link: function(scope) {
+//      console.log(scope.filmclip);
+      scope.API = null;
+      scope.onPlayerReady = function(API) {
+        scope.API = API;
+      };
+    }
+  };
+});
