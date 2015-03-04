@@ -62,6 +62,12 @@ button {
   color: #fff;
   cursor: pointer;
 }
+
+button.highlighted {
+  background: yellow;
+  color: red;
+  
+}
 /* animation on text switch */
 span.my-thing{
     display: inline-block;

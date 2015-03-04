@@ -80,37 +80,40 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
 	/* media to be passed onto custom directive wrapping videogular */
 	$scope.projects = [
 		{
-		  id: "very-ink",
+		  index: "very-ink",
 		  title: "Very.ink",
-		  abstract: '<p> A web app for collaborative sketching. Built on Nodejs, MongoDb,<button ng-click="seekAndPlay(3, \'video-very-ink\')">Angularjs,</button> Raphael.js and <button ng-click="seekAndPlay(7, \'video-very-ink\')">Requirejs.</button></p>',
+		  abstract: '<p> A web app for collaborative sketching. Built on Nodejs, MongoDb,<button id="very-ink-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-very-ink\')">Angularjs,</button> Raphael.js and <button id="very-ink-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-very-ink\')">Requirejs.</button></p>',
       sources: [
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
           {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
-      ]
+      ],
+      cuepoints: [2, 7]//the second value to link
     },    
     {
-		  id: "lml",
+		  index: "lml",
 		  title: "Digital Portfolio for Levin-Monsigny Landscape Architects",
-		  abstract: '<p>showcasing the French-German firm\'s works in searchable categories. A complete custom CMS built in Angularjs pulling <button ng-click="seekAndPlay(2, \'video-lml\')">WordPress JSON API</button> topped with Isotope for masonry effects and with Pascal Precht\'s translation module for <button ng-click="seekAndPlay(3, \'video-lml\')">bilingual features.</button> </p>',
+		  abstract: '<p>showcasing the French-German firm\'s works in searchable categories. A complete custom CMS built in Angularjs pulling <button id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">WordPress JSON API</button> topped with Isotope for masonry effects and with Pascal Precht\'s translation module for <button id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">bilingual features.</button> </p>',
       sources: [
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
           {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/stockholm-vfr.ogg"), type: "video/ogg"}
-      ]
+      ],
+      cuepoints: [1, 3]//the second value to link
     }
   ];
   
 }]);
 
-angular.module("trangApp").directive('trangVideogular', function($document){
+angular.module("trangApp").directive('trangVideogular', function($document, $timeout){
   return {
     restrict: 'E',
     scope: {
       filmclip:'=',//vg-src and abstract
-      config:'='//player config,
+      config:'=',//player config,
+      cuepoints:'='
     },
     templateUrl: 'modules/templates/trang-videogular-directive.html',
     link: function(scope) {
@@ -125,6 +128,17 @@ angular.module("trangApp").directive('trangVideogular', function($document){
         $document.scrollTo(video);
         scope.API.seekTime(second, false);    
         scope.API.play();
+      };
+      scope.onUpdateTime = function(currentTime) {
+        if(scope.cuepoints.indexOf(Math.round(currentTime)) >-1) {
+//          console.log('found cuepoint');
+          var linkId = scope.filmclip.index+'-'+Math.round(currentTime);
+          var link = angular.element(document.getElementById(linkId));
+          link.addClass('highlighted');//works
+          $timeout(function() {
+            link.removeClass('highlighted');//works
+          }, 1000);//change after 1000 miliseconds.
+        }
       };
     }
   };

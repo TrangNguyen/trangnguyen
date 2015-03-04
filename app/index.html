@@ -28,10 +28,11 @@
         <p><a href="#contact" du-smooth-scroll du-scrollspy>Hire me </a>for your next project!</p>
       </section>
       
-      <section ng-repeat="project in projects" id="{{project.id}}">
+      <section ng-repeat="project in projects" id="{{project.index}}">
         <div> 
           <trang-videogular config="config"
-                            filmclip="project">
+                            filmclip="project"
+                            cuepoints="project.cuepoints">
           </trang-videogular>
           
         </div>
