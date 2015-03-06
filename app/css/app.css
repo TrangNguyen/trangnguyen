@@ -102,7 +102,8 @@ span.my-thing {
   display: inline-block;
   padding: 0 3px;
   background-color: white;
-  transition: background-color 0.26s linear 0s;
+  -webkit-transition: background-color 0.26s linear 0s;
+          transition: background-color 0.26s linear 0s;
 }
 /* line 77, ../scss/app.scss */
 span.my-thing[class*="-add"] {
@@ -121,13 +122,16 @@ videogular {
   position: relative;
   background-color: #000000;
   display: block;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: moz-none;
   -ms-user-select: none;
-  user-select: none;
+  -o-user-select: none;
+     user-select: none;
 }
 
 /* line 104, ../scss/app.scss */
@@ -271,6 +275,7 @@ videogular vg-controls {
   display: block;
   position: absolute;
   z-index: 3;
+  top: -webkit-calc(100% - 50px);
   top: calc(100% - 50px);
 }
 
@@ -417,9 +422,15 @@ videogular vg-volume-bar .volumeClickArea {
 
 /* line 364, ../scss/app.scss */
 videogular vg-controls .hide-animation {
-  animation: hideControlsAnimationFrames ease-out 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  -webkit-animation: hideControlsAnimationFrames ease-out 0.5s;
+       -o-animation: hideControlsAnimationFrames ease-out 0.5s;
+          animation: hideControlsAnimationFrames ease-out 0.5s;
+  -webkit-animation-iteration-count: 1;
+       -o-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   /*when the spec is finished*/
   -webkit-animation: hideControlsAnimationFrames ease-out 0.5s;
   -webkit-animation-iteration-count: 1;
@@ -446,17 +457,6 @@ videogular vg-controls .hide-animation {
   }
 
   /* line 386, ../scss/app.scss */
-  100% {
-    opacity: 0;
-  }
-}
-@-moz-keyframes hideControlsAnimationFrames {
-  /* line 392, ../scss/app.scss */
-  0% {
-    opacity: 0.5;
-  }
-
-  /* line 395, ../scss/app.scss */
   100% {
     opacity: 0;
   }
@@ -496,9 +496,15 @@ videogular vg-controls .hide-animation {
 }
 /* line 427, ../scss/app.scss */
 videogular vg-controls .show-animation {
-  animation: showControlsAnimationFrames ease-out 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  -webkit-animation: showControlsAnimationFrames ease-out 0.5s;
+       -o-animation: showControlsAnimationFrames ease-out 0.5s;
+          animation: showControlsAnimationFrames ease-out 0.5s;
+  -webkit-animation-iteration-count: 1;
+       -o-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   /*when the spec is finished*/
   -webkit-animation: showControlsAnimationFrames ease-out 0.5s;
   -webkit-animation-iteration-count: 1;
@@ -525,17 +531,6 @@ videogular vg-controls .show-animation {
   }
 
   /* line 449, ../scss/app.scss */
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-@-moz-keyframes showControlsAnimationFrames {
-  /* line 455, ../scss/app.scss */
-  0% {
-    background-color: transparent;
-  }
-
-  /* line 458, ../scss/app.scss */
   100% {
     background-color: rgba(0, 0, 0, 0.5);
   }
@@ -660,7 +655,8 @@ videogular vg-buffering .loadingSpinner {
   border-top: 5px solid transparent;
   border-left: 5px solid transparent;
   border-radius: 50px;
-  box-shadow: 0 0 35px #FFFFFF;
+  -webkit-box-shadow: 0 0 35px #FFFFFF;
+          box-shadow: 0 0 35px #FFFFFF;
   width: 50px;
   height: 50px;
   margin: 0 auto;
@@ -672,29 +668,6 @@ videogular vg-buffering .loadingSpinner {
 videogular vg-buffering .loadingSpinner .stop {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
-}
-
-@-moz-keyframes spin {
-  /* line 579, ../scss/app.scss */
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-
-  /* line 582, ../scss/app.scss */
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-moz-keyframes spinoff {
-  /* line 588, ../scss/app.scss */
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-
-  /* line 591, ../scss/app.scss */
-  100% {
-    -moz-transform: rotate(-360deg);
-  }
 }
 @-webkit-keyframes spin {
   /* line 597, ../scss/app.scss */
