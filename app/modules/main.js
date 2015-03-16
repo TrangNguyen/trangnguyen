@@ -7,12 +7,21 @@ angular.module("trangApp", [
   'ngAnimate',
   "ngSanitize",
 	"com.2fdevs.videogular",
-	"com.2fdevs.videogular.plugins.controls"
+	"com.2fdevs.videogular.plugins.controls",
+	"pascalprecht.translate"
 ]);
   
 angular.module("trangApp")
 .config(['$locationProvider', function($locationProvider) {
   $locationProvider.html5Mode({enabled: true, requireBase: false});
+}])
+.config(['$translateProvider', function ($translateProvider) {
+  $translateProvider.useStaticFilesLoader({
+    prefix: 'modules/translations/locale-',
+    suffix: '.json'
+  });
+  $translateProvider.useMissingTranslationHandlerLog();
+  $translateProvider.preferredLanguage('en');
 }])
 //config to update url on scroll
 .run(function($rootScope, $location){
@@ -26,7 +35,7 @@ angular.module("trangApp")
   });
 });
 // controller
-angular.module("trangApp").controller('AppController', ['$scope', '$location', '$document',  '$sce', '$timeout', function($scope, $location, $document, $sce, $timeout) {
+angular.module("trangApp").controller('AppController', ['$scope', '$location', '$document',  '$sce', '$timeout', "$translate", function($scope, $location, $document, $sce, $timeout, $translate) {
 
   //check location.hash and scroll to section
   if($location.hash()) {
@@ -37,7 +46,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     }, 300);
   }
  
-  // to chang words on me section.
+  // to change words on me section.
   $scope.things = [
     "web",
     "realtime",
@@ -47,7 +56,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     "custom CMS"
   ];
   
-  // to chang words on me section.
+  // to change tech on me section.
   $scope.techs = [
     "AngularJS",
     "Socket.io",
@@ -56,8 +65,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     "NodeJS",
     "WordPress"
   ];
-  
-  
+    
   function changeWord(i) {
     if(i <$scope.things.length) {   
       $scope.thing = $scope.things[i];
@@ -87,9 +95,13 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   
   changeWord(0);
   
+  //change language
+  $scope.changeLanguage = function(language){
+    $translate.use(language);//change static translation
+  };
+
   /* Videogular stuff */
-  
-  
+    
   // player configuration for videgular
   $scope.config = {
   	playsInline: false,
@@ -105,34 +117,20 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   };
   
 	/* media to be passed onto custom directive wrapping videogular */
-	$scope.projects = [
-//		{
-//		  index: "very-ink",
-//		  title: "Very.ink",
-//		  abstract: '<p> A web app for collaborative sketching. Built on Nodejs, MongoDb,<button id="very-ink-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-very-ink\')">Angularjs,</button> Raphael.js and <button id="very-ink-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-very-ink\')">Requirejs.</button></p>',
-//      sources: [
-//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
-//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
-//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
-//          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
-//      ],
-//      cuepoints: [2, 7]//the second value to link
-//    },    
+	$scope.projects = [    
     {
 		  index: "lml",
 		  title: "Levin-Monsigny Landschaftsarchitekten",
-		  abstract: '<p>The <button id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual digital portfolio</button> of the French-German landscape architecture firm Levin-Monsigny Landschaftsarchitekten was ambitiously layed out in Isotope’s masonry style with their 17-year work <button id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">sortable via filters</button>. Their projects are viewable as a grid or a <button id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">sortable list view</button>. Masonry layout with five flexible components allow for <button id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">many layout possibilities</button> for each project. Images on projects can be shown in high resolution in a <button id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</button></p>',
+		  abstract: '<p><button id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">The bilingual digital portfolio</button> of the French-German landscape architecture firm Levin-Monsigny Landschaftsarchitekten was ambitiously laid out in Isotope’s masonry style with their 17-year work <button id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">sortable via filters</button>. </p>',
       sources: [
-        {src: $sce.trustAsResourceUrl("media/LML-portfolio.mp4.mp4"), type: "video/mp4"},
-//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
-//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
-          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/stockholm-vfr.ogg"), type: "video/ogg"}
+        {src: $sce.trustAsResourceUrl("media/LML-portfolio.mp4.mp4"), type: "video/mp4"}
       ],
       cuepoints: [15, 24, 31, 50, 80]//the second value to link
     }
   ];
   
 }]);
+//The projects are viewable as a grid or a <button id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">sortable list view</button>. Masonry layout with five flexible components allow <button id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">differrent layout possibilities</button> for each project. Images on projects can be shown in high resolution in a <button id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</button>
 
 angular.module("trangApp").directive('trangVideogular', function($document, $timeout){
   return {

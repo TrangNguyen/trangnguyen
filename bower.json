@@ -16,6 +16,9 @@
     "videogular-controls": "1.0.1",     
     "videogular-buffering":"1.0.1",     
     "videogular-overlay-play": "1.0.1",     
-    "videogular-poster": "1.0.1"
+    "videogular-poster": "1.0.1",
+    "angular-translate": "2.6.1",
+    "angular-translate-loader-static-files": "2.6.1",
+    "angular-translate-handler-log": "2.6.1"
   }  
 }

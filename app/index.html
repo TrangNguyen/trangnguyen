@@ -8,104 +8,33 @@
 		  <title>Trang Nguyen</title>
 		  <meta name="description" content="Trang Nguyen web development's portfolio" />
 		  <meta name="author" content="Design by Berliner Süden. Development by  Trang Nguyen" />
-		  <!-- build:css css/trangnguyen.css>-->
+		  <!--(if target build)>
+		  	<link rel="stylesheet" href="css/cityAndHome.css">
+		  <!(endif)-->
+		  		  
+		  <!--(if target local)> -->
 			 <link rel="stylesheet" href="css/app.css">
-			<!-- /build -->
+			<!--<!(endif)-->
+			
 		</head>
 		<body ng-app="trangApp">
 		<div class="wrap" ng-controller="AppController">
 		  <nav>
 		    <ul>
-		      <li><a href="#logo" du-smooth-scroll du-scrollspy>Logo</a></li>
-		      <li><a href="#me" du-smooth-scroll du-scrollspy>Who is Trang Nguyen?</a></li>
+		     <li><a href="#me" du-smooth-scroll du-scrollspy>About</a></li>
 		      <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>		      
         </ul>
       </nav>
-      
-      <section id="logo">
-      <svg width="300" height="350">
-        <path fill="#1EB287">
-          <animate 
-            attributeName="d" 
-            dur="3000ms" 
-            fill="freeze"
-            values="M 50,150 
-            C 100,150 100,150 150,150
-            150,200 150,200 150,250
-            100,250 100,250 50,250
-            50,200 50,200 50,150
-            Z;
-      
-            M 0,0 
-            C 100,0 100,0 200,0
-            200,100 200,100 200,100
-            100,100 100,100 0,100
-            0,50 0,50 0,0
-            Z;
-      
-            M 0,0 
-            C 150,0 150,0 300,0
-            300,100 300,100 300,100
-            150,100 150,100 0,100
-            0,50 0,50 0,0
-            Z;"/>
-        </path>
-        <path fill="#1EB287">
-          <animate 
-            attributeName="d" 
-            dur="5000ms" 
-            fill="freeze"
-            values="M 50,150 
-            L 75,150 75,150 100,150
-            125,150 125,150 150,150
-            150,200 150,200 150,250
-            125,250 125,250 100,250
-            75,250 75,250 50,250
-            50,200 50,200 50,150
-            Z;
-      
-            M 50,150 
-            L 75,150 75,150 100,150
-            125,150 125,150 150,150
-            150,250 150,250 150,350
-            125,350 125,350 100,350
-            75,350 75,350 50,350  
-            50,250 50,250 50,150
-            Z;
-              
-            M 50,150 
-            L 100,150 100,150 150,150
-            200,150 200,150 250,150
-            250,250 250,250 250,350
-            200,350 200,350 150,350
-            100,350 100,350 50,350
-            50,250 50,250 50,150
-            Z;
-      
-            M 50,150 
-            L 100,150 100,150 200,270
-            200,150 200,150 250,150        
-            250,200 250,200 250,350
-            200,350 200,350 100,230       
-            100,350 100,350 50,350  
-            50,250 50,200 50,150
-            Z;"/>
-        </path>
-      </svg>
-      
-      <style>
-        svg {
-          border: 3px solid #eee;
-          display: block;
-          margin: 1em auto;
-        }
-      </style>
-      </section>
+      <!--Toggle language options-->
+  		<ul id="language-toggle" ng-click="toggle=!toggle">
+  		  <li><a ng-if="toggle" type ="button" ng-click="changeLanguage('en')">EN</a></li> 
+  		  <li><a ng-if="!toggle" type ="button" ng-click="changeLanguage('de')">DE</a></li>
+  		</ul>
       
       <section id="me">
-        <h3>I'm a fullstack developer in Berlin, Germany.</h3>
-        <p>I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.</p>
-        <p><a href="#contact" du-smooth-scroll du-scrollspy>Hire me </a>for your next project!</p>
+        <h3><translate>I'm a fullstack developer in Berlin, Germany.</translate></h3>
+        <p><translate>I build</translate> <span class="my-thing value-{{thing}}">{{thing}}</span> <translate>apps with</translate> <span class="my-tech value-{{tech}}">{{tech}}</span>.</p>
+        <p><a href="#contact" du-smooth-scroll du-scrollspy><translate>Hire me</translate> </a><translate>for your next project!</translate></p>
       </section>
       
       <section ng-repeat="project in projects" id="{{project.index}}">
@@ -133,10 +62,10 @@
 		<!--<script src="../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>-->
 		<!--<script src="../bower_components/videogular-poster/vg-poster.js"></script>
 		<script src="../bower_components/videogular-buffering/vg-buffering.js"></script>-->
-		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>
-		<!-- build:js modules/main.js -->
-		<script src="modules/main.js "></script>
-		<!-- /build -->
-		
+		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>	
+		<script src="../bower_components/angular-translate/angular-translate.js"></script>
+		<script src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+		<script src="../bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>	 
+		<script src="modules/main.js "></script>		
 		</body>
 	</html>

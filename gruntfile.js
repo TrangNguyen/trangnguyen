@@ -5,13 +5,14 @@ module.exports = function (grunt) {
   
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		outputDir: '<%= pkg.folders.build + pkg.name + "-" + pkg.version %>',
 		/*load bower dependencies when building, it clean the directory first then install */
 		bower: {
       install: {
         options: {
           install: true,
           copy: false,
-          targetDir: '<%=pkg.folders.build %>'+'./bower_components',
+          targetDir: '<%= outputDir %>/bower_components',
           cleanTargetDir: true
         }
       }
@@ -22,9 +23,13 @@ module.exports = function (grunt) {
 				'<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
 				'* Copyright (c) <%= grunt.template.today("yyyy") %> */'
 		},
-		outputDir: '<%= pkg.folders.build + pkg.name + "-" + pkg.version %>',
+		
 		clean: {
-			all: ['<%=pkg.folders.build %>']
+			all: ['<%=pkg.folders.build %>'],
+			css: {
+        src: ['<%= pkg.folders.build + pkg.name + "-" + pkg.version %>/css/*.css',
+            '!<%= pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css']
+      }
 		},
 		/* files to hint, in this case, only our own js and gruntfile.js. */
 		jshint: {
@@ -99,15 +104,21 @@ module.exports = function (grunt) {
 			}
 		},
 		/* generate HTML5 AppCache Manifest from specific list */
-		appcache: {
-			options: {
-				basePath: "<%= outputDir %>"
-			},
-			build: {
-				dest: "<%= outputDir %>/<%= pkg.name %>.manifest",
-				cache: "<%= outputDir %>/**/*",
-				network: '*',
-				fallback: ''
+		manifest: {
+			generate: {
+				options: {
+					basePath: "<%=pkg.folders.build + pkg.name + '-' + pkg.version%>",
+					network: ["*"],
+					fallback: [],
+					exclude: [],
+					preferOnline: false,
+					timestamp: true
+				},
+
+				src: ["**/*", "!modules/main.js.map", "!modules/main.js.src",
+					//TODO - remove folder names manually, update grunt-manifest to have it done automatically
+					"!js", "!css", "!images", "!images/build", "!modules", "!modules/templates"],
+				dest: "<%= pkg.folders.build + pkg.name + '-' + pkg.version + '/' + pkg.name %>.manifest"
 			}
 		},
 		/* When release, we have an archive of the application in tar.gz format */
@@ -123,6 +134,7 @@ module.exports = function (grunt) {
 				cwd: '<%= outputDir %>/'
 			}
 		},
+		
 		/* Watchover changes and run speific tasks. Livereload true to auto injection, so no browser refresh needed.*/
 		watch: {
 			javascript: {
@@ -140,7 +152,7 @@ module.exports = function (grunt) {
 			},
 			css: {
         files: ['<%=pkg.folders.wwwRoot %>' + 'css/*',
-                '<%=pkg.folders.wwwRoot %>' + 'scss/**/*.scss'
+                '<%=pkg.folders.wwwRoot %>' + 'scss/*.scss'
         ],
         options: {
           livereload: false
@@ -162,13 +174,7 @@ module.exports = function (grunt) {
 			karma: {
 				files: ['<%=pkg.folders.testRoot + "**/*.js" %>'],
 				tasks: ['jshint', 'karma:development:run']
-			},
-//			connect: {
-//			  options: {
-//			    livereload: true
-//			  },
-//			  tasks: ['connect:server']
-//			}
+			}
 		},
 		/*options for karma tasks */
 		karma: {
@@ -244,6 +250,14 @@ module.exports = function (grunt) {
 					cwd: '<%= pkg.folders.wwwRoot%>media/build/'
 				}]
 			},
+			modules: {
+				files: [{
+					expand: true,
+					dest: '<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/modules/',
+					src: ['**', '!**/*.js', "!**/README"],
+					cwd: '<%= pkg.folders.wwwRoot%>modules/'
+				}]
+			},
 			fonts: {
 				files: [{
 					expand: true,
@@ -269,14 +283,15 @@ module.exports = function (grunt) {
 				}]
 			},
 			cssmin: {
-	      css: {
-	        files: {
-	          '<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css': [
-	              //include all css files in correct order, add new files in desired order
-	              '<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css'
-	            ]
-	        }
-	      }
+			  options: {
+		      shorthandCompacting: false,
+		      roundingPrecision: -1
+		    },
+        files: {
+          '<%= pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>min.css': 
+              //include all css files in correct order, add new files in desired order
+          ['<%= pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css']
+        }
 	    },
 			translations: {
 				files: [{
@@ -295,6 +310,18 @@ module.exports = function (grunt) {
 				output: "file"
 			}
 		},
+		
+		dataUri: {
+      dist: {
+        src: ['<%=pkg.folders.wwwRoot %>css/*.css'],
+        dest: '<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/',
+        options: {
+          target: ['<%=pkg.folders.wwwRoot %>images/*.*'],
+          fixDirLevel: true,
+          baseDir: '<%=pkg.folders.wwwRoot %>css'
+        }
+      }
+    },
 		/* bump pkg version, create tag, commit, push*/
 		push: {
 			options: {
@@ -317,29 +344,22 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask("install", "Create a deployable artifact for server environments",
-		function (system) {
+		function () {
 			grunt.task.run("jshint");
 			grunt.task.run("clean:all");
-
-			if (system) {
-				grunt.config('configuration', "configuration_" + system);
-			} else {
-				grunt.config('configuration', "configuration");
-			}
-
-//			grunt.task.run("ngtemplates");
-//			grunt.task.run("requirejs");
-      grunt.task.run("bower");
-//			grunt.task.run("cssmin");
+      grunt.task.run("bower");			
 //			grunt.task.run("autoprefixer:production");
       grunt.task.run("concat");
-			grunt.task.run("copy:images");
+//			grunt.task.run("copy:images");
 			grunt.task.run("copy:media");
-			grunt.task.run("copy:fonts");
+//			grunt.task.run("copy:fonts");
 			grunt.task.run("copy:htaccess");
-			grunt.task.run("copy:translations");
+			grunt.task.run("copy:modules");
 			grunt.task.run("processhtml:build");
-			grunt.task.run("appcache:build");
+			grunt.task.run("dataUri");
+			grunt.task.run("cssmin");
+			grunt.task.run("clean:css");
+			grunt.task.run("manifest");
 			grunt.task.run("compress");
 		}
 	);
