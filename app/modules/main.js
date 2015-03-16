@@ -41,10 +41,22 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   $scope.things = [
     "web",
     "realtime",
-    "angular",
-    "express",
-    "responsive"
+    "multilingual",
+    "multiuser",
+    "responsive",
+    "custom CMS"
   ];
+  
+  // to chang words on me section.
+  $scope.techs = [
+    "AngularJS",
+    "Socket.io",
+    "RequireJS",
+    "MongoDB",
+    "NodeJS",
+    "WordPress"
+  ];
+  
   
   function changeWord(i) {
     if(i <$scope.things.length) {   
@@ -58,6 +70,21 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
       changeWord(i);
     }    
   }
+  
+  function changeTech(j) {
+    if(j <$scope.techs.length) {   
+      $scope.tech = $scope.techs[j];
+      j++;    
+      $timeout(function() {
+        changeTech(j);
+      }, 1000);
+    } else {
+      j = 0;
+      changeTech(j);
+    }    
+  }
+  changeTech(0);
+  
   changeWord(0);
   
   /* Videogular stuff */
@@ -79,29 +106,29 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   
 	/* media to be passed onto custom directive wrapping videogular */
 	$scope.projects = [
-		{
-		  index: "very-ink",
-		  title: "Very.ink",
-		  abstract: '<p> A web app for collaborative sketching. Built on Nodejs, MongoDb,<button id="very-ink-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-very-ink\')">Angularjs,</button> Raphael.js and <button id="very-ink-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-very-ink\')">Requirejs.</button></p>',
-      sources: [
+//		{
+//		  index: "very-ink",
+//		  title: "Very.ink",
+//		  abstract: '<p> A web app for collaborative sketching. Built on Nodejs, MongoDb,<button id="very-ink-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-very-ink\')">Angularjs,</button> Raphael.js and <button id="very-ink-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-very-ink\')">Requirejs.</button></p>',
+//      sources: [
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
-          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
-      ],
-      cuepoints: [2, 7]//the second value to link
-    },    
+//          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
+//      ],
+//      cuepoints: [2, 7]//the second value to link
+//    },    
     {
 		  index: "lml",
-		  title: "Digital Portfolio for Levin-Monsigny Landscape Architects",
-		  abstract: '<p>showcasing the French-German firm\'s works in searchable categories. A complete custom CMS built in Angularjs pulling <button id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">WordPress JSON API</button> topped with Isotope for masonry effects and with Pascal Precht\'s translation module for <button id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">bilingual features.</button> </p>',
+		  title: "Levin-Monsigny Landschaftsarchitekten",
+		  abstract: '<p>The <button id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual digital portfolio</button> of the French-German landscape architecture firm Levin-Monsigny Landschaftsarchitekten was ambitiously layed out in Isotope’s masonry style with their 17-year work <button id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">sortable via filters</button>. Their projects are viewable as a grid or a <button id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">sortable list view</button>. Masonry layout with five flexible components allow for <button id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">many layout possibilities</button> for each project. Images on projects can be shown in high resolution in a <button id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</button></p>',
       sources: [
-//        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.mp4"), type: "video/mp4"},
+        {src: $sce.trustAsResourceUrl("media/LML-portfolio.mp4.mp4"), type: "video/mp4"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.webm"), type: "video/webm"},
 //        {src: $sce.trustAsResourceUrl("media/big_buck_bunny.ogv"), type: "video/ogg"}
           {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/stockholm-vfr.ogg"), type: "video/ogg"}
       ],
-      cuepoints: [1, 3]//the second value to link
+      cuepoints: [15, 24, 31, 50, 80]//the second value to link
     }
   ];
   
@@ -137,7 +164,7 @@ angular.module("trangApp").directive('trangVideogular', function($document, $tim
           link.addClass('highlighted');//works
           $timeout(function() {
             link.removeClass('highlighted');//works
-          }, 1000);//change after 1000 miliseconds.
+          }, 7000);//change after 1000 miliseconds.
         }
       };
     }

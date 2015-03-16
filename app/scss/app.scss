@@ -55,21 +55,30 @@ footer {
   text-align: center;
 }
 button {
-  font-size: 18px;
+  font-size: 14px;
   border: 0;
-  padding: 15px 30px;
-  background: #00AC7F;
-  color: #fff;
+  padding: 5px 5px;
   cursor: pointer;
 }
 
 button.highlighted {
-  background: yellow;
-  color: red;
+  background: #00AC7F;
+  color: #fff;
   
 }
 /* animation on text switch */
 span.my-thing{
+    display: inline-block;
+    padding: 0 3px;
+    background-color: white;
+    transition: background-color 0.26s linear 0s;
+    &[class*="-add"] {
+        background-color: yellow;
+    }
+}
+
+/* animation on tech switch */
+span.my-tech{
     display: inline-block;
     padding: 0 3px;
     background-color: white;

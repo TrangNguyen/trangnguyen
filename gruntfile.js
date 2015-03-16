@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         options: {
           install: true,
           copy: false,
-          targetDir: './bower_components',
+          targetDir: '<%=pkg.folders.build %>'+'./bower_components',
           cleanTargetDir: true
         }
       }
@@ -330,8 +330,9 @@ module.exports = function (grunt) {
 //			grunt.task.run("ngtemplates");
 //			grunt.task.run("requirejs");
       grunt.task.run("bower");
-			grunt.task.run("cssmin");
-			grunt.task.run("autoprefixer:production");
+//			grunt.task.run("cssmin");
+//			grunt.task.run("autoprefixer:production");
+      grunt.task.run("concat");
 			grunt.task.run("copy:images");
 			grunt.task.run("copy:media");
 			grunt.task.run("copy:fonts");
