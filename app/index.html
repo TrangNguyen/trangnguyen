@@ -11,47 +11,61 @@
 		  <!--(if target build)>
 		  	<link rel="stylesheet" href="css/cityAndHome.css">
 		  <!(endif)-->
-		  		  
+		  
+		  <!-- Load fonts -->
+		  <script src="//use.typekit.net/ghc4jmy.js"></script>
+		  <script>try{Typekit.load();}catch(e){}</script>
+		  
 		  <!--(if target local)> -->
 			 <link rel="stylesheet" href="css/app.css">
 			<!--<!(endif)-->
 			
 		</head>
 		<body ng-app="trangApp">
-		<div class="wrap" ng-controller="AppController">
-		  <nav>
-		    <ul>
-		     <li><a href="#me" du-smooth-scroll du-scrollspy>About</a></li>
-		      <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>		      
-        </ul>
-      </nav>
-      <!--Toggle language options-->
-  		<ul id="language-toggle" ng-click="toggle=!toggle">
-  		  <li><a ng-if="toggle" type ="button" ng-click="changeLanguage('en')">EN</a></li> 
-  		  <li><a ng-if="!toggle" type ="button" ng-click="changeLanguage('de')">DE</a></li>
-  		</ul>
+		<div class="row" ng-controller="AppController">
+		  <div class="small-12 columns">  
+  		  <!--<nav>
+  		    <ul>
+  		     <li><a href="#me" du-smooth-scroll du-scrollspy>About</a></li>
+  		      <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>		      
+          </ul>
+        </nav>-->
+        <!--Toggle language options-->
+    		<!--<ul id="language-toggle" ng-click="toggle=!toggle">
+    		  <li><a ng-if="toggle" type ="button" ng-click="changeLanguage('en')">EN</a></li> 
+    		  <li><a ng-if="!toggle" type ="button" ng-click="changeLanguage('de')">DE</a></li>
+    		</ul>-->
       
-      <section id="me">
-        <h3><translate>I'm a fullstack developer in Berlin, Germany.</translate></h3>
-        <p><translate>I build</translate> <span class="my-thing value-{{thing}}">{{thing}}</span> <translate>apps with</translate> <span class="my-tech value-{{tech}}">{{tech}}</span>.</p>
-        <p><a href="#contact" du-smooth-scroll du-scrollspy><translate>Hire me</translate> </a><translate>for your next project!</translate></p>
-      </section>
-      
-      <section ng-repeat="project in projects" id="{{project.index}}">
-        <div> 
-          <trang-videogular config="config"
-                            filmclip="project"
-                            cuepoints="project.cuepoints">
-          </trang-videogular>
+        <h1>Trang Nguyen</h1>
+        
+        <section id="me">
+          <h2><translate>I'm a fullstack developer in Berlin, Germany.</translate> <translate>I build</translate> <span class="my-thing value-{{thing}}">{{thing}}</span> <translate>apps with</translate> <span class="my-tech value-{{tech}}">{{tech}}</span>.
+          <a href="#contact" du-smooth-scroll du-scrollspy> <translate>Hire me</translate> </a><translate>for your next project!</translate></h2>
           
-        </div>
-      </section>
-     
-      <section id="contact">
-        <h2>Contact me for your next project </h2>
-        <p><a href="mailto: <mymail>">MAIL</a></p>
-        <p><a href="skype://<myskype>?chat">SKYPE</a></p>
-      </section>
+        </section>
+        
+        <section ng-repeat="project in projects" id="{{project.index}}">
+          <div> 
+            <trang-videogular config="config"
+                              filmclip="project"
+                              cuepoints="project.cuepoints">
+            </trang-videogular>
+            
+          </div>
+        </section>
+       
+        <section id="contact">
+          <h2>Contact me for your next project </h2>
+          <ul>
+            <li><a href="mailto: <mymail>">Email</a></li>
+            <li><a href="skype://<myskype>?chat">Skype</a></li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="">Xing</a></li>
+            <li><a href="">Github</a></li>
+          </ul>
+        </section>
+      
+      </div>
 		</div>
 		<!-- load all libs and vendors here-->
 		<script src="../bower_components/angular/angular.min.js"></script>

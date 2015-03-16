@@ -1,91 +1,49 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #ebebeb;
-}
-body, button {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-h1 {
-  padding-top: 50px;
-}
-img {
-  max-width: 100%;
-}
-nav {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.8);
-}
-nav li, nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center
-}
-nav li, nav a {
-  display: inline-block;
-}
-nav a {
-  padding: 20px;
-  color: #333;
-  text-decoration: none;
-}
-a:hover {
-  background: #fff;
-}
-a.active {
-  background: #00AC7F;
-  color: #fff;
-}
-.wrap {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 50px 20px;
-}
-section {
-  padding: 50px 0 30px 0;
-}
-footer {
-  text-align: center;
-}
-button {
-  font-size: 14px;
-  border: 0;
-  padding: 5px 5px;
-  cursor: pointer;
-}
+@charset "UTF-8";
 
-button.highlighted {
-  background: #00AC7F;
-  color: #fff;
+/* Import Foundation */
+@import
+  "foundation/settings",
+  "foundation";
+
+
+a.videoLink {
+  border: 0;
+  padding: 2px 5px;
+  cursor: pointer;
+  //background: #fff;
+  border-bottom: 1px solid #00eeee;
+  color: $black;
+  &.highlighted {
+    background: #00eeee;
+    border-bottom: 1px solid #00cccc;
+  }
   
 }
+
+
+section{
+  margin: 60px 0;
+}
+
+
 /* animation on text switch */
 span.my-thing{
     display: inline-block;
-    padding: 0 3px;
-    background-color: white;
-    transition: background-color 0.26s linear 0s;
-    &[class*="-add"] {
-        background-color: yellow;
-    }
+    text-decoration:underline;
+//    transition: background-color 2s linear 2s;
+//    &[class*="-add"] {
+//        background-color: yellow;
+//    }
 }
 
 /* animation on tech switch */
 span.my-tech{
     display: inline-block;
-    padding: 0 3px;
-    background-color: white;
-    transition: background-color 0.26s linear 0s;
-    &[class*="-add"] {
-        background-color: yellow;
-    }
+    text-decoration:underline;
+//    transition: background-color 2s linear 2s;
+//    &[class*="-add"] {
+//        background-color: yellow;
+//    }
 }
 
 /**
@@ -93,6 +51,17 @@ span.my-tech{
  * Two Fucking Developers http://twofuckingdevelopers.com
  * License: MIT
  */
+
+@font-face {
+  font-family: 'videogular';
+  src: url('../fonts/videogular.eot');
+  src: url('../fonts/videogular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/videogular.woff') format('woff'),
+  url('../fonts/videogular.ttf') format('truetype'),
+  url('../fonts/videogular.svg#videogular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 videogular, [videogular] {
   width: 100%;

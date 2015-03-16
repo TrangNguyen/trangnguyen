@@ -72,7 +72,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
       i++;    
       $timeout(function() {
         changeWord(i);
-      }, 1000);
+      }, 5000);
     } else {
       i = 0;
       changeWord(i);
@@ -85,7 +85,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
       j++;    
       $timeout(function() {
         changeTech(j);
-      }, 1000);
+      }, 5000);
     } else {
       j = 0;
       changeTech(j);
@@ -93,7 +93,11 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   }
   changeTech(0);
   
-  changeWord(0);
+  $timeout(function() {
+    changeWord(0);
+  }, 2500);
+  
+  
   
   //change language
   $scope.changeLanguage = function(language){
@@ -121,7 +125,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     {
 		  index: "lml",
 		  title: "Levin-Monsigny Landschaftsarchitekten",
-		  abstract: '<p><button id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">The bilingual digital portfolio</button> of the French-German landscape architecture firm Levin-Monsigny Landschaftsarchitekten was ambitiously laid out in Isotope’s masonry style with their 17-year work <button id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">sortable via filters</button>. </p>',
+		  abstract: '<p>An example project with a <a class="videoLink" id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual language switch</a>, <a class="videoLink" id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">filterable grid view</a>, <a class="videoLink" id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">sortable list view</a>, <a class="videoLink" id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">differrent layout possibilities</a> and a <a class="videoLink" id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</a></p>',
       sources: [
         {src: $sce.trustAsResourceUrl("media/LML-portfolio.mp4.mp4"), type: "video/mp4"}
       ],
@@ -130,9 +134,9 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   ];
   
 }]);
-//The projects are viewable as a grid or a <button id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">sortable list view</button>. Masonry layout with five flexible components allow <button id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">differrent layout possibilities</button> for each project. Images on projects can be shown in high resolution in a <button id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</button>
+//
 
-angular.module("trangApp").directive('trangVideogular', function($document, $timeout){
+angular.module("trangApp").directive('trangVideogular', function(){
   return {
     restrict: 'E',
     scope: {
@@ -148,9 +152,7 @@ angular.module("trangApp").directive('trangVideogular', function($document, $tim
         scope.API = API;
       };
       //bind custom controller to specific API
-      scope.seekAndPlay = function(second, id) {
-        var video = angular.element(document.getElementById(id));
-        $document.scrollTo(video);
+      scope.seekAndPlay = function(second) {
         scope.API.seekTime(second, false);    
         scope.API.play();
       };
@@ -159,10 +161,13 @@ angular.module("trangApp").directive('trangVideogular', function($document, $tim
 //          console.log('found cuepoint');
           var linkId = scope.filmclip.index+'-'+Math.round(currentTime);
           var link = angular.element(document.getElementById(linkId));
+          
+          var links = angular.element(document.getElementsByClassName("videoLink"));
+          
+          links.removeClass('highlighted');//works
+          
           link.addClass('highlighted');//works
-          $timeout(function() {
-            link.removeClass('highlighted');//works
-          }, 7000);//change after 1000 miliseconds.
+
         }
       };
     }

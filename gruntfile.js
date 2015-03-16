@@ -152,7 +152,7 @@ module.exports = function (grunt) {
 			},
 			css: {
         files: ['<%=pkg.folders.wwwRoot %>' + 'css/*',
-                '<%=pkg.folders.wwwRoot %>' + 'scss/*.scss'
+                '<%=pkg.folders.wwwRoot %>' + 'scss/**/*.scss'
         ],
         options: {
           livereload: false
@@ -283,16 +283,15 @@ module.exports = function (grunt) {
 				}]
 			},
 			cssmin: {
-			  options: {
-		      shorthandCompacting: false,
-		      roundingPrecision: -1
-		    },
-        files: {
-          '<%= pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>min.css': 
-              //include all css files in correct order, add new files in desired order
-          ['<%= pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css']
-        }
-	    },
+				css: {
+					files: {
+						'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css': [
+								//include all css files in correct order, add new files in desired order
+								'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css'
+							]
+					}
+				}
+			},
 			translations: {
 				files: [{
 					expand: true,
@@ -413,7 +412,7 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('web', ['sass', 'autoprefixer:development', 'connect:server', 'karma:development', 'watch']);
+	grunt.registerTask('web', ['sass', 'connect:server', 'karma:development', 'watch']);
 
 	//call grunt.loadNpmTasks for all dependencies in package.json which names start with "grunt-"
   require('load-grunt-tasks')(grunt);
