@@ -9,7 +9,7 @@
 		  <meta name="description" content="Trang Nguyen web development's portfolio" />
 		  <meta name="author" content="Design by Berliner Süden. Development by  Trang Nguyen" />
 		  <!--(if target build)>
-		  	<link rel="stylesheet" href="css/cityAndHome.css">
+		  	<link rel="stylesheet" href="css/trangnguyen.css">
 		  <!(endif)-->
 		  
 		  <!-- Load fonts -->
@@ -30,17 +30,21 @@
   		      <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>		      
           </ul>
         </nav>-->
-        <!--Toggle language options-->
-    		<!--<ul id="language-toggle" ng-click="toggle=!toggle">
-    		  <li><a ng-if="toggle" type ="button" ng-click="changeLanguage('en')">EN</a></li> 
-    		  <li><a ng-if="!toggle" type ="button" ng-click="changeLanguage('de')">DE</a></li>
-    		</ul>-->
       
         <h1>Trang Nguyen</h1>
         
         <section id="me">
-          <h2><translate>I'm a fullstack developer in Berlin, Germany.</translate> <translate>I build</translate> <span class="my-thing value-{{thing}}">{{thing}}</span> <translate>apps with</translate> <span class="my-tech value-{{tech}}">{{tech}}</span>.
-          <a href="#contact" du-smooth-scroll du-scrollspy> <translate>Hire me</translate> </a><translate>for your next project!</translate></h2>
+          <h2>I'm a freelance web developer in Berlin, Germany. I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.
+          <a href="#contact" du-smooth-scroll du-scrollspy>Consider me </a>for your next project!</h2>
+          <div id="contact">
+            <ul>
+              <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
+              <li><a target="_blank" href="skype://trangnguyen80?chat">Skype</a></li>
+              <li><a target="_blank" href="">LinkedIn</a></li>
+              <li><a target="_blank" href="">Xing</a></li>
+              <li><a target="_blank" href="https://github.com/TrangNguyen">Github</a></li>
+            </ul>
+          </div>
           
         </section>
         
@@ -53,18 +57,7 @@
             
           </div>
         </section>
-       
-        <section id="contact">
-          <h2>Contact me for your next project </h2>
-          <ul>
-            <li><a href="mailto: <mymail>">Email</a></li>
-            <li><a href="skype://<myskype>?chat">Skype</a></li>
-            <li><a href="">LinkedIn</a></li>
-            <li><a href="">Xing</a></li>
-            <li><a href="">Github</a></li>
-          </ul>
-        </section>
-      
+    
       </div>
 		</div>
 		<!-- load all libs and vendors here-->
@@ -72,14 +65,11 @@
 		<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
 		<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 		<script src="../bower_components/videogular/videogular.js"></script>
-		<script src="../bower_components/videogular-controls/vg-controls.js"></script>
-		<!--<script src="../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>-->
-		<!--<script src="../bower_components/videogular-poster/vg-poster.js"></script>
-		<script src="../bower_components/videogular-buffering/vg-buffering.js"></script>-->
-		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>	
-		<script src="../bower_components/angular-translate/angular-translate.js"></script>
-		<script src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-		<script src="../bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>	 
+		<!--<script src="../bower_components/videogular-controls/vg-controls.js"></script>-->
+		<script src="../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+		<script src="../bower_components/videogular-poster/vg-poster.js"></script>
+		<!--<script src="../bower_components/videogular-buffering/vg-buffering.js"></script>-->
+		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>		 
 		<script src="modules/main.js "></script>		
 		</body>
 	</html>

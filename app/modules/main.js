@@ -7,21 +7,14 @@ angular.module("trangApp", [
   'ngAnimate',
   "ngSanitize",
 	"com.2fdevs.videogular",
-	"com.2fdevs.videogular.plugins.controls",
-	"pascalprecht.translate"
+//	"com.2fdevs.videogular.plugins.controls",
+	"com.2fdevs.videogular.plugins.overlayplay",
+	"com.2fdevs.videogular.plugins.poster"
 ]);
   
 angular.module("trangApp")
 .config(['$locationProvider', function($locationProvider) {
   $locationProvider.html5Mode({enabled: true, requireBase: false});
-}])
-.config(['$translateProvider', function ($translateProvider) {
-  $translateProvider.useStaticFilesLoader({
-    prefix: 'modules/translations/locale-',
-    suffix: '.json'
-  });
-  $translateProvider.useMissingTranslationHandlerLog();
-  $translateProvider.preferredLanguage('en');
 }])
 //config to update url on scroll
 .run(function($rootScope, $location){
@@ -35,7 +28,7 @@ angular.module("trangApp")
   });
 });
 // controller
-angular.module("trangApp").controller('AppController', ['$scope', '$location', '$document',  '$sce', '$timeout', "$translate", function($scope, $location, $document, $sce, $timeout, $translate) {
+angular.module("trangApp").controller('AppController', ['$scope', '$location', '$document',  '$sce', '$timeout', function($scope, $location, $document, $sce, $timeout) {
 
   //check location.hash and scroll to section
   if($location.hash()) {
@@ -59,7 +52,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   // to change tech on me section.
   $scope.techs = [
     "AngularJS",
-    "Socket.io",
+    "SocketIO",
     "RequireJS",
     "MongoDB",
     "NodeJS",
@@ -97,12 +90,6 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     changeWord(0);
   }, 2500);
   
-  
-  
-  //change language
-  $scope.changeLanguage = function(language){
-    $translate.use(language);//change static translation
-  };
 
   /* Videogular stuff */
     
@@ -125,17 +112,32 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     {
 		  index: "lml",
 		  title: "Levin-Monsigny Landschaftsarchitekten",
-		  abstract: '<p>An example project with a <a class="videoLink" id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual language switch</a>, <a class="videoLink" id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">filterable grid view</a>, <a class="videoLink" id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">sortable list view</a>, <a class="videoLink" id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">differrent layout possibilities</a> and a <a class="videoLink" id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</a></p>',
+		  externalLink: "http://levin-monsigny.eu/app",
+		  abstract: '<p>As Angular developer, I built the site in SPA style with a <a class="videoLink" id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual language switch,</a> <a class="videoLink" id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">custom filters for grid view,</a> <a class="videoLink" id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">custom sorting for list view,</a> <a class="videoLink" id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">flexible layout possibilities</a> and a <a class="videoLink" id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</a></p>',
+		  intro: "The digital portfolio for the French-German landscape architecture firm is my collaboration with",
+		  team: [    
+		    { name: "Berliner Süden",
+		      role: "WordPress-Backend and CSS Development",
+		      link: "http://www.berlinersueden.de"
+		    },		    
+		    { name: "minigram Studio für MarkenDesign",
+		      role: "Design",
+		      link: "http://www.minigram.de"
+		    }
+		  ],
       sources: [
-        {src: $sce.trustAsResourceUrl("media/LML-portfolio.mp4.mp4"), type: "video/mp4"}
+        {src: $sce.trustAsResourceUrl("media/lml/lml.mp4"), type: "video/mp4"}
       ],
-      cuepoints: [15, 24, 31, 50, 80]//the second value to link
+      cuepoints: [15, 24, 31, 50, 80],//the second value to link
+      plugins: {
+        poster: "media/lml/lml-poster.png"
+      }
     }
   ];
   
 }]);
-//
 
+/* Custom directive for videogular with cuepoints   */
 angular.module("trangApp").directive('trangVideogular', function(){
   return {
     restrict: 'E',
@@ -146,7 +148,6 @@ angular.module("trangApp").directive('trangVideogular', function(){
     },
     templateUrl: 'modules/templates/trang-videogular-directive.html',
     link: function(scope) {
-//      console.log(scope.filmclip);
       scope.API = null;
       scope.onPlayerReady = function(API) {
         scope.API = API;
@@ -157,17 +158,13 @@ angular.module("trangApp").directive('trangVideogular', function(){
         scope.API.play();
       };
       scope.onUpdateTime = function(currentTime) {
-        if(scope.cuepoints.indexOf(Math.round(currentTime)) >-1) {
-//          console.log('found cuepoint');
-          var linkId = scope.filmclip.index+'-'+Math.round(currentTime);
-          var link = angular.element(document.getElementById(linkId));
+        if(scope.cuepoints.indexOf(Math.round(currentTime)) >-1) {                 
+          var links = angular.element(document.getElementsByClassName("videoLink"));          
+          links.removeClass('highlighted');
           
-          var links = angular.element(document.getElementsByClassName("videoLink"));
-          
-          links.removeClass('highlighted');//works
-          
-          link.addClass('highlighted');//works
-
+          var linkId = scope.filmclip.index+'-'+Math.round(currentTime);          
+          var link = angular.element(document.getElementById(linkId));          
+          link.addClass('highlighted');
         }
       };
     }

@@ -6,17 +6,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		outputDir: '<%= pkg.folders.build + pkg.name + "-" + pkg.version %>',
-		/*load bower dependencies when building, it clean the directory first then install */
-		bower: {
-      install: {
-        options: {
-          install: true,
-          copy: false,
-          targetDir: '<%= outputDir %>/bower_components',
-          cleanTargetDir: true
-        }
-      }
-    },
+		bower: grunt.file.readJSON('./.bowerrc'),
 		meta: {
 			banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
 				'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -53,14 +43,24 @@ module.exports = function (grunt) {
         dest: '<%= outputDir %>/main.js'
       }
     },
-    /* uglify to remove unneccessary stuff */
+    /* uglify to remove unneccessary stuff and compile all bower script too.*/
     uglify: {
       dist: {
         files: {
-          '<%= outputDir %>/main.js': [ '<%= outputDir %>/main.js' ]
+          '<%= outputDir %>/main.js': [  '<%= bower.directory %>/angular/angular.js',
+          '<%= bower.directory %>/angular-animate/angular-animate.js',
+          '<%= bower.directory %>/angular-sanitize/angular-sanitize.js',
+          '<%= bower.directory %>/videogular/videogular.js',
+          '<%= bower.directory %>/videogular-overlay-play/vg-overlay-play.js',
+          '<%= bower.directory %>/videogular-poster/vg-poster.js',
+          '<%= bower.directory %>/angular-scroll/angular-scroll.js',
+          '<%= outputDir %>/main.js'
+         ]
         },
         options: {
-          mangle: false // to make sure angular code doesn't break.
+          mangle: false ,// to make sure angular code doesn't break.
+          banner: '/*! <%= pkg.name %> lib - v<%= pkg.version %> -' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */'
         }
       }
     },
@@ -281,24 +281,16 @@ module.exports = function (grunt) {
 					src: ['.htaccess'],
 					cwd: '<%= pkg.folders.wwwRoot%>'
 				}]
-			},
-			cssmin: {
-				css: {
-					files: {
-						'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css': [
-								//include all css files in correct order, add new files in desired order
-								'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css'
-							]
-					}
+			}
+		},
+		cssmin: {
+			css: {
+				files: {
+					'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css': [
+							//include all css files in correct order, add new files in desired order
+							'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css'
+						]
 				}
-			},
-			translations: {
-				files: [{
-					expand: true,
-					dest: '<%= outputDir %>/translations/',
-					src: ['*.json'],
-					cwd: '<%= pkg.folders.wwwRoot%>/translations/'
-				}]
 			}
 		},
 		license: {
@@ -347,17 +339,17 @@ module.exports = function (grunt) {
 			grunt.task.run("jshint");
 			grunt.task.run("clean:all");
       grunt.task.run("bower");			
-//			grunt.task.run("autoprefixer:production");
       grunt.task.run("concat");
 //			grunt.task.run("copy:images");
 			grunt.task.run("copy:media");
-//			grunt.task.run("copy:fonts");
+			grunt.task.run("copy:fonts");
 			grunt.task.run("copy:htaccess");
 			grunt.task.run("copy:modules");
 			grunt.task.run("processhtml:build");
 			grunt.task.run("dataUri");
 			grunt.task.run("cssmin");
 			grunt.task.run("clean:css");
+			//			grunt.task.run("autoprefixer:production");
 			grunt.task.run("manifest");
 			grunt.task.run("compress");
 		}
