@@ -338,7 +338,7 @@ module.exports = function (grunt) {
 		function () {
 			grunt.task.run("jshint");
 			grunt.task.run("clean:all");
-      grunt.task.run("bower");			
+//      grunt.task.run("bower");			
       grunt.task.run("concat");
 //			grunt.task.run("copy:images");
 			grunt.task.run("copy:media");

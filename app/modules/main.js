@@ -113,9 +113,13 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
 		  index: "lml",
 		  title: "Levin-Monsigny Landschaftsarchitekten",
 		  externalLink: "http://levin-monsigny.eu/app",
-		  abstract: '<p>As Angular developer, I built the site in SPA style with a <a class="videoLink" id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual language switch,</a> <a class="videoLink" id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">custom filters for grid view,</a> <a class="videoLink" id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">custom sorting for list view,</a> <a class="videoLink" id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">flexible layout possibilities</a> and a <a class="videoLink" id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</a></p>',
-		  intro: "The digital portfolio for the French-German landscape architecture firm is my collaboration with",
-		  team: [    
+		  abstract: '<p>I developed the site in AngularJS, RequireJS pulling WordPress JSON API with <a class="videoLink" id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual language switch,</a> <a class="videoLink" id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">custom filters for grid view,</a> <a class="videoLink" id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">custom sorting for list view,</a> <a class="videoLink" id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">flexible layout possibilities</a> and a <a class="videoLink" id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</a></p>',
+		  intro: "The digital portfolio for the French-German landscape architecture firm was made by",
+		  team: [ 
+		    { name: "Trang Nguyen",
+		      role: "Angular Development",
+		      link: " "
+		    },   
 		    { name: "Berliner Süden",
 		      role: "WordPress-Backend and CSS Development",
 		      link: "http://www.berlinersueden.de"
@@ -131,6 +135,35 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
       cuepoints: [15, 24, 31, 50, 80],//the second value to link
       plugins: {
         poster: "media/lml/lml-poster.png"
+      }
+    },
+    
+    {
+      index: "randomembassy",
+      title: "Random Embassy",
+      externalLink: "http://randomembassy.com/#/",
+      abstract: '<p>To showcase the Philadelphia-based creative studio Random Embassy’s various projects and design activities, I developed an <a class="videoLink" id="randomembassy-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-randomembassy\')">optimized for mobile SPA,</a> with <a class="videoLink" id="randomembassy-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-randomembassy\')">dynamic content loading,</a> <a class="videoLink" id="randomembassy-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-randomembassy\')">unique layout for each project</a> and <a class="videoLink" id="randomembassy-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-randomembassy\')">smooth page transition</a> combining Angular and CSS animation.</p>',
+      intro: "Random Embassy's web presence was made by",
+      team: [ 
+        { name: "Trang Nguyen",
+          role: "Angular Development",
+          link: " "
+        },   
+        { name: "Berliner Süden",
+          role: "WordPress-Backend and CSS Development",
+          link: "http://www.berlinersueden.de"
+        },		    
+        { name: "Random Embassy",
+          role: "Design",
+          link: "http://randomembassy.com/#/"
+        }
+      ],
+      sources: [
+        {src: $sce.trustAsResourceUrl("media/lml/lml.mp4"), type: "video/mp4"}
+      ],
+      cuepoints: [15, 31, 50, 80],//the second value to link
+      plugins: {
+        poster: "media/randomembassy/random-poster.jpg"
       }
     }
   ];

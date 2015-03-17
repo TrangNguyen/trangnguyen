@@ -24,20 +24,18 @@
 		<body ng-app="trangApp">
 		<div class="row" ng-controller="AppController">
 		  <div class="small-12 columns">  
-  		  <!--<nav>
-  		    <ul>
-  		     <li><a href="#me" du-smooth-scroll du-scrollspy>About</a></li>
-  		      <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>		      
-          </ul>
-        </nav>-->
       
         <h1>Trang Nguyen</h1>
-        
+        <ul class="inline-list">
+         <li><a href="#me" du-smooth-scroll du-scrollspy>About</a></li>
+         <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>
+         <li><a href="#randomembassy" du-smooth-scroll du-scrollspy>Random Embassy</a></li>	      
+        </ul>
         <section id="me">
           <h2>I'm a freelance web developer in Berlin, Germany. I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.
           <a href="#contact" du-smooth-scroll du-scrollspy>Consider me </a>for your next project!</h2>
           <div id="contact">
-            <ul>
+            <ul class="inline-list">
               <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
               <li><a target="_blank" href="skype://trangnguyen80?chat">Skype</a></li>
               <li><a target="_blank" href="">LinkedIn</a></li>
