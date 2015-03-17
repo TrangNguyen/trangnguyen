@@ -1,5 +1,5 @@
 <!doctype html>
-<!--build:[manifest] trangnguyen.manifest>-->
+<!--build:[manifest] trangnguyen.manifest-->
 	<html xmlns="http://www.w3.org/1999/html">
 <!--/build-->
 		<head>
@@ -8,17 +8,14 @@
 		  <title>Trang Nguyen</title>
 		  <meta name="description" content="Trang Nguyen web development's portfolio" />
 		  <meta name="author" content="Design by Berliner Süden. Development by  Trang Nguyen" />
-		  <!--(if target build)>
-		  	<link rel="stylesheet" href="css/trangnguyen.css">
-		  <!(endif)-->
 		  
 		  <!-- Load fonts -->
 		  <script src="//use.typekit.net/ghc4jmy.js"></script>
 		  <script>try{Typekit.load();}catch(e){}</script>
 		  
-		  <!--(if target local)> -->
-			 <link rel="stylesheet" href="css/app.css">
-			<!--<!(endif)-->
+      <!-- build:css css/app.css-->
+        <link rel="stylesheet" href="css/app.css">	      
+      <!-- /build -->
 			
 		</head>
 		<body ng-app="trangApp">
@@ -26,11 +23,7 @@
 		  <div class="small-12 columns">  
       
         <h1>Trang Nguyen</h1>
-        <ul class="inline-list">
-         <li><a href="#me" du-smooth-scroll du-scrollspy>About</a></li>
-         <li><a href="#lml" du-smooth-scroll du-scrollspy>LML</a></li>
-         <li><a href="#randomembassy" du-smooth-scroll du-scrollspy>Random Embassy</a></li>	      
-        </ul>
+        
         <section id="me">
           <h2>I'm a freelance web developer in Berlin, Germany. I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.
           <a href="#contact" du-smooth-scroll du-scrollspy>Consider me </a>for your next project!</h2>
@@ -58,7 +51,7 @@
     
       </div>
 		</div>
-		<!-- load all libs and vendors here-->
+		<!-- build:js main.js -->
 		<script src="../bower_components/angular/angular.min.js"></script>
 		<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
 		<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
@@ -66,8 +59,8 @@
 		<!--<script src="../bower_components/videogular-controls/vg-controls.js"></script>-->
 		<script src="../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
 		<script src="../bower_components/videogular-poster/vg-poster.js"></script>
-		<!--<script src="../bower_components/videogular-buffering/vg-buffering.js"></script>-->
 		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>		 
-		<script src="modules/main.js "></script>		
+		<script src="modules/main.js "></script>
+		<!-- /build -->	
 		</body>
 	</html>

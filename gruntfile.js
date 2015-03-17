@@ -245,9 +245,9 @@ module.exports = function (grunt) {
 			media: {
 				files: [{
 					expand: true,
-					dest: '<%= outputDir %>/media/build/',
+					dest: '<%= outputDir %>/media/',
 					src: ['**', "!**/README"],
-					cwd: '<%= pkg.folders.wwwRoot%>media/build/'
+					cwd: '<%= pkg.folders.wwwRoot%>media/'
 				}]
 			},
 			modules: {
@@ -340,6 +340,7 @@ module.exports = function (grunt) {
 			grunt.task.run("clean:all");
 //      grunt.task.run("bower");			
       grunt.task.run("concat");
+      grunt.task.run("uglify");
 //			grunt.task.run("copy:images");
 			grunt.task.run("copy:media");
 			grunt.task.run("copy:fonts");
