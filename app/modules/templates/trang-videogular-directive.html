@@ -1,0 +1,33 @@
+<a target="_blank" href="{{filmclip.externalLink}}"><h3>{{filmclip.title}}</h3></a>
+
+<div compile="filmclip.abstract"></div>
+
+<div class="videogular-container" id="video-{{filmclip.index}}">
+  <videogular vg-theme="config.theme.url"
+              vg-responsive="config.responsive"
+              vg-player-ready="onPlayerReady($API)"
+              vg-complete="onCompleteVideo()"
+              vg-error="onError($event)"
+              vg-update-time="onUpdateTime($currentTime, $duration)"
+              vg-update-state="onUpdateState($state)">
+              
+      <vg-media vg-src="filmclip.sources" 
+                vg-preload='config.preload'
+                vg-native-controls="false">
+      </vg-media>
+          
+      <vg-overlay-play></vg-overlay-play>
+      <vg-poster vg-url="filmclip.plugins.poster"></vg-poster>
+      
+  </videogular>
+</div>
+
+<div id="extra-info">
+  <p>{{filmclip.intro}}</p>
+  <ul>
+    <li ng-repeat="member in filmclip.team">
+      <a target="_blank" href="{{member.link}}">{{member.name}}</a> | {{member.role}}
+    </li>
+  </ul>
+</div>
+

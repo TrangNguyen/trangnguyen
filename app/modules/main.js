@@ -7,7 +7,9 @@ angular.module("trangApp", [
   'ngAnimate',
   "ngSanitize",
 	"com.2fdevs.videogular",
-	"com.2fdevs.videogular.plugins.controls"
+//	"com.2fdevs.videogular.plugins.controls",
+	"com.2fdevs.videogular.plugins.overlayplay",
+	"com.2fdevs.videogular.plugins.poster"
 ]);
   
 angular.module("trangApp")
@@ -30,177 +32,194 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
 
   //check location.hash and scroll to section
   if($location.hash()) {
-    var scrollId = $location.hash();
-    var section = angular.element(document.getElementById(scrollId));
-    $document.scrollToElementAnimated(section);
+    $timeout(function() {
+      var scrollId = $location.hash();
+      var section = angular.element(document.getElementById(scrollId));
+      $document.scrollToElementAnimated(section);
+    }, 300);
   }
  
-  // to chang words on me section.
+  // to change words on me section.
   $scope.things = [
     "web",
     "realtime",
-    "angular",
-    "express",
-    "responsive"
+    "multilingual",
+    "multiuser",
+    "responsive",
+    "custom CMS"
   ];
   
+  // to change tech on me section.
+  $scope.techs = [
+    "AngularJS",
+    "SocketIO",
+    "RequireJS",
+    "MongoDB",
+    "NodeJS",
+    "WordPress"
+  ];
+    
   function changeWord(i) {
     if(i <$scope.things.length) {   
       $scope.thing = $scope.things[i];
       i++;    
       $timeout(function() {
         changeWord(i);
-      }, 1000);
+      }, 5000);
     } else {
       i = 0;
-      $timeout(function() {
-        changeWord(i);
-      }, 1000);
+      changeWord(i);
     }    
   }
-  changeWord(0);
   
-  //videogular stuff
-  $scope.currentTime = 0;
-	$scope.totalTime = 0;
-	$scope.state = null;
-	$scope.volume = 1;
-	$scope.isCompleted = false;
-	$scope.API = null;
+  function changeTech(j) {
+    if(j <$scope.techs.length) {   
+      $scope.tech = $scope.techs[j];
+      j++;    
+      $timeout(function() {
+        changeTech(j);
+      }, 5000);
+    } else {
+      j = 0;
+      changeTech(j);
+    }    
+  }
+  changeTech(0);
   
-  // make API accessible to the template.
-	$scope.onPlayerReady = function (API) {
-		$scope.API = API;
-	};
+  $timeout(function() {
+    changeWord(0);
+  }, 2500);
   
-  // my custom function to seek and play using API
-  $scope.seekAndPlay = function(second, id) {
-    var video = angular.element(document.getElementById(id));
-    $scope.API.seekTime(second, false);//this work but doesn't play
-    $scope.API.play();
-    $document.scrollTo(video);
+
+  /* Videogular stuff */
+    
+  // player configuration for videgular
+  $scope.config = {
+  	playsInline: false,
+  	autoHide: false,
+  	autoHideTime: 3000,
+  	autoPlay: false,
+  	responsive: true,
+  	loop: false,
+  	preload: "auto",
+  	theme: {
+  		url: "css/app.css"
+  	}
   };
   
-	$scope.onError = function (event) {
-    console.log("VIDEOGULAR ERROR EVENT");
-		console.log(event);
-	};
-
-	$scope.onCompleteVideo = function () {
-		$scope.isCompleted = true;
-	};
-
-	$scope.onUpdateState = function (state) {
-		$scope.state = state;
-	};
-
-	$scope.onUpdateTime = function (currentTime, totalTime) {
-		$scope.currentTime = currentTime;
-		$scope.totalTime = totalTime;
-	};
-
-	$scope.onUpdateVolume = function (newVol) {
-		$scope.volume = newVol;
-	};
-
-	$scope.media = 
-		{
+	/* media to be passed onto custom directive wrapping videogular */
+	$scope.projects = [    
+    {
+		  index: "lml",
+		  title: "Levin-Monsigny Landschaftsarchitekten",
+		  externalLink: "http://levin-monsigny.eu/app",
+		  abstract: '<p>I developed the site in AngularJS, RequireJS pulling WordPress JSON API with <a class="videoLink" id="lml-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-lml\')">bilingual language switch,</a> <a class="videoLink" id="lml-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-lml\')">custom filters for grid view,</a> <a class="videoLink" id="lml-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-lml\')">custom sorting for list view,</a> <a class="videoLink" id="lml-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-lml\')">flexible layout possibilities</a> and a <a class="videoLink" id="lml-{{cuepoints[4]}}" ng-click="seekAndPlay(cuepoints[4], \'video-lml\')">touch-friendly slideshow.</a></p>',
+		  intro: "The digital portfolio for the French-German landscape architecture firm was made by",
+		  team: [ 
+		    { name: "Trang Nguyen",
+		      role: "Angular Development",
+		      link: " "
+		    },   
+		    { name: "Berliner Süden",
+		      role: "WordPress-Backend and CSS Development",
+		      link: "http://www.berlinersueden.de"
+		    },		    
+		    { name: "minigram Studio für MarkenDesign",
+		      role: "Design",
+		      link: "http://www.minigram.de"
+		    }
+		  ],
       sources: [
-//        {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.mp4"), type: "video/mp4"},
-//        {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.webm"), type: "video/webm"},
-//        {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.ogv"), type: "video/ogg"}
-          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
-      ]
-    };
-
-  $scope.config = {
-		playsInline: false,
-		autoHide: false,
-		autoHideTime: 3000,
-		autoPlay: false,
-		sources: $scope.media.sources,
-//		tracks: $scope.media[0].tracks,
-		loop: false,
-		preload: "auto",
-		controls: false,
-		theme: {
-			url: "css/app.css"
-		}
-	};
-  
+        {src: $sce.trustAsResourceUrl("media/lml/lml.mp4"), type: "video/mp4"}
+      ],
+      cuepoints: [15, 24, 31, 50, 80],//the second value to link
+      plugins: {
+        poster: "media/lml/lml-poster.png"
+      }
+    },
+    
+    {
+      index: "randomembassy",
+      title: "Random Embassy",
+      externalLink: "http://randomembassy.com/#/",
+      abstract: '<p>To showcase the Philadelphia-based creative studio Random Embassy’s various projects and design activities, I developed an <a class="videoLink" id="randomembassy-{{cuepoints[0]}}" ng-click="seekAndPlay(cuepoints[0], \'video-randomembassy\')">optimized for mobile SPA,</a> with <a class="videoLink" id="randomembassy-{{cuepoints[1]}}" ng-click="seekAndPlay(cuepoints[1], \'video-randomembassy\')">dynamic content loading,</a> <a class="videoLink" id="randomembassy-{{cuepoints[2]}}" ng-click="seekAndPlay(cuepoints[2], \'video-randomembassy\')">unique layout for each project</a> and <a class="videoLink" id="randomembassy-{{cuepoints[3]}}" ng-click="seekAndPlay(cuepoints[3], \'video-randomembassy\')">smooth page transition</a> combining Angular and CSS animation.</p>',
+      intro: "Random Embassy's web presence was made by",
+      team: [ 
+        { name: "Trang Nguyen",
+          role: "Angular Development",
+          link: " "
+        },   
+        { name: "Berliner Süden",
+          role: "WordPress-Backend and CSS Development",
+          link: "http://www.berlinersueden.de"
+        },		    
+        { name: "Random Embassy",
+          role: "Design",
+          link: "http://randomembassy.com/#/"
+        }
+      ],
+      sources: [
+        {src: $sce.trustAsResourceUrl("media/lml/lml.mp4"), type: "video/mp4"}
+      ],
+      cuepoints: [15, 31, 50, 80],//the second value to link
+      plugins: {
+        poster: "media/randomembassy/random-poster.jpg"
+      }
+    }
+  ];
   
 }]);
 
-//Videogular controller
-//
-//angular.module("trangApp").controller('VideoController', [ '$scope', '$document', '$sce',   
-//  test videogular
-//  function ($scope, $document, $sce) {
-//		$scope.currentTime = 0;
-//		$scope.totalTime = 0;
-//		$scope.state = null;
-//		$scope.volume = 1;
-//		$scope.isCompleted = false;
-//		$scope.API = null;
-//    
-//     make API accessible to the template.
-//		$scope.onPlayerReady = function (API) {
-//			$scope.API = API;
-//		};
-//    
-//     my custom function to seek and play using API
-//    $scope.seekAndPlay = function(second, id) {
-//      var video = angular.element(document.getElementById(id));
-//      $scope.API.seekTime(second, false);this work but doesn't play
-//      $scope.API.play();
-//      $document.scrollTo(video);
-//    };
-//    
-//		$scope.onError = function (event) {
-//      console.log("VIDEOGULAR ERROR EVENT");
-//			console.log(event);
-//		};
-//
-//		$scope.onCompleteVideo = function () {
-//			$scope.isCompleted = true;
-//		};
-//
-//		$scope.onUpdateState = function (state) {
-//			$scope.state = state;
-//		};
-//
-//		$scope.onUpdateTime = function (currentTime, totalTime) {
-//			$scope.currentTime = currentTime;
-//			$scope.totalTime = totalTime;
-//		};
-//
-//		$scope.onUpdateVolume = function (newVol) {
-//			$scope.volume = newVol;
-//		};
-//
-//		$scope.media = [
-//			{
-//        sources: [
-//          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.mp4"), type: "video/mp4"},
-//          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.webm"), type: "video/webm"},
-//          {src: $sce.trustAsResourceUrl("../../media/big_buck_bunny.ogv"), type: "video/ogg"}
-//          {src: $sce.trustAsResourceUrl("http://v2v.cc/~j/theora_testsuite/ducks_take_off_444_720p25.ogg"), type: "video/ogg"}
-//        ]
-//      }
-//    ];
-//
-//    $scope.config = {
-//			playsInline: false,
-//			autoHide: false,
-//			autoHideTime: 3000,
-//			autoPlay: false,
-//			sources: $scope.media[0].sources,
-//			tracks: $scope.media[0].tracks,
-//			loop: false,
-//			preload: "auto",
-//			controls: false,
-//			theme: {
-//				url: "css/app.css"
-//			}
-//		};
-//}]);
+/* Custom directive for videogular with cuepoints   */
+angular.module("trangApp").directive('trangVideogular', function(){
+  return {
+    restrict: 'E',
+    scope: {
+      filmclip:'=',//vg-src and abstract
+      config:'=',//player config,
+      cuepoints:'='
+    },
+    templateUrl: 'modules/templates/trang-videogular-directive.html',
+    link: function(scope) {
+      scope.API = null;
+      scope.onPlayerReady = function(API) {
+        scope.API = API;
+      };
+      //bind custom controller to specific API
+      scope.seekAndPlay = function(second) {
+        scope.API.seekTime(second, false);    
+        scope.API.play();
+      };
+      scope.onUpdateTime = function(currentTime) {
+        if(scope.cuepoints.indexOf(Math.round(currentTime)) >-1) {                 
+          var links = angular.element(document.getElementsByClassName("videoLink"));          
+          links.removeClass('highlighted');
+          
+          var linkId = scope.filmclip.index+'-'+Math.round(currentTime);          
+          var link = angular.element(document.getElementById(linkId));          
+          link.addClass('highlighted');
+        }
+      };
+    }
+  };
+});
+
+// directive to compile html element as is.
+angular.module("trangApp").directive('compile', function($compile) {
+  // directive factory creates a link function
+  return function(scope, element, attrs) {
+    scope.$watch(
+      function(scope) {
+         // watch the 'compile' expression for changes
+        return scope.$eval(attrs.compile);
+      },
+      function(value) {
+        // when the 'compile' expression changes assign it into the current DOM
+        element.html(value);
+  
+        // compile the new DOM and link it to the current scope. We only compile .childNodes so that we don't get into infinite loop compiling ourselves
+        $compile(element.contents())(scope);
+      }
+    );
+  };
+});
