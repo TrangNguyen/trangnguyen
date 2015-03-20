@@ -1,8 +1,6 @@
 /*global module: true */
 module.exports = function (grunt) {
-	"use strict";
-  var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;// to config html5 mode
-  
+	"use strict";  
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		outputDir: '<%= pkg.folders.build + pkg.name + "-" + pkg.version %>',
@@ -197,30 +195,8 @@ module.exports = function (grunt) {
 			server: {
 				options:  {
 					port: 5000,
-					livereload: true,
 					base: '',
-					hostname: '*',
-					middleware: function(connect, options) {
-            var middlewares = [];
-
-            // RewriteRules support
-            middlewares.push(rewriteRulesSnippet);
-
-            if (!Array.isArray(options.base)) {
-                options.base = [options.base];
-            }
-
-            var directory = options.directory || options.base[options.base.length - 1];
-            options.base.forEach(function (base) {
-                // Serve static files.
-                middlewares.push(connect.static(base));
-            });
-
-            // Make directory browse-able.
-            middlewares.push(connect.directory(directory));
-
-            return middlewares;
-          }
+					hostname: '*'
 				}
 			}
 		},

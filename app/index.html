@@ -22,11 +22,10 @@
 		<div class="row" ng-controller="AppController">
 		  <div class="small-12 columns">  
       
-        <h1>Trang Nguyen</h1>
+        <h1><a href="#/">Trang Nguyen</a></h1>
         
-        <section id="me">
-          <h2>I'm a freelance web developer in Berlin, Germany. I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.
-          <a href="#contact" du-smooth-scroll du-scrollspy>Consider me </a>for your next project!</h2>
+        <section id="me-intro">
+          <h2>I'm a <a href="#about">freelance web developer</a> in Berlin, Germany. I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>. Consider me for your next project!</h2>
           <div id="contact">
             <ul class="inline-list">
               <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
@@ -38,28 +37,20 @@
           </div>
           
         </section>
-        
-        <section ng-repeat="project in projects" id="{{project.index}}">
-          <div> 
-            <trang-videogular config="config"
-                              filmclip="project"
-                              cuepoints="project.cuepoints">
-            </trang-videogular>
-            
-          </div>
-        </section>
-    
+        <ng-view></ng-view>
+
       </div>
 		</div>
 		<!-- build:js main.js -->
 		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../bower_components/angular-route/angular-route.min.js"></script>
 		<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
 		<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 		<script src="../bower_components/videogular/videogular.js"></script>
 		<!--<script src="../bower_components/videogular-controls/vg-controls.js"></script>-->
 		<script src="../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
 		<script src="../bower_components/videogular-poster/vg-poster.js"></script>
-		<script src="../bower_components/angular-scroll/angular-scroll.js"></script>		 
+		<!--<script src="../bower_components/angular-scroll/angular-scroll.js"></script>		 -->
 		<script src="modules/main.js "></script>
 		<!-- /build -->	
 		</body>

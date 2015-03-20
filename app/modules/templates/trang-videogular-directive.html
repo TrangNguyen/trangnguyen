@@ -1,6 +1,9 @@
-<h3>{{filmclip.title}}</h3>
+<div>
+  <h3>{{filmclip.title}}</h3>
+  <h3>Watch project!</h3>
+</div>
 
-<div compile="filmclip.abstract"></div>
+<div><p>{{filmclip.goal}}</p></div>
 
 <div class="videogular-container" id="video-{{filmclip.index}}">
   <videogular vg-theme="config.theme.url"
@@ -22,9 +25,11 @@
   </videogular>
 </div>
 
+<div compile="filmclip.abstract"></div>
+
 <div id="extra-info">
   <p>{{filmclip.intro}}</p>
-  <ul>
+  <ul class="nobullet">
     <li ng-repeat="member in filmclip.team">
       <a target="_blank" href="{{member.link}}">{{member.name}}</a> | {{member.role}}
     </li>
