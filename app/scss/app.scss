@@ -10,12 +10,16 @@ a.videoLink {
   border: 0;
   padding: 2px 5px;
   cursor: pointer;
-  //background: #fff;
-  border-bottom: 1px solid #00eeee;
+  background: #C3F8FF; 
+  border-bottom: 1px solid #ccc;
   color: $black;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  
   &.highlighted {
-    background: #00eeee;
-    border-bottom: 1px solid #00cccc;
+    background: #0AF8FF;
+    border-bottom: 1px solid #fff;
   }
   
 }

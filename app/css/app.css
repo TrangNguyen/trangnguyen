@@ -9277,29 +9277,33 @@ a.videoLink {
   border: 0;
   padding: 2px 5px;
   cursor: pointer;
-  border-bottom: 1px solid #00eeee;
+  background: #C3F8FF;
+  border-bottom: 1px solid #ccc;
   color: #000000;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
 }
-/* line 16, ../scss/app.scss */
+/* line 20, ../scss/app.scss */
 a.videoLink.highlighted {
-  background: #00eeee;
-  border-bottom: 1px solid #00cccc;
+  background: #0AF8FF;
+  border-bottom: 1px solid #fff;
 }
 
-/* line 24, ../scss/app.scss */
+/* line 28, ../scss/app.scss */
 section {
   margin: 60px 0;
 }
 
 /* animation on text switch */
-/* line 30, ../scss/app.scss */
+/* line 34, ../scss/app.scss */
 span.my-thing {
   display: inline-block;
   text-decoration: underline;
 }
 
 /* animation on tech switch */
-/* line 40, ../scss/app.scss */
+/* line 44, ../scss/app.scss */
 span.my-tech {
   display: inline-block;
   text-decoration: underline;
@@ -9317,7 +9321,7 @@ span.my-tech {
   font-weight: normal;
   font-style: normal;
 }
-/* line 66, ../scss/app.scss */
+/* line 70, ../scss/app.scss */
 videogular, [videogular] {
   width: 100%;
   height: 100%;
@@ -9352,17 +9356,17 @@ videogular, [videogular] {
   /* IMA ads plugin */
   /**********************/
 }
-/* line 81, ../scss/app.scss */
+/* line 85, ../scss/app.scss */
 videogular button, [videogular] button {
   cursor: pointer;
 }
-/* line 85, ../scss/app.scss */
+/* line 89, ../scss/app.scss */
 videogular .fullscreen, [videogular] .fullscreen {
   position: fixed;
   left: 0;
   top: 0;
 }
-/* line 91, ../scss/app.scss */
+/* line 95, ../scss/app.scss */
 videogular vg-media, [videogular] vg-media {
   width: 100%;
   height: 100%;
@@ -9370,14 +9374,14 @@ videogular vg-media, [videogular] vg-media {
   max-height: 100%;
   display: block;
 }
-/* line 100, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 videogular video, [videogular] video {
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
 }
-/* line 107, ../scss/app.scss */
+/* line 111, ../scss/app.scss */
 videogular .iconButton, [videogular] .iconButton {
   color: #FFFFFF;
   font-family: 'videogular';
@@ -9392,11 +9396,11 @@ videogular .iconButton, [videogular] .iconButton {
   padding: 6px;
   border: none;
 }
-/* line 123, ../scss/app.scss */
+/* line 127, ../scss/app.scss */
 videogular .iconButton:focus, [videogular] .iconButton:focus {
   border: 1px solid white;
 }
-/* line 130, ../scss/app.scss */
+/* line 134, ../scss/app.scss */
 videogular vg-poster, [videogular] vg-poster {
   width: 100%;
   height: 100%;
@@ -9407,7 +9411,7 @@ videogular vg-poster, [videogular] vg-poster {
   z-index: 1;
   top: 0;
 }
-/* line 141, ../scss/app.scss */
+/* line 145, ../scss/app.scss */
 videogular vg-poster img, [videogular] vg-poster img {
   width: auto;
   height: auto;
@@ -9420,17 +9424,17 @@ videogular vg-poster img, [videogular] vg-poster img {
   margin: auto;
   position: absolute;
 }
-/* line 155, ../scss/app.scss */
+/* line 159, ../scss/app.scss */
 videogular vg-poster img.pause,
 videogular vg-poster img.play, [videogular] vg-poster img.pause,
 [videogular] vg-poster img.play {
   display: none;
 }
-/* line 160, ../scss/app.scss */
+/* line 164, ../scss/app.scss */
 videogular vg-poster img.stop, [videogular] vg-poster img.stop {
   display: block;
 }
-/* line 167, ../scss/app.scss */
+/* line 171, ../scss/app.scss */
 videogular vg-overlay-play, [videogular] vg-overlay-play {
   width: 100%;
   height: 100%;
@@ -9440,11 +9444,11 @@ videogular vg-overlay-play, [videogular] vg-overlay-play {
   z-index: 2;
   top: 0;
 }
-/* line 177, ../scss/app.scss */
+/* line 181, ../scss/app.scss */
 videogular vg-overlay-play .play:before, [videogular] vg-overlay-play .play:before {
   content: "\e000";
 }
-/* line 181, ../scss/app.scss */
+/* line 185, ../scss/app.scss */
 videogular vg-overlay-play .overlayPlayContainer, [videogular] vg-overlay-play .overlayPlayContainer {
   font-size: 100px;
   width: 100%;
@@ -9458,13 +9462,13 @@ videogular vg-overlay-play .overlayPlayContainer, [videogular] vg-overlay-play .
   filter: alpha(opacity=60);
   opacity: 0.6;
 }
-/* line 196, ../scss/app.scss */
+/* line 200, ../scss/app.scss */
 videogular vg-overlay-play .overlayPlayContainer div, [videogular] vg-overlay-play .overlayPlayContainer div {
   vertical-align: middle;
   text-align: center;
   display: table-cell;
 }
-/* line 205, ../scss/app.scss */
+/* line 209, ../scss/app.scss */
 videogular vg-controls, [videogular] vg-controls {
   width: 100%;
   height: 50px;
@@ -9473,7 +9477,7 @@ videogular vg-controls, [videogular] vg-controls {
   z-index: 3;
   top: calc(100% - 50px);
 }
-/* line 214, ../scss/app.scss */
+/* line 218, ../scss/app.scss */
 videogular vg-controls .controls-container, [videogular] vg-controls .controls-container {
   width: 100%;
   height: 50px;
@@ -9482,7 +9486,7 @@ videogular vg-controls .controls-container, [videogular] vg-controls .controls-c
   display: table;
   zoom: 1;
 }
-/* line 224, ../scss/app.scss */
+/* line 228, ../scss/app.scss */
 videogular vg-play-pause-button, [videogular] vg-play-pause-button {
   display: table-cell;
   width: 50px;
@@ -9490,7 +9494,7 @@ videogular vg-play-pause-button, [videogular] vg-play-pause-button {
   text-align: center;
   cursor: pointer;
 }
-/* line 232, ../scss/app.scss */
+/* line 236, ../scss/app.scss */
 videogular vg-time-display, [videogular] vg-time-display {
   color: #FFFFFF;
   display: table-cell;
@@ -9501,32 +9505,32 @@ videogular vg-time-display, [videogular] vg-time-display {
   text-align: center;
   cursor: default;
 }
-/* line 243, ../scss/app.scss */
+/* line 247, ../scss/app.scss */
 videogular .vgTimeDisplay, [videogular] .vgTimeDisplay {
   display: table-cell;
   font-family: Arial;
   font-size: 18px;
   width: auto;
 }
-/* line 250, ../scss/app.scss */
+/* line 254, ../scss/app.scss */
 videogular vg-scrub-bar, [videogular] vg-scrub-bar {
   width: auto;
   display: table-cell;
   cursor: pointer;
   vertical-align: middle;
 }
-/* line 257, ../scss/app.scss */
+/* line 261, ../scss/app.scss */
 videogular vg-scrub-bar [role=slider], [videogular] vg-scrub-bar [role=slider] {
   margin-top: 24px;
   margin-bottom: 24px;
   height: 2px;
   background-color: black;
 }
-/* line 264, ../scss/app.scss */
+/* line 268, ../scss/app.scss */
 videogular vg-scrub-bar :focus vg-scrub-bar-current-time, [videogular] vg-scrub-bar :focus vg-scrub-bar-current-time {
   border-right: 6px black groove;
 }
-/* line 268, ../scss/app.scss */
+/* line 272, ../scss/app.scss */
 videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
   background-color: #FFFFFF;
   width: 100%;
@@ -9534,7 +9538,7 @@ videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
   display: block;
   cursor: pointer;
 }
-/* line 276, ../scss/app.scss */
+/* line 280, ../scss/app.scss */
 videogular vg-volume, [videogular] vg-volume {
   display: table-cell;
   width: 50px;
@@ -9542,7 +9546,7 @@ videogular vg-volume, [videogular] vg-volume {
   text-align: center;
   cursor: pointer;
 }
-/* line 284, ../scss/app.scss */
+/* line 288, ../scss/app.scss */
 videogular vg-volume-bar, [videogular] vg-volume-bar {
   width: 50px;
   height: 100px;
@@ -9554,14 +9558,14 @@ videogular vg-volume-bar, [videogular] vg-volume-bar {
   cursor: pointer;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* line 297, ../scss/app.scss */
+  /* line 301, ../scss/app.scss */
   videogular vg-volume-bar, [videogular] vg-volume-bar {
     zoom: 1;
     filter: alpha(opacity=50);
     opacity: 0.5;
   }
 }
-/* line 304, ../scss/app.scss */
+/* line 308, ../scss/app.scss */
 videogular vg-fullscreen-button, [videogular] vg-fullscreen-button {
   display: table-cell;
   width: 50px;
@@ -9569,14 +9573,14 @@ videogular vg-fullscreen-button, [videogular] vg-fullscreen-button {
   text-align: center;
   cursor: pointer;
 }
-/* line 312, ../scss/app.scss */
+/* line 316, ../scss/app.scss */
 videogular vg-volume-bar .verticalVolumeBar, [videogular] vg-volume-bar .verticalVolumeBar {
   width: 50px;
   height: 100px;
   background-color: #000000;
   position: absolute;
 }
-/* line 319, ../scss/app.scss */
+/* line 323, ../scss/app.scss */
 videogular vg-volume-bar .volumeBackground, [videogular] vg-volume-bar .volumeBackground {
   width: 20px;
   height: 70px;
@@ -9585,20 +9589,20 @@ videogular vg-volume-bar .volumeBackground, [videogular] vg-volume-bar .volumeBa
   background-color: #222222;
   position: absolute;
 }
-/* line 328, ../scss/app.scss */
+/* line 332, ../scss/app.scss */
 videogular vg-volume-bar .volumeValue, [videogular] vg-volume-bar .volumeValue {
   width: 20px;
   height: 100%;
   background-color: #FFFFFF;
   position: absolute;
 }
-/* line 335, ../scss/app.scss */
+/* line 339, ../scss/app.scss */
 videogular vg-volume-bar .volumeClickArea, [videogular] vg-volume-bar .volumeClickArea {
   width: 20px;
   height: 100%;
   position: absolute;
 }
-/* line 341, ../scss/app.scss */
+/* line 345, ../scss/app.scss */
 videogular vg-controls .hide-animation, [videogular] vg-controls .hide-animation {
   animation: hideControlsAnimationFrames ease-out 0.5s;
   animation-iteration-count: 1;
@@ -9661,7 +9665,7 @@ videogular vg-controls .hide-animation, [videogular] vg-controls .hide-animation
     opacity: 0;
   }
 }
-/* line 404, ../scss/app.scss */
+/* line 408, ../scss/app.scss */
 videogular vg-controls .show-animation, [videogular] vg-controls .show-animation {
   animation: showControlsAnimationFrames ease-out 0.5s;
   animation-iteration-count: 1;
@@ -9724,48 +9728,48 @@ videogular vg-controls .show-animation, [videogular] vg-controls .show-animation
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
-/* line 468, ../scss/app.scss */
+/* line 472, ../scss/app.scss */
 videogular vg-play-pause-button .play:before, [videogular] vg-play-pause-button .play:before {
   content: "\e000";
 }
-/* line 472, ../scss/app.scss */
+/* line 476, ../scss/app.scss */
 videogular vg-play-pause-button .pause:before, [videogular] vg-play-pause-button .pause:before {
   content: "\e001";
 }
-/* line 476, ../scss/app.scss */
+/* line 480, ../scss/app.scss */
 videogular vg-mute-button, [videogular] vg-mute-button {
   width: 50px;
   display: block;
 }
-/* line 481, ../scss/app.scss */
+/* line 485, ../scss/app.scss */
 videogular vg-mute-button .level3:before, [videogular] vg-mute-button .level3:before {
   content: "\e002";
 }
-/* line 485, ../scss/app.scss */
+/* line 489, ../scss/app.scss */
 videogular vg-mute-button .level2:before, [videogular] vg-mute-button .level2:before {
   content: "\e003";
 }
-/* line 489, ../scss/app.scss */
+/* line 493, ../scss/app.scss */
 videogular vg-mute-button .level1:before, [videogular] vg-mute-button .level1:before {
   content: "\e004";
 }
-/* line 493, ../scss/app.scss */
+/* line 497, ../scss/app.scss */
 videogular vg-mute-button .level0:before, [videogular] vg-mute-button .level0:before {
   content: "\e005";
 }
-/* line 497, ../scss/app.scss */
+/* line 501, ../scss/app.scss */
 videogular vg-mute-button .mute:before, [videogular] vg-mute-button .mute:before {
   content: "\e006";
 }
-/* line 501, ../scss/app.scss */
+/* line 505, ../scss/app.scss */
 videogular vg-fullscreen-button .enter:before, [videogular] vg-fullscreen-button .enter:before {
   content: "\e007";
 }
-/* line 505, ../scss/app.scss */
+/* line 509, ../scss/app.scss */
 videogular vg-fullscreen-button .exit:before, [videogular] vg-fullscreen-button .exit:before {
   content: "\e008";
 }
-/* line 512, ../scss/app.scss */
+/* line 516, ../scss/app.scss */
 videogular vg-buffering, [videogular] vg-buffering {
   width: 100%;
   height: 100%;
@@ -9773,7 +9777,7 @@ videogular vg-buffering, [videogular] vg-buffering {
   z-index: 4;
   top: 0;
 }
-/* line 520, ../scss/app.scss */
+/* line 524, ../scss/app.scss */
 videogular vg-buffering .bufferingContainer, [videogular] vg-buffering .bufferingContainer {
   width: 100%;
   position: absolute;
@@ -9784,7 +9788,7 @@ videogular vg-buffering .bufferingContainer, [videogular] vg-buffering .bufferin
   filter: alpha(opacity=60);
   opacity: 0.6;
 }
-/* line 535, ../scss/app.scss */
+/* line 539, ../scss/app.scss */
 videogular vg-buffering .loadingSpinner, [videogular] vg-buffering .loadingSpinner {
   background-color: transparent;
   border: 5px solid white;
@@ -9799,7 +9803,7 @@ videogular vg-buffering .loadingSpinner, [videogular] vg-buffering .loadingSpinn
   -moz-animation: spin .5s infinite linear;
   -webkit-animation: spin .5s infinite linear;
 }
-/* line 550, ../scss/app.scss */
+/* line 554, ../scss/app.scss */
 videogular vg-buffering .loadingSpinner .stop, [videogular] vg-buffering .loadingSpinner .stop {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
@@ -9836,7 +9840,7 @@ videogular vg-buffering .loadingSpinner .stop, [videogular] vg-buffering .loadin
     -webkit-transform: rotate(-360deg);
   }
 }
-/* line 594, ../scss/app.scss */
+/* line 598, ../scss/app.scss */
 videogular vg-ima-ads, [videogular] vg-ima-ads {
   width: 100%;
   height: 100%;
