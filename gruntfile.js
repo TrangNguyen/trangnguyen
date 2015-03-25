@@ -318,8 +318,8 @@ module.exports = function (grunt) {
       grunt.task.run("concat");
       grunt.task.run("uglify");
 //			grunt.task.run("copy:images");
-			grunt.task.run("copy:media");
-			grunt.task.run("copy:fonts");
+//			grunt.task.run("copy:media");
+//			grunt.task.run("copy:fonts");
 			grunt.task.run("copy:htaccess");
 			grunt.task.run("copy:modules");
 			grunt.task.run("processhtml:build");

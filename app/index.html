@@ -4,11 +4,11 @@
 <!--/build-->
 		<head>
 		  <meta charset="utf-8">
-			<meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+			<meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
 		  <title>Trang Nguyen</title>
-		  <meta name="description" content="Trang Nguyen web development's portfolio" />
+		  <meta name="description" content="With programmer's brain and creative heart, I create digital products that work beautifully." />
 		  <meta name="author" content="Design by Berliner Süden. Development by  Trang Nguyen" />
-		  
+		  <meta name="keywords" content="mobile app development, web development, web app development, berlin, germany, javascript, angular, node, mongo, requirejs, html5">
 		  <!-- Load fonts -->
 		  <script src="//use.typekit.net/ghc4jmy.js"></script>
 		  <script>try{Typekit.load();}catch(e){}</script>
@@ -21,36 +21,18 @@
 		<body ng-app="trangApp">
 		<div class="row" ng-controller="AppController">
 		  <div class="small-12 columns">  
-      
-        <h1><a href="#/">Trang Nguyen</a></h1>
-        
+              
         <section id="me-intro">
-          <h2>I'm a <a href="#about">freelance web developer</a> in Berlin, Germany. I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>. Consider me for your next project!</h2>
-          <div id="contact">
-            <ul class="inline-list">
-              <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
-              <li><a target="_blank" href="skype://trangnguyen80?chat">Skype</a></li>
-              <li><a target="_blank" href="">LinkedIn</a></li>
-              <li><a target="_blank" href="">Xing</a></li>
-              <li><a target="_blank" href="https://github.com/TrangNguyen">Github</a></li>
-            </ul>
-          </div>
+          <h1>Hello, my name is <span>Trang Nguyen.</span></h1>
+          <h2>I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}.</span></h2> 
           
+          <h2><span><a target="_blank" href="mailto:trangnguyen80@gmail.com">Contact me</a></span> about your next project.</h2>                
         </section>
-        <ng-view></ng-view>
 
       </div>
 		</div>
 		<!-- build:js main.js -->
 		<script src="../bower_components/angular/angular.min.js"></script>
-		<script src="../bower_components/angular-route/angular-route.min.js"></script>
-		<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
-		<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-		<script src="../bower_components/videogular/videogular.js"></script>
-		<!--<script src="../bower_components/videogular-controls/vg-controls.js"></script>-->
-		<script src="../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
-		<script src="../bower_components/videogular-poster/vg-poster.js"></script>
-		<!--<script src="../bower_components/angular-scroll/angular-scroll.js"></script>		 -->
 		<script src="modules/main.js "></script>
 		<!-- /build -->	
 		</body>
