@@ -1,0 +1,364 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'update', '-g', 'bower' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose request where is /bower
+5 verbose request registry https://registry.npmjs.org/
+6 verbose request id 3cafd597be76abf2
+7 verbose url raw /bower
+8 verbose url resolving [ 'https://registry.npmjs.org/', './bower' ]
+9 verbose url resolved https://registry.npmjs.org/bower
+10 verbose request where is https://registry.npmjs.org/bower
+11 info trying registry request attempt 1 at 09:34:40
+12 verbose etag "F5GNC10X22NR4FPZMS96D2P78"
+13 http GET https://registry.npmjs.org/bower
+14 verbose request where is /bower
+15 verbose request registry https://registry.npmjs.org/
+16 verbose url raw /bower
+17 verbose url resolving [ 'https://registry.npmjs.org/', './bower' ]
+18 verbose url resolved https://registry.npmjs.org/bower
+19 verbose request where is https://registry.npmjs.org/bower
+20 info trying registry request attempt 1 at 09:34:40
+21 verbose etag "F5GNC10X22NR4FPZMS96D2P78"
+22 http GET https://registry.npmjs.org/bower
+23 http 200 https://registry.npmjs.org/bower
+24 silly registry.get cb [ 200,
+24 silly registry.get   { date: 'Fri, 10 Apr 2015 07:34:39 GMT',
+24 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly registry.get     etag: '"B75PZIF9UZTD158RMY4I6WR91"',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'cache-control': 'max-age=60',
+24 silly registry.get     'content-length': '111574',
+24 silly registry.get     'accept-ranges': 'bytes',
+24 silly registry.get     via: '1.1 varnish',
+24 silly registry.get     age: '34',
+24 silly registry.get     'x-served-by': 'cache-fra1222-FRA',
+24 silly registry.get     'x-cache': 'HIT',
+24 silly registry.get     'x-cache-hits': '1',
+24 silly registry.get     'x-timer': 'S1428651279.715008,VS0,VE0',
+24 silly registry.get     vary: 'Accept',
+24 silly registry.get     'keep-alive': 'timeout=10, max=50',
+24 silly registry.get     connection: 'Keep-Alive' } ]
+25 http 200 https://registry.npmjs.org/bower
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Fri, 10 Apr 2015 07:34:39 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"B75PZIF9UZTD158RMY4I6WR91"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '111574',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '35',
+26 silly registry.get     'x-served-by': 'cache-fra1245-FRA',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '2',
+26 silly registry.get     'x-timer': 'S1428651279.790091,VS0,VE0',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 info outdated updating [ [ '/usr/local/lib', 'bower', '1.3.12', '1.4.1', '1.4.1', 'latest' ],
+27 info outdated   [ '/usr/local/lib/node_modules/foundation-cli',
+27 info outdated     'bower',
+27 info outdated     '1.3.12',
+27 info outdated     '1.4.1',
+27 info outdated     '1.4.1',
+27 info outdated     '^1.3.12' ] ]
+28 verbose install where,what [ '/usr/local/lib', [ 'bower@1.4.1' ] ]
+29 verbose install where,what [ '/usr/local/lib/node_modules/foundation-cli',
+29 verbose install   [ 'bower@1.4.1' ] ]
+30 verbose readDependencies using package.json deps
+31 verbose cache add [ 'bower@1.4.1', null ]
+32 verbose cache add name=undefined spec="bower@1.4.1" args=["bower@1.4.1",null]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: 'bower@1.4.1',
+33 verbose parsed url   path: 'bower@1.4.1',
+33 verbose parsed url   href: 'bower@1.4.1' }
+34 verbose cache add name="bower" spec="1.4.1" args=["bower","1.4.1"]
+35 verbose parsed url { protocol: null,
+35 verbose parsed url   slashes: null,
+35 verbose parsed url   auth: null,
+35 verbose parsed url   host: null,
+35 verbose parsed url   port: null,
+35 verbose parsed url   hostname: null,
+35 verbose parsed url   hash: null,
+35 verbose parsed url   search: null,
+35 verbose parsed url   query: null,
+35 verbose parsed url   pathname: '1.4.1',
+35 verbose parsed url   path: '1.4.1',
+35 verbose parsed url   href: '1.4.1' }
+36 verbose addNamed [ 'bower', '1.4.1' ]
+37 verbose addNamed [ '1.4.1', '1.4.1' ]
+38 silly lockFile 185f46c0-bower-1-4-1 bower@1.4.1
+39 verbose lock bower@1.4.1 /Users/trangnguyen/.npm/185f46c0-bower-1-4-1.lock
+40 verbose cache add [ 'bower@1.4.1', null ]
+41 verbose cache add name=undefined spec="bower@1.4.1" args=["bower@1.4.1",null]
+42 verbose parsed url { protocol: null,
+42 verbose parsed url   slashes: null,
+42 verbose parsed url   auth: null,
+42 verbose parsed url   host: null,
+42 verbose parsed url   port: null,
+42 verbose parsed url   hostname: null,
+42 verbose parsed url   hash: null,
+42 verbose parsed url   search: null,
+42 verbose parsed url   query: null,
+42 verbose parsed url   pathname: 'bower@1.4.1',
+42 verbose parsed url   path: 'bower@1.4.1',
+42 verbose parsed url   href: 'bower@1.4.1' }
+43 verbose cache add name="bower" spec="1.4.1" args=["bower","1.4.1"]
+44 verbose parsed url { protocol: null,
+44 verbose parsed url   slashes: null,
+44 verbose parsed url   auth: null,
+44 verbose parsed url   host: null,
+44 verbose parsed url   port: null,
+44 verbose parsed url   hostname: null,
+44 verbose parsed url   hash: null,
+44 verbose parsed url   search: null,
+44 verbose parsed url   query: null,
+44 verbose parsed url   pathname: '1.4.1',
+44 verbose parsed url   path: '1.4.1',
+44 verbose parsed url   href: '1.4.1' }
+45 verbose addNamed [ 'bower', '1.4.1' ]
+46 verbose registry.get https://registry.npmjs.org/bower not expired, no request
+47 silly lockFile 04dcb06b--npmjs-org-bower-bower-1-4-1-tgz https://registry.npmjs.org/bower/-/bower-1.4.1.tgz
+48 verbose lock https://registry.npmjs.org/bower/-/bower-1.4.1.tgz /Users/trangnguyen/.npm/04dcb06b--npmjs-org-bower-bower-1-4-1-tgz.lock
+49 verbose addRemoteTarball [ 'https://registry.npmjs.org/bower/-/bower-1.4.1.tgz',
+49 verbose addRemoteTarball   'a18be39d030792754f30f1c5b32d37b0156ba8dd' ]
+50 info retry fetch attempt 1 at 09:34:40
+51 verbose fetch to= /var/folders/bs/75p4b1xn2wj1c2_j3w8nbr9m0000gn/T/npm-29966-JCNUHrFg/registry.npmjs.org/bower/-/bower-1.4.1.tgz
+52 http GET https://registry.npmjs.org/bower/-/bower-1.4.1.tgz
+53 http 200 https://registry.npmjs.org/bower/-/bower-1.4.1.tgz
+54 silly lockFile 04dcb06b--npmjs-org-bower-bower-1-4-1-tgz https://registry.npmjs.org/bower/-/bower-1.4.1.tgz
+55 silly lockFile 04dcb06b--npmjs-org-bower-bower-1-4-1-tgz https://registry.npmjs.org/bower/-/bower-1.4.1.tgz
+56 silly lockFile 185f46c0-bower-1-4-1 bower@1.4.1
+57 silly lockFile 185f46c0-bower-1-4-1 bower@1.4.1
+58 silly resolved [ { name: 'bower',
+58 silly resolved     version: '1.4.1',
+58 silly resolved     description: 'The browser package manager',
+58 silly resolved     author: { name: 'Twitter' },
+58 silly resolved     licenses: [ [Object] ],
+58 silly resolved     repository: { type: 'git', url: 'https://github.com/bower/bower' },
+58 silly resolved     main: 'lib',
+58 silly resolved     homepage: 'http://bower.io',
+58 silly resolved     engines: { node: '>=0.10.0' },
+58 silly resolved     dependencies:
+58 silly resolved      { abbrev: '^1.0.5',
+58 silly resolved        archy: '1.0.0',
+58 silly resolved        'bower-config': '^0.6.1',
+58 silly resolved        'bower-endpoint-parser': '^0.2.2',
+58 silly resolved        'bower-json': '^0.4.0',
+58 silly resolved        'bower-logger': '^0.2.2',
+58 silly resolved        'bower-registry-client': '^0.3.0',
+58 silly resolved        cardinal: '0.4.4',
+58 silly resolved        chalk: '^1.0.0',
+58 silly resolved        chmodr: '0.1.0',
+58 silly resolved        configstore: '^0.3.2',
+58 silly resolved        'decompress-zip': '^0.1.0',
+58 silly resolved        fstream: '^1.0.3',
+58 silly resolved        'fstream-ignore': '^1.0.2',
+58 silly resolved        github: '^0.2.3',
+58 silly resolved        glob: '^4.3.2',
+58 silly resolved        'graceful-fs': '^3.0.5',
+58 silly resolved        handlebars: '^2.0.0',
+58 silly resolved        inquirer: '0.8.0',
+58 silly resolved        insight: '^0.5.0',
+58 silly resolved        'is-root': '^1.0.0',
+58 silly resolved        junk: '^1.0.0',
+58 silly resolved        lockfile: '^1.0.0',
+58 silly resolved        'lru-cache': '^2.5.0',
+58 silly resolved        mkdirp: '0.5.0',
+58 silly resolved        mout: '^0.11.0',
+58 silly resolved        nopt: '^3.0.1',
+58 silly resolved        opn: '^1.0.1',
+58 silly resolved        'p-throttler': '0.1.1',
+58 silly resolved        promptly: '0.2.0',
+58 silly resolved        q: '^1.1.2',
+58 silly resolved        request: '2.53.0',
+58 silly resolved        'request-progress': '0.3.1',
+58 silly resolved        retry: '0.6.1',
+58 silly resolved        rimraf: '^2.2.8',
+58 silly resolved        semver: '^2.3.0',
+58 silly resolved        'shell-quote': '^1.4.2',
+58 silly resolved        'stringify-object': '^1.0.0',
+58 silly resolved        'tar-fs': '^1.4.1',
+58 silly resolved        tmp: '0.0.24',
+58 silly resolved        'update-notifier': '^0.3.0',
+58 silly resolved        'user-home': '^1.1.0',
+58 silly resolved        which: '^1.0.8' },
+58 silly resolved     devDependencies:
+58 silly resolved      { chai: '^1.10.0',
+58 silly resolved        coveralls: '^2.11.2',
+58 silly resolved        'expect.js': '^0.3.1',
+58 silly resolved        grunt: '^0.4.5',
+58 silly resolved        'grunt-cli': '^0.1.13',
+58 silly resolved        'grunt-contrib-jshint': '^0.10.0',
+58 silly resolved        'grunt-contrib-watch': '^0.6.1',
+58 silly resolved        'grunt-exec': '^0.4.6',
+58 silly resolved        'grunt-simple-mocha': '^0.4.0',
+58 silly resolved        istanbul: '^0.3.5',
+58 silly resolved        'load-grunt-tasks': '^2.0.0',
+58 silly resolved        mocha: '^2.1.0',
+58 silly resolved        multiline: '^1.0.2',
+58 silly resolved        nock: '^0.56.0',
+58 silly resolved        'node-uuid': '^1.4.2',
+58 silly resolved        proxyquire: '^1.3.0',
+58 silly resolved        'spawn-sync': '^1.0.5' },
+58 silly resolved     scripts: { test: 'grunt test' },
+58 silly resolved     bin: { bower: 'bin/bower' },
+58 silly resolved     preferGlobal: true,
+58 silly resolved     gitHead: 'a1287416d40f944d58cb8f2e774e2076bfffd32f',
+58 silly resolved     bugs: { url: 'https://github.com/bower/bower/issues' },
+58 silly resolved     _id: 'bower@1.4.1',
+58 silly resolved     _shasum: 'a18be39d030792754f30f1c5b32d37b0156ba8dd',
+58 silly resolved     _from: 'bower@1.4.1',
+58 silly resolved     _npmVersion: '2.7.4',
+58 silly resolved     _nodeVersion: '0.12.0',
+58 silly resolved     _npmUser: { name: 'sheerun', email: 'sheerun@sher.pl' },
+58 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+58 silly resolved     dist:
+58 silly resolved      { shasum: 'a18be39d030792754f30f1c5b32d37b0156ba8dd',
+58 silly resolved        tarball: 'http://registry.npmjs.org/bower/-/bower-1.4.1.tgz' },
+58 silly resolved     directories: {},
+58 silly resolved     _resolved: 'https://registry.npmjs.org/bower/-/bower-1.4.1.tgz' } ]
+59 info install bower@1.4.1 into /usr/local/lib/node_modules/foundation-cli
+60 info installOne bower@1.4.1
+61 silly resolved [ { name: 'bower',
+61 silly resolved     version: '1.4.1',
+61 silly resolved     description: 'The browser package manager',
+61 silly resolved     author: { name: 'Twitter' },
+61 silly resolved     licenses: [ [Object] ],
+61 silly resolved     repository: { type: 'git', url: 'https://github.com/bower/bower' },
+61 silly resolved     main: 'lib',
+61 silly resolved     homepage: 'http://bower.io',
+61 silly resolved     engines: { node: '>=0.10.0' },
+61 silly resolved     dependencies:
+61 silly resolved      { abbrev: '^1.0.5',
+61 silly resolved        archy: '1.0.0',
+61 silly resolved        'bower-config': '^0.6.1',
+61 silly resolved        'bower-endpoint-parser': '^0.2.2',
+61 silly resolved        'bower-json': '^0.4.0',
+61 silly resolved        'bower-logger': '^0.2.2',
+61 silly resolved        'bower-registry-client': '^0.3.0',
+61 silly resolved        cardinal: '0.4.4',
+61 silly resolved        chalk: '^1.0.0',
+61 silly resolved        chmodr: '0.1.0',
+61 silly resolved        configstore: '^0.3.2',
+61 silly resolved        'decompress-zip': '^0.1.0',
+61 silly resolved        fstream: '^1.0.3',
+61 silly resolved        'fstream-ignore': '^1.0.2',
+61 silly resolved        github: '^0.2.3',
+61 silly resolved        glob: '^4.3.2',
+61 silly resolved        'graceful-fs': '^3.0.5',
+61 silly resolved        handlebars: '^2.0.0',
+61 silly resolved        inquirer: '0.8.0',
+61 silly resolved        insight: '^0.5.0',
+61 silly resolved        'is-root': '^1.0.0',
+61 silly resolved        junk: '^1.0.0',
+61 silly resolved        lockfile: '^1.0.0',
+61 silly resolved        'lru-cache': '^2.5.0',
+61 silly resolved        mkdirp: '0.5.0',
+61 silly resolved        mout: '^0.11.0',
+61 silly resolved        nopt: '^3.0.1',
+61 silly resolved        opn: '^1.0.1',
+61 silly resolved        'p-throttler': '0.1.1',
+61 silly resolved        promptly: '0.2.0',
+61 silly resolved        q: '^1.1.2',
+61 silly resolved        request: '2.53.0',
+61 silly resolved        'request-progress': '0.3.1',
+61 silly resolved        retry: '0.6.1',
+61 silly resolved        rimraf: '^2.2.8',
+61 silly resolved        semver: '^2.3.0',
+61 silly resolved        'shell-quote': '^1.4.2',
+61 silly resolved        'stringify-object': '^1.0.0',
+61 silly resolved        'tar-fs': '^1.4.1',
+61 silly resolved        tmp: '0.0.24',
+61 silly resolved        'update-notifier': '^0.3.0',
+61 silly resolved        'user-home': '^1.1.0',
+61 silly resolved        which: '^1.0.8' },
+61 silly resolved     devDependencies:
+61 silly resolved      { chai: '^1.10.0',
+61 silly resolved        coveralls: '^2.11.2',
+61 silly resolved        'expect.js': '^0.3.1',
+61 silly resolved        grunt: '^0.4.5',
+61 silly resolved        'grunt-cli': '^0.1.13',
+61 silly resolved        'grunt-contrib-jshint': '^0.10.0',
+61 silly resolved        'grunt-contrib-watch': '^0.6.1',
+61 silly resolved        'grunt-exec': '^0.4.6',
+61 silly resolved        'grunt-simple-mocha': '^0.4.0',
+61 silly resolved        istanbul: '^0.3.5',
+61 silly resolved        'load-grunt-tasks': '^2.0.0',
+61 silly resolved        mocha: '^2.1.0',
+61 silly resolved        multiline: '^1.0.2',
+61 silly resolved        nock: '^0.56.0',
+61 silly resolved        'node-uuid': '^1.4.2',
+61 silly resolved        proxyquire: '^1.3.0',
+61 silly resolved        'spawn-sync': '^1.0.5' },
+61 silly resolved     scripts: { test: 'grunt test' },
+61 silly resolved     bin: { bower: 'bin/bower' },
+61 silly resolved     preferGlobal: true,
+61 silly resolved     gitHead: 'a1287416d40f944d58cb8f2e774e2076bfffd32f',
+61 silly resolved     bugs: { url: 'https://github.com/bower/bower/issues' },
+61 silly resolved     _id: 'bower@1.4.1',
+61 silly resolved     _shasum: 'a18be39d030792754f30f1c5b32d37b0156ba8dd',
+61 silly resolved     _from: 'bower@1.4.1',
+61 silly resolved     _npmVersion: '2.7.4',
+61 silly resolved     _nodeVersion: '0.12.0',
+61 silly resolved     _npmUser: { name: 'sheerun', email: 'sheerun@sher.pl' },
+61 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+61 silly resolved     dist:
+61 silly resolved      { shasum: 'a18be39d030792754f30f1c5b32d37b0156ba8dd',
+61 silly resolved        tarball: 'http://registry.npmjs.org/bower/-/bower-1.4.1.tgz' },
+61 silly resolved     directories: {},
+61 silly resolved     _resolved: 'https://registry.npmjs.org/bower/-/bower-1.4.1.tgz' } ]
+62 info install bower@1.4.1 into /usr/local/lib
+63 info installOne bower@1.4.1
+64 verbose lib/node_modules/foundation-cli/node_modules/bower unbuild
+65 verbose lib/node_modules/bower unbuild
+66 info preuninstall bower@1.3.12
+67 info uninstall bower@1.3.12
+68 verbose tar unpack /Users/trangnguyen/.npm/bower/1.4.1/package.tgz
+69 silly lockFile eaa59dad-oundation-cli-node-modules-bower tar:///usr/local/lib/node_modules/foundation-cli/node_modules/bower
+70 verbose lock tar:///usr/local/lib/node_modules/foundation-cli/node_modules/bower /Users/trangnguyen/.npm/eaa59dad-oundation-cli-node-modules-bower.lock
+71 silly lockFile 4af98bde-uyen-npm-bower-1-4-1-package-tgz tar:///Users/trangnguyen/.npm/bower/1.4.1/package.tgz
+72 verbose lock tar:///Users/trangnguyen/.npm/bower/1.4.1/package.tgz /Users/trangnguyen/.npm/4af98bde-uyen-npm-bower-1-4-1-package-tgz.lock
+73 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild bower@1.3.12
+74 verbose /usr/local/bin,[object Object] binRoot
+75 silly gunzTarPerm modes [ '755', '644' ]
+76 info postuninstall bower@1.3.12
+77 error Error: EACCES, mkdir '/usr/local/lib/node_modules/foundation-cli/node_modules/bower'
+77 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/foundation-cli/node_modules/bower']
+77 error   errno: 3,
+77 error   code: 'EACCES',
+77 error   path: '/usr/local/lib/node_modules/foundation-cli/node_modules/bower',
+77 error   fstream_type: 'Directory',
+77 error   fstream_path: '/usr/local/lib/node_modules/foundation-cli/node_modules/bower',
+77 error   fstream_class: 'DirWriter',
+77 error   fstream_stack:
+77 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+77 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+77 error      'Object.oncomplete (fs.js:107:15)' ] }
+78 error Please try running this command again as root/Administrator.
+79 error System Darwin 14.1.0
+80 error command "node" "/usr/local/bin/npm" "update" "-g" "bower"
+81 error cwd /Users/trangnguyen/Dev/git/trangnguyen
+82 error node -v v0.10.32
+83 error npm -v 1.4.28
+84 error path /usr/local/lib/node_modules/foundation-cli/node_modules/bower
+85 error fstream_path /usr/local/lib/node_modules/foundation-cli/node_modules/bower
+86 error fstream_type Directory
+87 error fstream_class DirWriter
+88 error code EACCES
+89 error errno 3
+90 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/foundation-cli/node_modules/bower'
+91 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+91 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+91 error fstream_stack Object.oncomplete (fs.js:107:15)
+92 verbose exit [ 3, true ]

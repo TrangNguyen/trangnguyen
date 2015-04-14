@@ -46,12 +46,6 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= outputDir %>/main.js': [  '<%= bower.directory %>/angular/angular.js',
-          '<%= bower.directory %>/angular-animate/angular-animate.js',
-          '<%= bower.directory %>/angular-sanitize/angular-sanitize.js',
-          '<%= bower.directory %>/videogular/videogular.js',
-          '<%= bower.directory %>/videogular-overlay-play/vg-overlay-play.js',
-          '<%= bower.directory %>/videogular-poster/vg-poster.js',
-          '<%= bower.directory %>/angular-scroll/angular-scroll.js',
           '<%= outputDir %>/main.js'
          ]
         },

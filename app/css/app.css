@@ -1733,8 +1733,8 @@ select {
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   position: relative;
   transition: opacity 300ms ease-out;
-  background-color: #000000;
-  border-color: black;
+  background-color: #2A2A2A;
+  border-color: #242424;
   color: #FFFFFF;
 }
 /* line 115, ../scss/foundation/components/_alert-boxes.scss */
@@ -2342,7 +2342,7 @@ select {
 }
 /* line 122, ../scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs > * {
-  color: #000000;
+  color: #2A2A2A;
   float: left;
   font-size: 0.6875rem;
   line-height: 0.6875rem;
@@ -2355,7 +2355,7 @@ select {
 }
 /* line 70, ../scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs > * a {
-  color: #000000;
+  color: #2A2A2A;
 }
 /* line 75, ../scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs > *.current {
@@ -2424,14 +2424,14 @@ button, .button {
   display: inline-block;
   padding: 1rem 2rem 1.0625rem 2rem;
   font-size: 1rem;
-  background-color: #000000;
-  border-color: black;
+  background-color: #2A2A2A;
+  border-color: #222222;
   color: #FFFFFF;
   transition: background-color 300ms ease-out;
 }
 /* line 158, ../scss/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: black;
+  background-color: #222222;
 }
 /* line 164, ../scss/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
@@ -2548,8 +2548,8 @@ button.round, .button.round {
 }
 /* line 237, ../scss/foundation/components/_buttons.scss */
 button.disabled, button[disabled], .button.disabled, .button[disabled] {
-  background-color: #000000;
-  border-color: black;
+  background-color: #2A2A2A;
+  border-color: #222222;
   color: #FFFFFF;
   box-shadow: none;
   cursor: default;
@@ -2557,7 +2557,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
 }
 /* line 158, ../scss/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-  background-color: black;
+  background-color: #222222;
 }
 /* line 164, ../scss/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
@@ -2565,7 +2565,7 @@ button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[dis
 }
 /* line 175, ../scss/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-  background-color: #000000;
+  background-color: #2A2A2A;
 }
 /* line 238, ../scss/foundation/components/_buttons.scss */
 button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
@@ -4012,7 +4012,7 @@ form .row textarea.columns {
 /* Label Styles */
 /* line 386, ../scss/foundation/components/_forms.scss */
 label {
-  color: #4d4d4d;
+  color: #6a6a6a;
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
@@ -4034,7 +4034,7 @@ label.inline {
 /* line 390, ../scss/foundation/components/_forms.scss */
 label small {
   text-transform: capitalize;
-  color: #676767;
+  color: gray;
 }
 
 /* Attach elements to the beginning or end of an input */
@@ -4423,7 +4423,7 @@ span.error, small.error {
 /* line 560, ../scss/foundation/components/_forms.scss */
 .error > label > small {
   background: transparent;
-  color: #676767;
+  color: gray;
   display: inline;
   font-size: 60%;
   font-style: normal;
@@ -4566,7 +4566,7 @@ label.error {
 }
 /* line 181, ../scss/foundation/components/_icon-bar.scss */
 .icon-bar > a:hover {
-  background: #000000;
+  background: #2A2A2A;
 }
 /* line 185, ../scss/foundation/components/_icon-bar.scss */
 .icon-bar > a:hover label {
@@ -4578,7 +4578,7 @@ label.error {
 }
 /* line 190, ../scss/foundation/components/_icon-bar.scss */
 .icon-bar > a.active {
-  background: #000000;
+  background: #2A2A2A;
 }
 /* line 194, ../scss/foundation/components/_icon-bar.scss */
 .icon-bar > a.active label {
@@ -4992,7 +4992,7 @@ kbd {
   white-space: nowrap;
   padding: 0.25rem 0.5rem 0.25rem;
   font-size: 0.6875rem;
-  background-color: #000000;
+  background-color: #2A2A2A;
   color: #FFFFFF;
 }
 /* line 96, ../scss/foundation/components/_labels.scss */
@@ -5427,14 +5427,14 @@ ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus, ul.p
 }
 /* line 68, ../scss/foundation/components/_pagination.scss */
 ul.pagination li.current a, ul.pagination li.current button {
-  background: #000000;
+  background: #2A2A2A;
   color: #FFFFFF;
   cursor: default;
   font-weight: bold;
 }
 /* line 74, ../scss/foundation/components/_pagination.scss */
 ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
-  background: #000000;
+  background: #2A2A2A;
 }
 /* line 136, ../scss/foundation/components/_pagination.scss */
 ul.pagination li {
@@ -5487,12 +5487,12 @@ ul.pagination li {
 }
 /* line 89, ../scss/foundation/components/_panels.scss */
 .panel.callout {
-  border-color: #d5d5d5;
+  border-color: #d8d8d8;
   border-style: solid;
   border-width: 1px;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #f0f0f0;
+  background: #f2f2f2;
   color: #333333;
 }
 /* line 62, ../scss/foundation/components/_panels.scss */
@@ -5518,11 +5518,11 @@ ul.pagination li {
 }
 /* line 91, ../scss/foundation/components/_panels.scss */
 .panel.callout a:not(.button) {
-  color: #000000;
+  color: #2A2A2A;
 }
 /* line 94, ../scss/foundation/components/_panels.scss */
 .panel.callout a:not(.button):hover, .panel.callout a:not(.button):focus {
-  color: black;
+  color: #242424;
 }
 /* line 101, ../scss/foundation/components/_panels.scss */
 .panel.radius {
@@ -5600,7 +5600,7 @@ ul.pagination li {
 }
 /* line 61, ../scss/foundation/components/_progress-bars.scss */
 .progress .meter {
-  background: #000000;
+  background: #2A2A2A;
   display: block;
   height: 100%;
 }
@@ -5682,12 +5682,12 @@ ul.pagination li {
 }
 /* line 150, ../scss/foundation/components/_range-slider.scss */
 .range-slider.radius .range-slider-handle {
-  background: #000000;
+  background: #2A2A2A;
   border-radius: 3px;
 }
 /* line 118, ../scss/foundation/components/_range-slider.scss */
 .range-slider.radius .range-slider-handle:hover {
-  background: black;
+  background: #252525;
 }
 /* line 152, ../scss/foundation/components/_range-slider.scss */
 .range-slider.round {
@@ -5696,12 +5696,12 @@ ul.pagination li {
 }
 /* line 154, ../scss/foundation/components/_range-slider.scss */
 .range-slider.round .range-slider-handle {
-  background: #000000;
+  background: #2A2A2A;
   border-radius: 1000px;
 }
 /* line 118, ../scss/foundation/components/_range-slider.scss */
 .range-slider.round .range-slider-handle:hover {
-  background: black;
+  background: #252525;
 }
 /* line 156, ../scss/foundation/components/_range-slider.scss */
 .range-slider.disabled, .range-slider[disabled] {
@@ -5711,13 +5711,13 @@ ul.pagination li {
 }
 /* line 158, ../scss/foundation/components/_range-slider.scss */
 .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
-  background: #000000;
+  background: #2A2A2A;
   cursor: default;
   opacity: 0.7;
 }
 /* line 118, ../scss/foundation/components/_range-slider.scss */
 .range-slider.disabled .range-slider-handle:hover, .range-slider[disabled] .range-slider-handle:hover {
-  background: black;
+  background: #252525;
 }
 
 /* line 161, ../scss/foundation/components/_range-slider.scss */
@@ -5740,17 +5740,17 @@ ul.pagination li {
   z-index: 1;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-  background: #000000;
+  background: #2A2A2A;
 }
 /* line 118, ../scss/foundation/components/_range-slider.scss */
 .range-slider-handle:hover {
-  background: black;
+  background: #252525;
 }
 
 /* line 169, ../scss/foundation/components/_reveal.scss */
 .reveal-modal-bg {
-  background: #000000;
-  background: rgba(0, 0, 0, 0.45);
+  background: #2A2A2A;
+  background: rgba(42, 42, 42, 0.45);
   bottom: 0;
   display: none;
   left: 0;
@@ -5774,7 +5774,7 @@ ul.pagination li {
   background-color: #FFFFFF;
   padding: 1.875rem;
   border: solid 1px #666666;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(42, 42, 42, 0.4);
 }
 @media only screen and (max-width: 40em) {
   /* line 171, ../scss/foundation/components/_reveal.scss */
@@ -5925,7 +5925,7 @@ ul.pagination li {
 }
 /* line 76, ../scss/foundation/components/_side-nav.scss */
 .side-nav li a:not(.button) {
-  color: #000000;
+  color: #2A2A2A;
   display: block;
   margin: 0;
   padding: 0.4375rem 0.875rem;
@@ -5933,15 +5933,15 @@ ul.pagination li {
 /* line 81, ../scss/foundation/components/_side-nav.scss */
 .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
   background: rgba(0, 0, 0, 0.025);
-  color: #4d4d4d;
+  color: #6a6a6a;
 }
 /* line 86, ../scss/foundation/components/_side-nav.scss */
 .side-nav li a:not(.button):active {
-  color: #4d4d4d;
+  color: #6a6a6a;
 }
 /* line 91, ../scss/foundation/components/_side-nav.scss */
 .side-nav li.active > a:first-child:not(.button) {
-  color: #4d4d4d;
+  color: #6a6a6a;
   font-family: "filson-pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
 }
@@ -5955,7 +5955,7 @@ ul.pagination li {
 }
 /* line 105, ../scss/foundation/components/_side-nav.scss */
 .side-nav li.heading {
-  color: #000000;
+  color: #2A2A2A;
   font-size: 0.875rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -6153,7 +6153,7 @@ ul.pagination li {
 .sub-nav dd.active a,
 .sub-nav li.active a {
   border-radius: 3px;
-  background: #000000;
+  background: #2A2A2A;
   color: #FFFFFF;
   cursor: default;
   font-weight: normal;
@@ -6163,7 +6163,7 @@ ul.pagination li {
 .sub-nav dt.active a:hover,
 .sub-nav dd.active a:hover,
 .sub-nav li.active a:hover {
-  background: black;
+  background: #242424;
 }
 
 /* line 215, ../scss/foundation/components/_switches.scss */
@@ -6226,7 +6226,7 @@ ul.pagination li {
 }
 /* line 110, ../scss/foundation/components/_switches.scss */
 .switch input:checked + label {
-  background: #000000;
+  background: #2A2A2A;
 }
 /* line 114, ../scss/foundation/components/_switches.scss */
 .switch input:checked + label:after {
@@ -6257,7 +6257,7 @@ ul.pagination li {
 }
 /* line 166, ../scss/foundation/components/_switches.scss */
 .switch input:checked + label {
-  background: #000000;
+  background: #2A2A2A;
 }
 /* line 126, ../scss/foundation/components/_switches.scss */
 .switch.large label {
@@ -6511,7 +6511,7 @@ table tr td {
 /* line 59, ../scss/foundation/components/_thumbs.scss */
 .th {
   border: solid 4px #FFFFFF;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1px rgba(42, 42, 42, 0.2);
   display: inline-block;
   line-height: 0;
   max-width: 100%;
@@ -6519,7 +6519,7 @@ table tr td {
 }
 /* line 48, ../scss/foundation/components/_thumbs.scss */
 .th:hover, .th:focus {
-  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 6px 1px rgba(42, 42, 42, 0.5);
 }
 /* line 63, ../scss/foundation/components/_thumbs.scss */
 .th.radius {
@@ -6536,8 +6536,8 @@ table tr td {
 }
 /* line 44, ../scss/foundation/components/_tooltips.scss */
 .has-tip:hover, .has-tip:focus {
-  border-bottom: dotted 1px black;
-  color: #000000;
+  border-bottom: dotted 1px #131313;
+  color: #2A2A2A;
 }
 /* line 50, ../scss/foundation/components/_tooltips.scss */
 .has-tip.tip-left, .has-tip.tip-right {
@@ -6590,8 +6590,8 @@ table tr td {
 }
 /* line 95, ../scss/foundation/components/_tooltips.scss */
 .tooltip.opened {
-  border-bottom: dotted 1px black !important;
-  color: #000000 !important;
+  border-bottom: dotted 1px #131313 !important;
+  color: #2A2A2A !important;
 }
 
 /* line 101, ../scss/foundation/components/_tooltips.scss */
@@ -6858,13 +6858,13 @@ meta.foundation-mq-topbar {
   font-size: 0.8125rem;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  background-color: #000000;
-  border-color: black;
+  background-color: #2A2A2A;
+  border-color: #222222;
   color: #FFFFFF;
 }
 /* line 158, ../scss/foundation/components/_buttons.scss */
 .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-  background-color: black;
+  background-color: #222222;
 }
 /* line 164, ../scss/foundation/components/_buttons.scss */
 .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
@@ -6945,13 +6945,13 @@ meta.foundation-mq-topbar {
   font-size: 0.8125rem;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  background-color: #000000;
-  border-color: black;
+  background-color: #2A2A2A;
+  border-color: #222222;
   color: #FFFFFF;
 }
 /* line 158, ../scss/foundation/components/_buttons.scss */
 .top-bar-section ul li > button:hover, .top-bar-section ul li > button:focus {
-  background-color: black;
+  background-color: #222222;
 }
 /* line 164, ../scss/foundation/components/_buttons.scss */
 .top-bar-section ul li > button:hover, .top-bar-section ul li > button:focus {
@@ -7035,12 +7035,12 @@ meta.foundation-mq-topbar {
 }
 /* line 366, ../scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a {
-  background: #000000;
+  background: #2A2A2A;
   color: #FFFFFF;
 }
 /* line 369, ../scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a:hover {
-  background: black;
+  background: #242424;
   color: #FFFFFF;
 }
 /* line 377, ../scss/foundation/components/_top-bar.scss */
@@ -7242,14 +7242,14 @@ meta.foundation-mq-topbar {
   }
   /* line 532, ../scss/foundation/components/_top-bar.scss */
   .top-bar-section li.active:not(.has-form) a:not(.button) {
-    background: #000000;
+    background: #2A2A2A;
     color: #FFFFFF;
     line-height: 2.8125rem;
     padding: 0 0.9375rem;
   }
   /* line 537, ../scss/foundation/components/_top-bar.scss */
   .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-    background: black;
+    background: #242424;
     color: #FFFFFF;
   }
   /* line 547, ../scss/foundation/components/_top-bar.scss */
@@ -7389,7 +7389,7 @@ meta.foundation-mq-topbar {
   }
   /* line 680, ../scss/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:active > a {
-    background: #000000;
+    background: #2A2A2A;
     color: #FFFFFF;
   }
   /* line 688, ../scss/foundation/components/_top-bar.scss */
@@ -7699,13 +7699,13 @@ td {
 /* Default Link Styles */
 /* line 217, ../scss/foundation/components/_type.scss */
 a {
-  color: #000000;
+  color: #2A2A2A;
   line-height: inherit;
   text-decoration: none;
 }
 /* line 222, ../scss/foundation/components/_type.scss */
 a:hover, a:focus {
-  color: black;
+  color: #242424;
 }
 /* line 230, ../scss/foundation/components/_type.scss */
 a img {
@@ -7718,7 +7718,7 @@ p {
   font-family: inherit;
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility;
 }
@@ -7740,8 +7740,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #222222;
   font-family: "filson-pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
-  font-weight: bold;
-  line-height: 1.4;
+  font-weight: normal;
+  line-height: 1.2;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
   text-rendering: optimizeLegibility;
@@ -7760,12 +7760,12 @@ h1 {
 
 /* line 270, ../scss/foundation/components/_type.scss */
 h2 {
-  font-size: 1.0625rem;
+  font-size: 1.1875rem;
 }
 
 /* line 271, ../scss/foundation/components/_type.scss */
 h3 {
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
 }
 
 /* line 272, ../scss/foundation/components/_type.scss */
@@ -7841,7 +7841,7 @@ ol,
 dl {
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.6;
   list-style-position: outside;
   margin-bottom: 1.25rem;
 }
@@ -7961,7 +7961,7 @@ blockquote cite a:visited {
 /* line 418, ../scss/foundation/components/_type.scss */
 blockquote,
 blockquote p {
-  line-height: 1.7;
+  line-height: 1.6;
   color: #6f6f6f;
 }
 
@@ -8000,7 +8000,7 @@ blockquote p {
 @media only screen and (min-width: 40.0625em) {
   /* line 455, ../scss/foundation/components/_type.scss */
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.4;
+    line-height: 1.2;
   }
 
   /* line 456, ../scss/foundation/components/_type.scss */
@@ -8010,12 +8010,12 @@ blockquote p {
 
   /* line 457, ../scss/foundation/components/_type.scss */
   h2 {
-    font-size: 1.6875rem;
+    font-size: 1.4375rem;
   }
 
   /* line 458, ../scss/foundation/components/_type.scss */
   h3 {
-    font-size: 1.4375rem;
+    font-size: 1.25rem;
   }
 
   /* line 459, ../scss/foundation/components/_type.scss */
@@ -8271,7 +8271,7 @@ ul.off-canvas-list li a:active {
 /* line 434, ../scss/foundation/components/_offcanvas.scss */
 .move-right .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -4px 0 4px rgba(42, 42, 42, 0.5), 4px 0 4px rgba(42, 42, 42, 0.5);
   cursor: pointer;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
@@ -8303,7 +8303,7 @@ ul.off-canvas-list li a:active {
 /* line 442, ../scss/foundation/components/_offcanvas.scss */
 .move-left .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -4px 0 4px rgba(42, 42, 42, 0.5), 4px 0 4px rgba(42, 42, 42, 0.5);
   cursor: pointer;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
@@ -8335,7 +8335,7 @@ ul.off-canvas-list li a:active {
 /* line 453, ../scss/foundation/components/_offcanvas.scss */
 .offcanvas-overlap .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -4px 0 4px rgba(42, 42, 42, 0.5), 4px 0 4px rgba(42, 42, 42, 0.5);
   cursor: pointer;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
@@ -8367,7 +8367,7 @@ ul.off-canvas-list li a:active {
 /* line 464, ../scss/foundation/components/_offcanvas.scss */
 .offcanvas-overlap-left .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -4px 0 4px rgba(42, 42, 42, 0.5), 4px 0 4px rgba(42, 42, 42, 0.5);
   cursor: pointer;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
@@ -8399,7 +8399,7 @@ ul.off-canvas-list li a:active {
 /* line 475, ../scss/foundation/components/_offcanvas.scss */
 .offcanvas-overlap-right .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -4px 0 4px rgba(42, 42, 42, 0.5), 4px 0 4px rgba(42, 42, 42, 0.5);
   cursor: pointer;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
@@ -9101,7 +9101,7 @@ th.hide-for-touch {
   * {
     background: transparent !important;
     box-shadow: none !important;
-    color: #000000 !important;
+    color: #2A2A2A !important;
     /* Black prints faster: h5bp.com/s */
     text-shadow: none !important;
   }
@@ -9272,367 +9272,86 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 9, ../scss/app.scss */
-a.videoLink {
-  border: 0;
-  padding: 2px 5px;
-  cursor: pointer;
-  background: #C3F8FF;
-  border-bottom: 1px solid #ccc;
-  color: #000000;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-}
 /* line 20, ../scss/app.scss */
-a.videoLink.highlighted {
-  background: #0AF8FF;
-  border-bottom: 1px solid #fff;
+html, body {
+  background-color: #F5F5F5;
+  height: 100%;
 }
 
-/* line 27, ../scss/app.scss */
-ul.nobullet {
-  list-style-type: none;
-}
-
-/* line 31, ../scss/app.scss */
+/* line 25, ../scss/app.scss */
 section {
   margin: 60px 0;
 }
 
 /* animation on text switch */
-/* line 37, ../scss/app.scss */
+/* line 31, ../scss/app.scss */
 span.my-thing {
   display: inline-block;
-  text-decoration: underline;
+  color: #7f7f7f;
 }
 
 /* animation on tech switch */
-/* line 47, ../scss/app.scss */
+/* line 42, ../scss/app.scss */
 span.my-tech {
   display: inline-block;
+  color: #7f7f7f;
+}
+
+/* line 53, ../scss/app.scss */
+div.project {
+  padding: 1.25rem;
+}
+
+/* line 58, ../scss/app.scss */
+#project-intro {
+  padding-top: 1.25rem;
+}
+
+/* line 62, ../scss/app.scss */
+#project-desc {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+/* line 65, ../scss/app.scss */
+#project-desc a {
+  padding: 0;
+  color: #2A2A2A;
   text-decoration: underline;
 }
 
-/**
- * @license Videogular v1.0.1 http://videogular.com
- * Two Fucking Developers http://twofuckingdevelopers.com
- * License: MIT
- */
-@font-face {
-  font-family: 'videogular';
-  src: url("../fonts/videogular.eot");
-  src: url("../fonts/videogular.eot?#iefix") format("embedded-opentype"), url("../fonts/videogular.woff") format("woff"), url("../fonts/videogular.ttf") format("truetype"), url("../fonts/videogular.svg#videogular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 /* line 73, ../scss/app.scss */
-videogular, [videogular] {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #000000;
-  display: block;
-  flex-direction: column;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: moz-none;
-  -ms-user-select: none;
-  user-select: none;
-  /*****************/
-  /* Poster plugin */
-  /*****************/
-  /**********************/
-  /* OverlayPlay plugin */
-  /**********************/
-  /*********************/
-  /* Controlbar plugin */
-  /*********************/
-  /* IE10 hack */
-  /* Controlbar icons */
+#team ul {
+  list-style-type: none;
+  margin-left: 0;
 }
-/* line 88, ../scss/app.scss */
-videogular button, [videogular] button {
-  cursor: pointer;
+/* line 77, ../scss/app.scss */
+#team ul li {
+  padding: 0.15625rem;
+  border-top: 1px solid #a5a5a5;
 }
-/* line 92, ../scss/app.scss */
-videogular .fullscreen, [videogular] .fullscreen {
-  position: fixed;
-  left: 0;
-  top: 0;
+/* line 80, ../scss/app.scss */
+#team ul li:last-of-type {
+  border-bottom: 1px solid #a5a5a5;
 }
-/* line 98, ../scss/app.scss */
-videogular vg-media, [videogular] vg-media {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
+/* line 83, ../scss/app.scss */
+#team ul li a {
+  color: #2A2A2A;
+  padding: 0;
+  text-decoration: none;
 }
-/* line 107, ../scss/app.scss */
-videogular video, [videogular] video {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-}
-/* line 114, ../scss/app.scss */
-videogular .iconButton, [videogular] .iconButton {
-  color: #0AF8FF;
-  font-family: 'videogular';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  background: none;
-  padding: 6px;
-  border: none;
-}
-/* line 130, ../scss/app.scss */
-videogular .iconButton:focus, [videogular] .iconButton:focus {
-  border: 1px solid white;
-}
-/* line 137, ../scss/app.scss */
-videogular vg-poster, [videogular] vg-poster {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  display: block;
-  z-index: 1;
-  top: 0;
-}
-/* line 148, ../scss/app.scss */
-videogular vg-poster img, [videogular] vg-poster img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  position: absolute;
-}
-/* line 162, ../scss/app.scss */
-videogular vg-poster img.pause,
-videogular vg-poster img.play, [videogular] vg-poster img.pause,
-[videogular] vg-poster img.play {
-  display: none;
-}
-/* line 167, ../scss/app.scss */
-videogular vg-poster img.stop, [videogular] vg-poster img.stop {
-  display: block;
-}
-/* line 174, ../scss/app.scss */
-videogular vg-overlay-play, [videogular] vg-overlay-play {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-}
-/* line 184, ../scss/app.scss */
-videogular vg-overlay-play .play:before, [videogular] vg-overlay-play .play:before {
-  content: "\e000";
-}
-/* line 188, ../scss/app.scss */
-videogular vg-overlay-play .overlayPlayContainer, [videogular] vg-overlay-play .overlayPlayContainer {
-  font-size: 100px;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  display: table;
-  cursor: pointer;
-  zoom: 1;
-  filter: alpha(opacity=80);
-  opacity: 0.8;
-}
-/* line 203, ../scss/app.scss */
-videogular vg-overlay-play .overlayPlayContainer div, [videogular] vg-overlay-play .overlayPlayContainer div {
-  vertical-align: middle;
-  text-align: center;
-  display: table-cell;
-}
-/* line 212, ../scss/app.scss */
-videogular vg-controls, [videogular] vg-controls {
-  width: 100%;
-  height: 50px;
-  display: block;
-  position: absolute;
-  z-index: 3;
-  top: calc(100% - 50px);
-}
-/* line 221, ../scss/app.scss */
-videogular vg-controls .controls-container, [videogular] vg-controls .controls-container {
-  width: 100%;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  display: table;
-  zoom: 1;
-}
-/* line 231, ../scss/app.scss */
-videogular vg-play-pause-button, [videogular] vg-play-pause-button {
-  display: table-cell;
-  width: 50px;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* line 242, ../scss/app.scss */
-  videogular vg-volume-bar, [videogular] vg-volume-bar {
-    zoom: 1;
-    filter: alpha(opacity=50);
-    opacity: 0.5;
-  }
-}
-/* line 249, ../scss/app.scss */
-videogular vg-controls .hide-animation, [videogular] vg-controls .hide-animation {
-  animation: hideControlsAnimationFrames ease-out 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  /*when the spec is finished*/
-  -webkit-animation: hideControlsAnimationFrames ease-out 0.5s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  /*Chrome 16+, Safari 4+*/
-  -moz-animation: hideControlsAnimationFrames ease-out 0.5s;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-fill-mode: forwards;
-  /*FF 5+*/
-  -o-animation: hideControlsAnimationFrames ease-out 0.5s;
-  -o-animation-iteration-count: 1;
-  -o-animation-fill-mode: forwards;
-  /*Not implemented yet*/
-  -ms-animation: hideControlsAnimationFrames ease-out 0.5s;
-  -ms-animation-iteration-count: 1;
-  -ms-animation-fill-mode: forwards;
-  /*IE 10+*/
-}
-@keyframes hideControlsAnimationFrames {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-moz-keyframes hideControlsAnimationFrames {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes hideControlsAnimationFrames {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-o-keyframes hideControlsAnimationFrames {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-ms-keyframes hideControlsAnimationFrames {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/* line 312, ../scss/app.scss */
-videogular vg-controls .show-animation, [videogular] vg-controls .show-animation {
-  animation: showControlsAnimationFrames ease-out 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  /*when the spec is finished*/
-  -webkit-animation: showControlsAnimationFrames ease-out 0.5s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  /*Chrome 16+, Safari 4+*/
-  -moz-animation: showControlsAnimationFrames ease-out 0.5s;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-fill-mode: forwards;
-  /*FF 5+*/
-  -o-animation: showControlsAnimationFrames ease-out 0.5s;
-  -o-animation-iteration-count: 1;
-  -o-animation-fill-mode: forwards;
-  /*Not implemented yet*/
-  -ms-animation: showControlsAnimationFrames ease-out 0.5s;
-  -ms-animation-iteration-count: 1;
-  -ms-animation-fill-mode: forwards;
-  /*IE 10+*/
-}
-@keyframes showControlsAnimationFrames {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-@-moz-keyframes showControlsAnimationFrames {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-@-webkit-keyframes showControlsAnimationFrames {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-@-o-keyframes showControlsAnimationFrames {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-@-ms-keyframes showControlsAnimationFrames {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-/* line 376, ../scss/app.scss */
-videogular vg-play-pause-button .play:before, [videogular] vg-play-pause-button .play:before {
-  content: "\e000";
-}
-/* line 380, ../scss/app.scss */
-videogular vg-play-pause-button .pause:before, [videogular] vg-play-pause-button .pause:before {
-  content: "\e001";
+/* line 90, ../scss/app.scss */
+#team ul li span {
+  color: #7f7f7f;
 }
 
-/** end videogular styles **/
+/* line 96, ../scss/app.scss */
+#contact ul.inline-list li {
+  margin-left: 0;
+  margin-right: 0.625rem;
+}
+/* line 99, ../scss/app.scss */
+#contact ul.inline-list li a {
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=app.css.map */
