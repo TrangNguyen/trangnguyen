@@ -79,9 +79,9 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
+$row-width: rem-calc(1400);
 // $total-columns: 12;
-// $column-gutter: rem-calc(30);
+$column-gutter: rem-calc(50);
 
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -206,7 +206,7 @@ $header-line-height: 1.2;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(27);
+$h1-font-size: rem-calc(44);
 $h2-font-size: rem-calc(23);
 $h3-font-size: rem-calc(20);
 // $h4-font-size: rem-calc(23);
@@ -214,7 +214,7 @@ $h3-font-size: rem-calc(20);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
-// $h1-font-reduction: rem-calc(10);
+$h1-font-reduction: rem-calc(14);
  $h2-font-reduction: rem-calc(4);
 // $h3-font-reduction: rem-calc(5);
 // $h4-font-reduction: rem-calc(5);

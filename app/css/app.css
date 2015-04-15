@@ -187,7 +187,7 @@ select {
 /* line 228, ../scss/foundation/components/_grid.scss */
 .row {
   margin: 0 auto;
-  max-width: 62.5rem;
+  max-width: 87.5rem;
   width: 100%;
 }
 /* line 172, ../scss/foundation/components/_global.scss */
@@ -212,7 +212,7 @@ select {
 }
 /* line 238, ../scss/foundation/components/_grid.scss */
 .row .row {
-  margin: 0 -0.9375rem;
+  margin: 0 -1.5625rem;
   max-width: none;
   width: auto;
 }
@@ -244,8 +244,8 @@ select {
 /* line 243, ../scss/foundation/components/_grid.scss */
 .column,
 .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
   width: 100%;
   float: left;
 }
@@ -433,8 +433,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     float: left;
   }
 
@@ -615,8 +615,8 @@ select {
   /* line 218, ../scss/foundation/components/_grid.scss */
   .row.small-uncollapse > .column,
   .row.small-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     float: left;
   }
 }
@@ -793,8 +793,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     float: left;
   }
 
@@ -975,8 +975,8 @@ select {
   /* line 218, ../scss/foundation/components/_grid.scss */
   .row.medium-uncollapse > .column,
   .row.medium-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     float: left;
   }
 
@@ -1321,8 +1321,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     float: left;
   }
 
@@ -1503,8 +1503,8 @@ select {
   /* line 218, ../scss/foundation/components/_grid.scss */
   .row.large-uncollapse > .column,
   .row.large-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     float: left;
   }
 
@@ -1714,7 +1714,7 @@ select {
 /* line 146, ../scss/foundation/components/_accordion.scss */
 .accordion .accordion-navigation > .content, .accordion dd > .content {
   display: none;
-  padding: 0.9375rem;
+  padding: 1.5625rem;
 }
 /* line 149, ../scss/foundation/components/_accordion.scss */
 .accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
@@ -5799,7 +5799,7 @@ ul.pagination li {
   .reveal-modal {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 80%;
   }
@@ -5827,7 +5827,7 @@ ul.pagination li {
   .reveal-modal.tiny {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 30%;
   }
@@ -5837,7 +5837,7 @@ ul.pagination li {
   .reveal-modal.small {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 40%;
   }
@@ -5847,7 +5847,7 @@ ul.pagination li {
   .reveal-modal.medium {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 60%;
   }
@@ -5857,7 +5857,7 @@ ul.pagination li {
   .reveal-modal.large {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 70%;
   }
@@ -5867,7 +5867,7 @@ ul.pagination li {
   .reveal-modal.xlarge {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 95%;
   }
@@ -5887,7 +5887,7 @@ ul.pagination li {
   .reveal-modal.full {
     left: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
     right: 0;
     width: 100%;
   }
@@ -6462,7 +6462,7 @@ table tr td {
 .tabs-content > .content {
   display: none;
   float: left;
-  padding: 0.9375rem 0;
+  padding: 1.5625rem 0;
   width: 100%;
 }
 /* line 88, ../scss/foundation/components/_tabs.scss */
@@ -6472,7 +6472,7 @@ table tr td {
 }
 /* line 89, ../scss/foundation/components/_tabs.scss */
 .tabs-content > .content.contained {
-  padding: 0.9375rem;
+  padding: 1.5625rem;
 }
 /* line 91, ../scss/foundation/components/_tabs.scss */
 .tabs-content.vertical {
@@ -6480,7 +6480,7 @@ table tr td {
 }
 /* line 93, ../scss/foundation/components/_tabs.scss */
 .tabs-content.vertical > .content {
-  padding: 0 0.9375rem;
+  padding: 0 1.5625rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
@@ -7201,7 +7201,7 @@ meta.foundation-mq-topbar {
   .contain-to-grid .top-bar {
     margin-bottom: 0;
     margin: 0 auto;
-    max-width: 62.5rem;
+    max-width: 87.5rem;
   }
 
   /* line 493, ../scss/foundation/components/_top-bar.scss */
@@ -7755,7 +7755,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 /* line 269, ../scss/foundation/components/_type.scss */
 h1 {
-  font-size: 1.0625rem;
+  font-size: 1.875rem;
 }
 
 /* line 270, ../scss/foundation/components/_type.scss */
@@ -8005,7 +8005,7 @@ blockquote p {
 
   /* line 456, ../scss/foundation/components/_type.scss */
   h1 {
-    font-size: 1.6875rem;
+    font-size: 2.75rem;
   }
 
   /* line 457, ../scss/foundation/components/_type.scss */
@@ -9278,78 +9278,109 @@ html, body {
   height: 100%;
 }
 
-/* line 25, ../scss/app.scss */
-section {
-  margin: 60px 0;
+/* line 26, ../scss/app.scss */
+.row.full-width {
+  max-width: 100% !important;
+  background-color: #cacaca;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 32, ../scss/app.scss */
+  article {
+    margin-bottom: 6.25rem !important;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 38, ../scss/app.scss */
+  .cta {
+    margin-bottom: 6.25rem !important;
+  }
+}
+
+/* line 45, ../scss/app.scss */
+#me-intro h1 {
+  font-size: 1.4375rem;
+  padding-top: 1.25rem;
+}
+
+/* line 51, ../scss/app.scss */
+#reasons {
+  padding-top: 1.25rem;
+}
+/* line 53, ../scss/app.scss */
+#reasons a {
+  text-decoration: underline;
 }
 
 /* animation on text switch */
-/* line 31, ../scss/app.scss */
+/* line 59, ../scss/app.scss */
 span.my-thing {
   display: inline-block;
   color: #7f7f7f;
 }
 
 /* animation on tech switch */
-/* line 42, ../scss/app.scss */
+/* line 70, ../scss/app.scss */
 span.my-tech {
   display: inline-block;
   color: #7f7f7f;
 }
 
-/* line 53, ../scss/app.scss */
-div.project {
-  padding: 1.25rem;
-}
-
-/* line 58, ../scss/app.scss */
-#project-intro {
-  padding-top: 1.25rem;
-}
-
-/* line 62, ../scss/app.scss */
-#project-desc {
-  padding-top: 0.625rem;
+/* line 86, ../scss/app.scss */
+.project h1 {
+  padding-top: 0.9375rem;
   padding-bottom: 0.625rem;
 }
-/* line 65, ../scss/app.scss */
+
+/* line 92, ../scss/app.scss */
+.recent {
+  padding-top: 2.5rem;
+  padding-bottom: 0.625rem;
+}
+
+/* line 102, ../scss/app.scss */
 #project-desc a {
   padding: 0;
   color: #2A2A2A;
   text-decoration: underline;
 }
+/* line 107, ../scss/app.scss */
+#project-desc h1 {
+  padding-top: 0.625rem;
+}
 
-/* line 73, ../scss/app.scss */
+/* line 113, ../scss/app.scss */
 #team ul {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 77, ../scss/app.scss */
+/* line 117, ../scss/app.scss */
 #team ul li {
   padding: 0.15625rem;
   border-top: 1px solid #a5a5a5;
 }
-/* line 80, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 #team ul li:last-of-type {
   border-bottom: 1px solid #a5a5a5;
 }
-/* line 83, ../scss/app.scss */
-#team ul li a {
+/* line 125, ../scss/app.scss */
+#team ul li span {
+  color: #7f7f7f;
+}
+/* line 129, ../scss/app.scss */
+#team a {
   color: #2A2A2A;
   padding: 0;
   text-decoration: none;
 }
-/* line 90, ../scss/app.scss */
-#team ul li span {
-  color: #7f7f7f;
-}
 
-/* line 96, ../scss/app.scss */
+/* line 136, ../scss/app.scss */
 #contact ul.inline-list li {
   margin-left: 0;
   margin-right: 0.625rem;
 }
-/* line 99, ../scss/app.scss */
+/* line 139, ../scss/app.scss */
 #contact ul.inline-list li a {
   text-decoration: none;
 }

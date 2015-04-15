@@ -20,82 +20,78 @@
 			
 		</head>
 		<body ng-app="trangApp" ng-controller="AppController">
-		<div class="row">
-		  <div class="small-12 columns">        
-        <h1 class="small-12 columns">Trang Nguyen—<span>freelance web developer<span></h1>        
-        <div id="me-intro" class="small-12 columns">
-          <h2>I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.</h2>
-          <h2>I’m looking for exciting challenging projects!</h2>
-          <a class="more" ng-click="more=!more">{{!more && '+ Want to know why should you consider me for your next project?' || '- Here is why.'}}</a>
-          <div ng-show="more">
-            <h3>I’m a self-taught programmer</h3>
-              <p>I’m an autodidact developer and a cross-disciplinarian, having graduated in film editing, I make <a target="_blank" href="http://midcut.com">films</a>, especially photofilms and installations. While looking for a technological solution to my video installation work, I was introduced to NodeJS and I was thrilled. Later with MongoDB and AngularJS I made myself a full-stack developer.</p>
-              <h3>I’m a doer</h3>
-              <p>Whatever I set myself into, I’ve excelled at it, whether it’s making exquisite meals or knitting a motherboard pattern. I take great pride in translating challenging design concepts into shipping applications and find an incredible reward seeing the result of my hours of hard work online.</p>
-              <h3>I’m a teamplayer</h3>
-              <p>As a filmmaker, I’ve mastered teamwork. There isn’t a product that is just for me to keep on my shelf but to share, to communicate. I respect my client’s interest, appreciate a good design, put myself in the shoes of the ones who will be using the product and combine all input, critic for the best of the project.</p>              
-              <h3>I’m a perfectionist</h3>
-              <p>I love planning, I do extensive research, prototype, test and iterate, that goes for coding as much as for filmmaking. A project is not finished until I have seen the result, had a wrap-up with involved parties and drawn lessons for the next.</p>
-              <h3>And what more, I love challenge. So if you have one, let’s talk about it.</h3>
-          </div>
-          <div id="contact">
-            <ul class="inline-list">
-              <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
-              <li><a target="_blank" href="skype://trangnguyen80?chat">Skype</a></li>
-              <!--<li><a target="_blank" href="">LinkedIn</a></li>
-              <li><a target="_blank" href="">Xing</a></li>-->
-              <li><a target="_blank" href="https://github.com/TrangNguyen">Github</a></li>
-            </ul>
-          </div>          
-        </div>
+		
+		<section class="row" id="me-intro">
+		  
+		  <div class="small-12 columns"> 
+		         
+        <h1>Hi, my name is Trang Nguyen, a freelance web developer in Berlin.</h1>        
+        <h2>I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.</h2>
+        <h2>I’m looking for exciting challenging projects! <a class="more" ng-click="more=!more">{{!more && 'More' || 'Less'}} about me.</a></h2>
+        
+       <!-- <ul class="inline-list" id="contact">
+          <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
+          <li><a target="_blank" href="skype://trangnguyen80?chat">Skype</a></li>
+          <!--<li><a target="_blank" href="">LinkedIn</a></li>
+          <li><a target="_blank" href="">Xing</a></li>--*>
+          <li><a target="_blank" href="https://github.com/TrangNguyen">Github</a></li>
+        </ul>-->
+                
+        <ul id="reasons" ng-show="more" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">       
+          <li  ng-repeat="reason in reasons">
+            <h3>{{reason.head}}</h3>
+            <p compile="reason.description"></p>
+          </li>
+          
+          <li><h3>And what more, I love challenge. So if you have one, let’s talk about it.</h3></li>
+        </ul>
+      
       </div>
-    </div>  
-    <div class="row project" ng-repeat="project in projects" id="{{project.id}}">
-      <div class="small-12 columns">
-        <h1>{{project.title}}</h1>
-        <div class="row" id="project-intro">
-          <div class="small-12 large-10 columns">
-            <p>{{project.intro}}</p>
-          </div>
-        </div>
-        <img ng-src="{{project.image}}">
-        <div class="row" id="project-desc">
-          <div class="small-12 medium-6 columns">
-            <p>{{project.process}}</p>
-            <h3><a target="_blank" href="{{project.link}}">See this project online</a></h3>
-          </div>
-          <div class="small-12 medium-6 columns end" id="team">
-            <h3>Team</h3>             
-            <ul>             
-              <li ng-repeat="member in project.team">
-                <a target="_blank" href="{{member.link}}">{{member.name}} </a><span>{{member.role}}</span>
-              </li>
-            </ul>
-            <p>Built with: <span class="techstack">{{project.techstack}}</span></p>          
-          </div>
-        </div>
+    </section>
+    
+    <section>
+    
+      <div class="row text-center recent">
+        <p class="small-12 columns">Recent work:</p>
       </div>
-    </div>
-
+      
+      <article class="row project" ng-repeat="project in projects" id="{{project.id}}">
+      
+        <div class="small-12 columns" >
+          <img ng-src="{{project.image}}">
+          <h1>{{project.title}}</h1>
+        </div>
+        
+        <div id="project-desc" class="small-12 medium-6 columns">
+          <p>{{project.intro}}</p>
+          <p>{{project.process}}</p>
+        </div>
+        
+        <div id="team" class="small-12 medium-6 columns end">
+          <ul>
+            <li ng-repeat="member in project.team">
+              <a target="_blank" href="{{member.link}}">{{member.name}} </a><span compile="member.role"></span>
+            </li>
+          </ul>
+          <p>Built with: <span class="techstack">{{project.techstack}}</span></p>
+          <p><a target="_blank" href="{{project.link}}">See this project online</a></p>        
+        </div>
+        
+      </article>
+      
+    </section>
+    <section class="row text-center cta">
+      <h2 class="small-12 columns">I’m looking for exciting challenging projects — get in touch!</h2>
+       
+        <p><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a><br>
+        <a target="_blank" href="skype://trangnguyen80?chat">Skype</a><br>
+        <a target="_blank" href="https://github.com/TrangNguyen">Github</a></p>
+     
+    </section>
     <!-- Footer -->    
     <footer id="footer" class="row">
       <div class="small-12 medium-6 columns">
         &copy; 2015 Trang Nguyen | All rights reserved
-      </div>
-      <div class="small-12 medium-6 columns">
-        <ul class="inline-list">
-          <li>
-            <a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a>
-          </li>
-          <li>
-            <a target="_blank" href="skype://trangnguyen80?chat">Skype</a>
-          </li>
-          <!--<li><a target="_blank" href="">LinkedIn</a></li>
-          <li><a target="_blank" href="">Xing</a></li>-->
-          <li>
-            <a target="_blank" href="https://github.com/TrangNguyen">Github</a>
-          </li>
-        </ul>
       </div>
     </footer>  
 		<!-- build:js main.js -->
