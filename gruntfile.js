@@ -45,7 +45,7 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= outputDir %>/main.js': [  '<%= bower.directory %>/angular/angular.js',
+          '<%= outputDir %>/main.js': [  '<%= bower.directory %>/angular/angular.js', '<%= bower.directory %>/angular-scroll/angular-scroll.min.js',
           '<%= outputDir %>/main.js'
          ]
         },
