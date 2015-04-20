@@ -63,8 +63,8 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-// $base-font-size: 100%;
-
+$base-font-size: 17px;
+$rem-base: $base-font-size;
 // The $base-font-size is 100% while $base-line-height is 150%
 // $base-line-height: 150%;
 
@@ -92,7 +92,7 @@ $font-family-sans-serif: "filson-pro", "Helvetica Neue", Helvetica, Roboto, Aria
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
- $font-weight-normal: normal;
+ $font-weight-normal: 300;
 $font-weight-bold: bold;
 
 // $white       : #FFFFFF;
@@ -206,17 +206,17 @@ $header-line-height: 1.2;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(44);
-$h2-font-size: rem-calc(23);
-$h3-font-size: rem-calc(20);
-// $h4-font-size: rem-calc(23);
+$h1-font-size: rem-calc(26);
+$h2-font-size: rem-calc(44);
+$h3-font-size: rem-calc(22);
+$h4-font-size: 1rem;
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
-$h1-font-reduction: rem-calc(14);
- $h2-font-reduction: rem-calc(4);
-// $h3-font-reduction: rem-calc(5);
+$h1-font-reduction: rem-calc(5);
+$h2-font-reduction: rem-calc(16);
+$h3-font-reduction: rem-calc(2);
 // $h4-font-reduction: rem-calc(5);
 // $h5-font-reduction: 0;
 // $h6-font-reduction: 0;

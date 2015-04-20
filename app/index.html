@@ -6,7 +6,7 @@
 		  <meta charset="utf-8">
 			<meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 		  <title>Trang Nguyen</title>
-		  <meta name="description" content="Trang Nguyen web development's portfolio" />
+		  <meta name="description" content="Trang Nguyen web development’s portfolio" />
 		  <meta name="author" content="Design by Berliner Süden. Development by  Trang Nguyen" />
 		  <meta name="keywords" content="mobile app development, web development, web app development, berlin, germany, javascript, angular, node, mongo, requirejs, html5" />
 		  
@@ -17,49 +17,84 @@
       <!-- build:css css/app.css-->
         <link rel="stylesheet" href="css/app.css">	      
       <!-- /build -->
+      
+      <!--favicon-->
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="images/favicon/favicon-196x196.png" sizes="196x196" />
+      <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+      <link rel="icon" type="image/png" href="images/favicon/favicon-128.png" sizes="128x128" />
+      <meta name="application-name" content="Trang Nguyen"/>
+      <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png" />
+      <meta name="msapplication-square70x70logo" content="images/favicon/mstile-70x70.png" />
+      <meta name="msapplication-square150x150logo" content="images/favicon/mstile-150x150.png" />
+      <meta name="msapplication-wide310x150logo" content="images/favicon/mstile-310x150.png" />
+      <meta name="msapplication-square310x310logo" content="images/favicon/mstile-310x310.png" />
 			
 		</head>
 		<body ng-app="trangApp" ng-controller="AppController">
 		
+		
+		
 		<section class="row" id="me-intro">
 		  
-		  <div class="small-12 columns"> 
-		         
-        <h1>Hi, my name is Trang Nguyen, a freelance web developer in Berlin.</h1>        
-        <h2>I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>.</h2>
-        <h2>I’m looking for exciting challenging projects! <a class="more" ng-click="more=!more">{{!more && 'More' || 'Less'}} about me.</a></h2>
-        
-       <!-- <ul class="inline-list" id="contact">
-          <li><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a></li>
-          <li><a target="_blank" href="skype://trangnguyen80?chat">Skype</a></li>
-          <!--<li><a target="_blank" href="">LinkedIn</a></li>
-          <li><a target="_blank" href="">Xing</a></li>--*>
-          <li><a target="_blank" href="https://github.com/TrangNguyen">Github</a></li>
-        </ul>-->
-                
+		  <div  class="small-12 columns text-center logo"> 
+		    <h1><a class="highlighter" href="">Trang Nguyen</a></h1>
+		  </div>
+		  
+		  <div class="small-12 columns"> 		    
+		    <h1 class="motto">I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span>. </h1>
+		    <img src="images/nguyen.jpg">
+		  </div>
+		  
+		  <div class="small-12 medium-8 large-6 columns"> 
+        <div class="intro">
+          <h1>Hi, my name is <a class="more" href="">Trang Nguyen</a>. I am a freelance web developer in Berlin looking for new and challenging projects! Find out <a class="more" ng-click="more=!more" href="#reasons" du-smooth-scroll du-scrollspy duration="500">more about me</a> or see <a class="more" href="#levin-monsigny" du-smooth-scroll du-scrollspy duration="500">my work.</a></h1>
+        </div>
+      </div>
+      
+      <div id="contact" class="small-12 medium-4 large-6 columns text-center">
+        <div class="row">
+          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="mailto:trangnguyen80@gmail.com"><img src="fonts/icons/mail.svg"/>Email</a></div>
+          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
+          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
+          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="https://de.linkedin.com/in/trangnguyenDE"><img src="fonts/icons/profile.svg"/>LinkedIn</a></div>
+        </div>
+      </div>
+      
+      <div class="small-12 columns">
         <ul id="reasons" ng-show="more" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">       
           <li  ng-repeat="reason in reasons">
-            <h3>{{reason.head}}</h3>
+            <h4>{{reason.head}}</h4>
             <p compile="reason.description"></p>
           </li>
           
-          <li><h3>And what more, I love challenge. So if you have one, let’s talk about it.</h3></li>
+          <li><h4>And what more, I love challenge. So if you have one, let’s <a class="highlighter" href="#footer" du-smooth-scroll du-scrollspy duration="2000">get in touch.</a></h4></li>
         </ul>
-      
       </div>
+      
     </section>
     
     <section>
     
-      <div class="row text-center recent">
-        <p class="small-12 columns">Recent work:</p>
-      </div>
+      <!--<div class="row text-center recent">
+        <p class="small-12 columns"><img width="20" height="20" src="fonts/icons/arrow-down.svg"> Recent work:</p>
+      </div>-->
       
       <article class="row project" ng-repeat="project in projects" id="{{project.id}}">
       
         <div class="small-12 columns" >
           <img ng-src="{{project.image}}">
-          <h1>{{project.title}}</h1>
+          <h2>{{project.title}}</h2>
         </div>
         
         <div id="project-desc" class="small-12 medium-6 columns">
@@ -74,18 +109,19 @@
             </li>
           </ul>
           <p>Built with: <span class="techstack">{{project.techstack}}</span></p>
-          <p><a target="_blank" href="{{project.link}}">See this project online</a></p>        
+          <p>See this <a class="highlighter" target="_blank" href="{{project.link}}">project online</a></p>        
         </div>
         
       </article>
       
     </section>
     <section class="row text-center cta">
-      <h2 class="small-12 columns">I’m looking for exciting challenging projects — get in touch!</h2>
+      <h3 class="small-12 columns">I’m looking for new and challenging projects — get in touch!</h3>
        
-        <p><a target="_blank" href="mailto:trangnguyen80@gmail.com">Email</a><br>
-        <a target="_blank" href="skype://trangnguyen80?chat">Skype</a><br>
-        <a target="_blank" href="https://github.com/TrangNguyen">Github</a></p>
+        <div class="small-6 medium-3 columns"><a target="_blank" href="mailto:trangnguyen80@gmail.com"><img src="fonts/icons/mail.svg"/>Email</a></div>
+        <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
+        <div class="small-6 medium-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
+        <div class="small-6 medium-3 columns"><a target="_blank" href="https://de.linkedin.com/in/trangnguyenDE"><img src="fonts/icons/profile.svg"/>LinkedIn</a></div>
      
     </section>
     <!-- Footer -->    
@@ -96,6 +132,8 @@
     </footer>  
 		<!-- build:js main.js -->
 		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../bower_components/angular-scroll/angular-scroll.min.js"></script>
+		
 		<script src="modules/main.js "></script>
 		<!-- /build -->	
 		</body>

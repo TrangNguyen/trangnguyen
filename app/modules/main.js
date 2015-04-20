@@ -2,14 +2,15 @@
 "use strict";
 
 //declare our app with its module dependencies
-angular.module("trangApp", []);
+angular.module("trangApp", ["duScroll"]).value('duScrollOffset', 30);
   
 // controller
-angular.module("trangApp").controller('AppController', ['$scope', '$location', '$document', '$timeout', function($scope, $location, $document, $timeout) {
+angular.module("trangApp").controller('AppController', ['$scope', '$location', '$anchorScroll', '$document', '$timeout', function($scope, $location, $anchorScroll, $document, $timeout) {
  
   // to change words on me section.
   $scope.things = [
     "web",
+    "mobile",
     "realtime",
     "multilingual",
     "multiuser",
@@ -26,27 +27,29 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     "NodeJS",
     "WordPress"
   ];
-    
+  
+  //adjectives for animation  
   function changeWord(i) {
-    if(i <$scope.things.length) {   
+    if(i <$scope.things.length) {  
       $scope.thing = $scope.things[i];
       i++;    
       $timeout(function() {
         changeWord(i);
-      }, 10000);
+      }, 2000);
     } else {
       i = 0;
       changeWord(i);
     }    
   }
   
+  //technologies for animation
   function changeTech(j) {
     if(j <$scope.techs.length) {   
       $scope.tech = $scope.techs[j];
       j++;    
       $timeout(function() {
         changeTech(j);
-      }, 10000);
+      }, 2000);
     } else {
       j = 0;
       changeTech(j);
@@ -54,14 +57,26 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   }
   changeTech(0);
   
-  //make a slight delay of the 2 text switches.
-  $timeout(function() {
-    changeWord(0);
-  }, 2500);
+  changeWord(0);
   
+  //make a slight delay between 2 text switches.
+  $timeout(function() {
+    changeWord(1);
+  }, 1000);
+  
+  //scroll to content with anchor scroll, remove hash.
+  $scope.scrollTo = function(id) {
+    var old = $location.hash();
+    $location.hash(id);
+    $anchorScroll();
+    //reset to old to keep any additional routing logic from kicking in
+    $location.hash(old);
+  };
+  
+  //about me
   $scope.reasons = [{
-    head: 'I’m a self-taught programmer',
-    description: 'I’m an autodidact developer and a cross-disciplinarian, having graduated in film editing, I make <a target="_blank" href="http://midcut.com">films</a>, especially photofilms and installations. While looking for a technological solution to my video installation work, I was introduced to NodeJS and I was thrilled. Later with MongoDB and AngularJS I made myself a full-stack developer.'
+    head: 'I’m a self-taught developer',
+    description: 'I’m an autodidact developer and a cross-disciplinarian. Having graduated in film editing, I make <a target="_blank" href="http://midcut.com">films</a>, especially photofilms and installations. While looking for a technological solution to my video installation work, I was introduced to NodeJS and I was thrilled. Later with MongoDB and AngularJS I made myself a full-stack developer.'
   },{
     head: 'I’m a doer',
     description: 'Whatever I set myself into, I’ve excelled at it, whether it’s making exquisite meals or knitting a motherboard pattern. I take great pride in translating challenging design concepts into shipping applications and find an incredible reward seeing the result of my hours of hard work online.'
@@ -73,6 +88,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
     description: 'I love planning, I do extensive research, prototype, test and iterate, that goes for coding as much as for filmmaking. A project is not finished until I have seen the result, had a wrap-up with involved parties and drawn lessons for the next.'
   }];
   
+  //recent projects  
   $scope.projects = [{
     title: 'Levin-Monsigny Landschaftsarchitekten',
     id:'levin-monsigny',
@@ -134,7 +150,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   }];  
 }]);
 
-// directive to compile html element as is.
+// directive to compile html element as is, inline linking
 angular.module("trangApp").directive('compile', function($compile) {
   // directive factory creates a link function
   return function(scope, element, attrs) {
@@ -145,8 +161,7 @@ angular.module("trangApp").directive('compile', function($compile) {
       },
       function(value) {
         // when the 'compile' expression changes assign it into the current DOM
-        element.html(value);
-  
+        element.html(value);  
         // compile the new DOM and link it to the current scope. We only compile .childNodes so that we don't get into infinite loop compiling ourselves
         $compile(element.contents())(scope);
       }
