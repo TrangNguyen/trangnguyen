@@ -103,13 +103,13 @@ module.exports = function (grunt) {
 					network: ["*"],
 					fallback: [],
 					exclude: [],
-					preferOnline: false,
+					preferOnline: true,
 					timestamp: true
 				},
 
 				src: ["**/*", "!modules/main.js.map", "!modules/main.js.src",
 					//TODO - remove folder names manually, update grunt-manifest to have it done automatically
-					"!js", "!css", "!images", "!images/build", "!modules", "!modules/templates"],
+					"!js", "!css", "!images", "!fonts", "!images/build", "!modules", "!modules/templates"],
 				dest: "<%= pkg.folders.build + pkg.name + '-' + pkg.version + '/' + pkg.name %>.manifest"
 			}
 		},
@@ -207,9 +207,9 @@ module.exports = function (grunt) {
 			images: {
 				files: [{
 					expand: true,
-					dest: '<%= outputDir %>/images/build/',
+					dest: '<%= outputDir %>/images/',
 					src: ['**', "!**/README"],
-					cwd: '<%= pkg.folders.wwwRoot%>images/build/'
+					cwd: '<%= pkg.folders.wwwRoot%>images/'
 				}]
 			},
 			media: {
@@ -232,7 +232,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					dest: '<%= outputDir %>/fonts/',
-					src: ['**'],
+					src: ['**', "!**/README"],
 					cwd: '<%= pkg.folders.wwwRoot%>fonts/'
 				}]
 			},
