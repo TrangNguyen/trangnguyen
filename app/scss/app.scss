@@ -78,12 +78,33 @@ a.highlighter {
   font-weight: 700;
 }
 
-.motto {
-  position:absolute;
-  bottom: 50%;
-  left:$globalspacing * 6;
-  padding-right:$globalspacing * 4 !important;
-  z-index:98;
+.motto-container {
+  padding-top:$globalspacing * 6 !important;
+  min-height: $globalspacing * 18;
+  @media #{$medium-only} {
+    min-height: $globalspacing * 32;
+  }
+  
+  .motto {
+
+    @media #{$medium-up} {
+      padding-top:0;
+      padding-bottom:0;
+//      position:absolute;
+//      bottom: $globalspacing;
+//      left:$globalspacing * 6;
+      padding-right:$globalspacing * 4 !important;
+//      z-index:98;
+    }
+  }
+  
+  h1.motto {
+    font-weight:700;
+    font-size: $h3-font-size;
+    @media #{$medium-up} {
+      font-size: $h2-font-size;
+    }
+  }
 }
 
 #me-intro {
@@ -97,14 +118,7 @@ a.highlighter {
   }
   
   .intro {
-    min-height: 140px;
-    @media #{$medium-up} {
-      min-height: 240px;
-    }
-    
-    @media #{$large-up} {
-      min-height: 240px;
-    }
+    padding-bottom: $globalspacing * 3;
   }
 }
 
@@ -127,7 +141,8 @@ a.highlighter {
 /* animation on text switch */
 span.my-thing{
     display: inline-block;
-    color: lighten($mediumgrey, 10%);
+//    color: lighten($mediumgrey, 10%);
+    color: $highlighter;
     font-weight: 700;
 //    text-decoration:underline;
 //    transition: background-color 2s linear 2s;
@@ -139,7 +154,7 @@ span.my-thing{
 /* animation on tech switch */
 span.my-tech{
     display: inline-block;
-    color: lighten($mediumgrey, 10%);
+    color: $highlighter;
     font-weight: 700;
 //    text-decoration:underline;
 

@@ -207,7 +207,7 @@ $header-line-height: 1.2;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(26);
-$h2-font-size: rem-calc(44);
+$h2-font-size: rem-calc(40);
 $h3-font-size: rem-calc(22);
 $h4-font-size: 1rem;
 // $h5-font-size: rem-calc(18);
@@ -217,7 +217,7 @@ $h4-font-size: 1rem;
 $h1-font-reduction: rem-calc(5);
 $h2-font-reduction: rem-calc(16);
 $h3-font-reduction: rem-calc(2);
-// $h4-font-reduction: rem-calc(5);
+$h4-font-reduction: 0;
 // $h5-font-reduction: 0;
 // $h6-font-reduction: 0;
 

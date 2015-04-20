@@ -7770,7 +7770,7 @@ h3 {
 
 /* line 272, ../scss/foundation/components/_type.scss */
 h4 {
-  font-size: 0.70588rem;
+  font-size: 1rem;
 }
 
 /* line 273, ../scss/foundation/components/_type.scss */
@@ -9327,55 +9327,65 @@ a.highlighter {
 }
 
 /* line 81, ../scss/app.scss */
-.motto {
-  position: absolute;
-  bottom: 50%;
-  left: 3.52941rem;
-  padding-right: 2.35294rem !important;
-  z-index: 98;
+.motto-container {
+  padding-top: 3.52941rem !important;
+  min-height: 10.58824rem;
 }
-
-/* line 90, ../scss/app.scss */
-#me-intro h1 {
-  padding-top: 1.17647rem;
-  line-height: 1.4;
-}
-/* line 94, ../scss/app.scss */
-#me-intro .more {
-  color: #2A2A2A;
-  font-weight: 700;
-}
-/* line 99, ../scss/app.scss */
-#me-intro .intro {
-  min-height: 140px;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 99, ../scss/app.scss */
-  #me-intro .intro {
-    min-height: 240px;
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  /* line 81, ../scss/app.scss */
+  .motto-container {
+    min-height: 18.82353rem;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 99, ../scss/app.scss */
-  #me-intro .intro {
-    min-height: 240px;
+@media only screen and (min-width: 40.0625em) {
+  /* line 88, ../scss/app.scss */
+  .motto-container .motto {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 2.35294rem !important;
+  }
+}
+/* line 101, ../scss/app.scss */
+.motto-container h1.motto {
+  font-weight: 700;
+  font-size: 1.29412rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 101, ../scss/app.scss */
+  .motto-container h1.motto {
+    font-size: 2.58824rem;
   }
 }
 
 /* line 111, ../scss/app.scss */
+#me-intro h1 {
+  padding-top: 1.17647rem;
+  line-height: 1.4;
+}
+/* line 115, ../scss/app.scss */
+#me-intro .more {
+  color: #2A2A2A;
+  font-weight: 700;
+}
+/* line 120, ../scss/app.scss */
+#me-intro .intro {
+  padding-bottom: 1.76471rem;
+}
+
+/* line 125, ../scss/app.scss */
 #reasons {
   padding-top: 1.17647rem;
   padding-bottom: 1.17647rem;
 }
-/* line 114, ../scss/app.scss */
+/* line 128, ../scss/app.scss */
 #reasons h4 {
   font-weight: 700;
 }
-/* line 117, ../scss/app.scss */
+/* line 131, ../scss/app.scss */
 #reasons a {
   text-decoration: underline;
 }
-/* line 120, ../scss/app.scss */
+/* line 134, ../scss/app.scss */
 #reasons a.highlighter {
   color: #d6aa51;
   border-bottom: 2px solid #d6aa51;
@@ -9383,85 +9393,85 @@ a.highlighter {
 }
 
 /* animation on text switch */
-/* line 128, ../scss/app.scss */
+/* line 142, ../scss/app.scss */
 span.my-thing {
   display: inline-block;
-  color: #bfbfbf;
+  color: #d6aa51;
   font-weight: 700;
 }
 
 /* animation on tech switch */
-/* line 140, ../scss/app.scss */
+/* line 155, ../scss/app.scss */
 span.my-tech {
   display: inline-block;
-  color: #bfbfbf;
+  color: #d6aa51;
   font-weight: 700;
 }
 
-/* line 157, ../scss/app.scss */
+/* line 172, ../scss/app.scss */
 .project h2 {
   padding-top: 0.88235rem;
   padding-bottom: 0.58824rem;
   font-weight: 700;
 }
 
-/* line 164, ../scss/app.scss */
+/* line 179, ../scss/app.scss */
 .recent {
   padding-top: 2.35294rem;
   padding-bottom: 0.58824rem;
 }
 
-/* line 174, ../scss/app.scss */
+/* line 189, ../scss/app.scss */
 #project-desc h2 {
   padding-top: 0.58824rem;
 }
 
-/* line 180, ../scss/app.scss */
+/* line 195, ../scss/app.scss */
 #team ul {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 184, ../scss/app.scss */
+/* line 199, ../scss/app.scss */
 #team ul li {
   padding: 0.14706rem;
   border-top: 1px solid #a5a5a5;
 }
-/* line 187, ../scss/app.scss */
+/* line 202, ../scss/app.scss */
 #team ul li:last-of-type {
   border-bottom: 1px solid #a5a5a5;
 }
-/* line 192, ../scss/app.scss */
+/* line 207, ../scss/app.scss */
 #team ul li span {
   color: #7f7f7f;
 }
-/* line 196, ../scss/app.scss */
+/* line 211, ../scss/app.scss */
 #team a {
   color: #2A2A2A;
   padding: 0;
   text-decoration: none;
 }
-/* line 201, ../scss/app.scss */
+/* line 216, ../scss/app.scss */
 #team a.highlighter {
   color: #d6aa51;
   border-bottom: 1px solid #d6aa51;
 }
 
-/* line 206, ../scss/app.scss */
+/* line 221, ../scss/app.scss */
 #contact {
   padding-top: 0.58824rem;
   padding-bottom: 2.35294rem;
 }
-/* line 211, ../scss/app.scss */
+/* line 226, ../scss/app.scss */
 #contact ul.inline-list li {
   margin-left: 0;
   margin-right: 0.58824rem;
 }
-/* line 214, ../scss/app.scss */
+/* line 229, ../scss/app.scss */
 #contact ul.inline-list li a {
   text-decoration: none;
 }
 
-/* line 221, ../scss/app.scss */
+/* line 236, ../scss/app.scss */
 footer {
   padding-bottom: 1.17647rem;
   padding-top: 1.17647rem;
