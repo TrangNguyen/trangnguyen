@@ -66,6 +66,7 @@ article {
   z-index:99;
   
   h1 {
+    font-weight: 700;
     @include border-radius(18px);
     border: 1px solid $highlighter;
     display:inline;
@@ -75,12 +76,16 @@ article {
 
 a.highlighter {
   color: $highlighter !important;
-  font-weight: 700;
 }
 
 .motto-container {
   padding-top:$globalspacing * 6 !important;
   min-height: $globalspacing * 18;
+  
+  @media #{$small-only} {
+    min-height: $globalspacing * 24;
+  }
+  
   @media #{$medium-only} {
     min-height: $globalspacing * 32;
   }
@@ -99,8 +104,7 @@ a.highlighter {
   }
   
   h1.motto {
-    font-weight:700;
-    font-size: $h3-font-size;
+    font-size: $h3-font-size + rem-calc(4);
     @media #{$medium-up} {
       font-size: $h2-font-size;
     }
