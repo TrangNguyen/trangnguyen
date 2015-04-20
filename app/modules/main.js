@@ -131,8 +131,8 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   },{
     title: 'Random Embassy',
     id: 'random-embassy',
-    intro: 'As Smyrski Creatives turned Random Embassy, the Philadelphia-based creative studio approached Berliner Süden for a new digital portfolio.',
-    process: 'To showcase the Philadelphia-based creative studio Random Embassy’s various projects and design activities, I developed an Angular application that is optimized for mobile, with dynamic content loading, unique layout for every featured project and smooth transition combining AngularJS and CSS Animation. While Berliner Süden took care of WordPress backend data design and CSS-Development, I optimized the WordPress JSON API to feed content to the Angular app.',
+    intro: 'Random Embassy, the Philadelphia-based creative studio approached Berliner Süden for a new mobile-ready digital portfolio.',
+    process: 'To showcase Random Embassy’s various projects and design activities, I developed an Angular application that is optimized for mobile, with dynamic content loading, unique layout for every featured project and smooth transitions making use of AngularJS and CSS animations. While Berliner Süden took care of WordPress backend data design and CSS-Development, I optimized the WordPress JSON API to feed content to the Angular app.',
     team: [ 
       { name: "Anthony Smyrski",
         role: "Design",
