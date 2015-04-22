@@ -76,13 +76,13 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   //about me
   $scope.reasons = [{
     head: 'I’m a self-taught developer',
-    description: 'I studied Computer Science Education, Ecology and most recently Film, (see my <a target="_blank" href="http://midcut.com">film</a> portfolio). My video installation work lead me to development and I use what I learned in Film in my development work.'
+    description: 'I studied Computer Science Education, Ecology and most recently Film, (see my <a target="_blank" href="http://midcut.com">film</a> portfolio). My video installation work lead me to development and my experience in other disciplines help me in my development work.'
   },{
     head: 'I’m a doer',
     description: 'I take great pride in translating challenging design concepts into working applications and love seeing the result of many hours of work online.'
   },{
     head: 'I’m a team player',
-    description: 'I respect my client’s interest and I love working on a team to work together to build a great product.'
+    description: 'I respect my client’s interest and I love working on a team together to build great products.'
   },{
     head: 'I’m a perfectionist',
     description: 'I do extensive research, prototyping, testing and iteration. A project is finished once I have seen the result, have had a wrap-up with involved parties and drawn lessons for the next job.'

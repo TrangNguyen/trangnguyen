@@ -109,7 +109,7 @@ module.exports = function (grunt) {
 
 				src: ["**/*", "!modules/main.js.map", "!modules/main.js.src",
 					//TODO - remove folder names manually, update grunt-manifest to have it done automatically
-					"!js", "!css", "!images", "!fonts", "!images/build", "!modules", "!modules/templates"],
+					"!js", "!css", "!images", "!images/favicon", "!fonts", "!fonts/icons", "!images/build", "!modules"],
 				dest: "<%= pkg.folders.build + pkg.name + '-' + pkg.version + '/' + pkg.name %>.manifest"
 			}
 		},
@@ -256,7 +256,7 @@ module.exports = function (grunt) {
 		cssmin: {
 			css: {
 				files: {
-					'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css': [
+					'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css': [
 							//include all css files in correct order, add new files in desired order
 							'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css'
 						]

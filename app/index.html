@@ -41,17 +41,13 @@
       <meta name="msapplication-square310x310logo" content="images/favicon/mstile-310x310.png" />
 			
 		</head>
-		<body ng-app="trangApp" ng-controller="AppController">
+		<body ng-app="trangApp" ng-controller="AppController">		
 		
-		
-		
-		<section class="row" id="me-intro">
-		  
+		<section class="row" id="me-intro">		  
 		  <div  class="small-12 columns text-center logo"> 
 		    <h1><a class="highlighter" href="#me-intro" du-smooth-scroll du-scrollspy >Trang Nguyen</a></h1>
 		  </div>
-		  
-		  
+		  		  
 		  <div class="small-12 columns">
 		    <!--<img src="images/nguyen.jpg"> 	-->
 		    <div class="motto-container">	    
@@ -65,15 +61,6 @@
 		    </div>
 		  </div>
       
-      <!--<div id="contact" class="small-12 medium-4 large-6 columns text-center">
-        <div class="row">
-          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="mailto:trangnguyen80@gmail.com"><img src="fonts/icons/mail.svg"/>Email</a></div>
-          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
-          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
-          <div class="small-3 medium-6 large-3 columns"><a target="_blank" href="https://de.linkedin.com/in/trangnguyenDE"><img src="fonts/icons/profile.svg"/>LinkedIn</a></div>
-        </div>
-      </div>-->
-      
       <div class="small-12 columns">
         <ul id="reasons" ng-show="more" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">       
           <li  ng-repeat="reason in reasons">
@@ -83,18 +70,11 @@
           
           <li><h3>And what more, I love challenge. So if you have one, let’s <a class="highlighter" href="#footer" du-smooth-scroll du-scrollspy duration="2000">get in touch.</a></h3></li>
         </ul>
-      </div>
-      
+      </div>      
     </section>
     
-    <section>
-    
-      <!--<div class="row text-center recent">
-        <p class="small-12 columns"><img width="20" height="20" src="fonts/icons/arrow-down.svg"> Recent work:</p>
-      </div>-->
-      
-      <article class="row project" ng-repeat="project in projects" id="{{project.id}}">
-      
+    <section>      
+      <article class="row project" ng-repeat="project in projects" id="{{project.id}}">      
         <div class="small-12 columns" >
           <img ng-src="{{project.image}}">
           <h2>{{project.title}}</h2>
@@ -113,20 +93,18 @@
           </ul>
           <p>Built with: <span class="techstack">{{project.techstack}}</span></p>
           <p>See this <a class="highlighter" target="_blank" href="{{project.link}}">project online</a></p>        
-        </div>
-        
-      </article>
-      
+        </div>        
+      </article>      
     </section>
+    
     <section class="row text-center cta">
-      <h2 class="small-12 columns">I’m looking for new and challenging projects — get in touch!</h2>
-       
-        <div class="small-6 medium-3 columns"><a target="_blank" href="mailto:trangnguyen80@gmail.com"><img src="fonts/icons/mail.svg"/>Email</a></div>
-        <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
-        <div class="small-6 medium-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
-        <div class="small-6 medium-3 columns"><a target="_blank" href="https://de.linkedin.com/in/trangnguyenDE"><img src="fonts/icons/profile.svg"/>LinkedIn</a></div>
-     
+      <h2 class="small-12 columns">I’m looking for new and challenging projects — get in touch!</h2>       
+      <div class="small-6 medium-3 columns"><a target="_blank" href="mailto:trangnguyen80@gmail.com"><img src="fonts/icons/mail.svg"/>Email</a></div>
+      <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
+      <div class="small-6 medium-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
+      <div class="small-6 medium-3 columns"><a target="_blank" href="https://de.linkedin.com/in/trangnguyenDE"><img src="fonts/icons/profile.svg"/>LinkedIn</a></div>     
     </section>
+    
     <!-- Footer -->    
     <footer id="footer" class="row">
       <div class="small-12 medium-6 columns">
