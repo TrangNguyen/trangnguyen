@@ -3,7 +3,7 @@
   "homepage": "http://trangnguyen.de",
   "author": "Trang Nguyen <trangnguyen80@gmail.com>",
   "description": "Trang Nguyen's web development portfolio",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "devDependencies": {
     "karma": "0.12.x",
     "karma-jasmine": "0.2.x",

@@ -1,7 +1,7 @@
 {
   "name": "trangnguyen",
   "homepage": "https://github.com/TrangNguyen/trangnguyen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "app/css/app.css",
   "ignore": [
     ".jshintrc",
