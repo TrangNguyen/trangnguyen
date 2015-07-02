@@ -32,10 +32,7 @@ html, body {
 }
 
 .row{
-  &.full-width{
-    max-width: 100% !important;
-    background-color: $lightgrey;
-  }
+  max-width: 80% !important;
 }
 
 article {
@@ -64,14 +61,58 @@ article {
   top:$globalspacing / 2;
   left:0;
   z-index:99;
-  
   h1 {
     font-weight: 700;
-    @include border-radius(18px);
+    
+    border-radius: 0px 0px 6px 6px;
+    -moz-border-radius: 0px 0px 6px 6px;
+    -webkit-border-radius: 0px 0px 6px 6px;
+    
     border: 1px solid $highlighter;
     display:inline;
     padding: $globalspacing;
+    background-color:$body-bg;
   }
+  
+  &.menuOpen {
+    position:fixed;
+    top:70px;
+    left:0;
+    height:70px;
+    min-height:70px;
+    z-index:99;
+  
+  }
+}
+
+#mainNav {
+  position:fixed;
+  top:0;
+  left:0;
+  height:70px;
+  min-height:70px;
+  background-color: rgba(0,0,0,0.75);
+  
+  ul {
+    list-style-type: none; 
+    text-align: center;
+    padding-top: $globalspacing * 2;
+    li { 
+      display: inline-block;
+      padding-right: $globalspacing;
+      font-size: ($h1-font-size - remcalc(1));
+      
+      @media #{$large-up} {
+        padding-right: $globalspacing * 6;
+      }
+      
+    }
+    a {
+      text-decoration: none;
+      color: $highlighter !important;
+    }
+  }
+  z-index:99;
 }
 
 a.highlighter {
@@ -95,11 +136,7 @@ a.highlighter {
     @media #{$medium-up} {
       padding-top:0;
       padding-bottom:0;
-//      position:absolute;
-//      bottom: $globalspacing;
-//      left:$globalspacing * 6;
       padding-right:$globalspacing * 4 !important;
-//      z-index:98;
     }
   }
   
@@ -126,6 +163,33 @@ a.highlighter {
   }
 }
 
+#expertise {
+  ul {
+   list-style-type: none;
+   margin-left: 0;
+   
+   li {
+     padding: ($globalspacing / 4);
+     border-top: 1px solid $mediumgrey;
+     &:last-of-type {
+       border-bottom: 1px solid $mediumgrey;
+     }     
+   }
+   
+   li span{
+     color: darken( $mediumgrey, 15% );
+   }
+  }
+  a {
+    color: $black;
+    padding: 0;
+    text-decoration: none;       
+  }
+  span.highlighter {
+    color: darken( $highlighter, 15% );
+  }
+}
+
 #reasons {
   padding-top: $globalspacing * 2;
   padding-bottom: $globalspacing * 2;
@@ -140,6 +204,13 @@ a.highlighter {
     border-bottom:  2px solid $highlighter;
     text-decoration: none;
   }
+}
+
+#contactLink {
+   margin-bottom: $globalspacing * 5 !important;
+   @media #{$medium-up} {
+     margin-bottom: $globalspacing * 10 !important;
+   }
 }
 
 /* animation on text switch */
@@ -218,7 +289,7 @@ div.project {
     text-decoration: none;       
   }
   a.highlighter {
-    color: $highlighter;
+    color: darken( $highlighter, 15% );
     border-bottom:  1px solid $highlighter;
   }
 }

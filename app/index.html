@@ -14,7 +14,7 @@
 		  <script src="//use.typekit.net/ghc4jmy.js"></script>
 		  <script>try{Typekit.load();}catch(e){}</script>
 		  
-      <!-- build:css css/app.css-->
+      <!-- build:css css/trangnguyen.css-->
         <link rel="stylesheet" href="css/app.css">	      
       <!-- /build -->
       
@@ -43,37 +43,62 @@
 		</head>
 		<body ng-app="trangApp" ng-controller="AppController">		
 		
-		<section class="row" id="me-intro">		  
-		  <div  class="small-12 columns text-center logo"> 
-		    <h1><a class="highlighter" href="#me-intro" du-smooth-scroll du-scrollspy >Trang Nguyen</a></h1>
+		<section class="row" id="me-intro">	
+			  
+		  <div class="small-12 columns text-center logo" ng-class="{'menuOpen':menuOpen}"> 
+		    <h1><a class="highlighter" ng-click="menuOpen =!menuOpen">Trang Nguyen</a></h1>
+		    <!--<h1><a class="highlighter menuOpen" ng-click="menuOpen =!menuOpen">=</a></h1>-->
 		  </div>
+		  
+      <div id="mainNav" class="small-12 columns text-center" ng-show="menuOpen">
+        <ul>
+          <li><a class="more" href="#me-intro" du-smooth-scroll du-scrollspy duration="2000">Home</a></li>  		    
+          <li><a class="more" href="#reasons" du-smooth-scroll du-scrollspy duration="500">About</a></li>
+          <li><a class="more" href="#levin-monsigny" du-smooth-scroll du-scrollspy duration="500">Work</a></li>
+          <li><a class="more" href="#footer" du-smooth-scroll du-scrollspy duration="2000">Contact</a></li>
+        </ul>
+      </div>
 		  		  
 		  <div class="small-12 columns">
-		    <!--<img src="images/nguyen.jpg"> 	-->
 		    <div class="motto-container">	    
 		      <h1 class="motto">Hi, my name is Trang Nguyen. <br class="show-for-large-up">I build <span class="my-thing value-{{thing}}">{{thing}}</span> apps with <span class="my-tech value-{{tech}}">{{tech}}</span></h1>
 		    </div>
+		    <img src="images/trang-banner.jpg">
 		  </div>
 		  
 		  <div class="small-12 large-8 columns"> 
 		    <div class="intro">
-		      <h1>I am a freelance web developer in Berlin. <a class="more" href="#footer" du-smooth-scroll du-scrollspy duration="2000">Contact me</a>, find out <a class="more" ng-click="more=!more" href="#reasons" du-smooth-scroll du-scrollspy duration="500">more about me</a> or see <a class="more" href="#levin-monsigny" du-smooth-scroll du-scrollspy duration="500">my work.</a></h1>
+		      <!--<h1>I am a web developer in Berlin. <a class="more" href="#footer" du-smooth-scroll du-scrollspy duration="2000">Contact me</a>, find out <a class="more" ng-click="more=!more" href="#reasons" du-smooth-scroll du-scrollspy duration="500">more about me</a> or see <a class="more" href="#levin-monsigny" du-smooth-scroll du-scrollspy duration="500">my work.</a></h1>-->
+		      
+		      <h1>I am a web developer in Berlin.</h1>		      		      
 		    </div>
 		  </div>
       
       <div class="small-12 columns">
-        <ul id="reasons" ng-show="more" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">       
-          <li  ng-repeat="reason in reasons">
+        <ul id="reasons" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4 end">       
+          <li ng-repeat="reason in reasons">
             <h4>{{reason.head}}</h4>
             <p compile="reason.description"></p>
           </li>
-          
-          <li><h3>And what more, I love challenge. So if you have one, let’s <a class="highlighter" href="#footer" du-smooth-scroll du-scrollspy duration="2000">get in touch.</a></h3></li>
         </ul>
+        
+        <h1>My expertise</h1>
+        <div id="expertise" class="small-12 columns end">
+          <ul>
+            <li ng-repeat="obj in expertise">
+               <span class="highlighter">{{obj.category}}<span> {{obj.tech}}
+            </li>
+          </ul>
+        </div>
+              
+        <h3 id="contactLink">What’s more, I love challenge. So if you have one, let’s <a class="highlighter" href="#footer" du-smooth-scroll du-scrollspy duration="2000">get in touch.</a></h3>
       </div>      
     </section>
     
-    <section>      
+    <section>
+      <div class="row">
+        <h1 class="small-12 large-8 columns"> Recent works</h1>
+      </div>     
       <article class="row project" ng-repeat="project in projects" id="{{project.id}}">      
         <div class="small-12 columns" >
           <img ng-src="{{project.image}}">
@@ -98,7 +123,8 @@
     </section>
     
     <section class="row text-center cta">
-      <h2 class="small-12 columns">I’m looking for new and challenging projects — get in touch!</h2>       
+      <h2 class="small-12 columns">I’m looking for new and challenging projects.<br>
+       Get in touch!</h2>       
       <div class="small-6 medium-3 columns"><a target="_blank" href="mailto:trang@trangnguyen.de"><img src="fonts/icons/mail.svg"/>Email</a></div>
       <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
       <div class="small-6 medium-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
@@ -106,8 +132,8 @@
     </section>
     
     <!-- Footer -->    
-    <footer id="footer" class="row">
-      <div class="small-12 medium-6 columns">
+    <footer id="footer" class="row text-center">
+      <div class="small-12 columns">
         &copy; 2015 Trang Nguyen | All rights reserved
       </div>
     </footer>  

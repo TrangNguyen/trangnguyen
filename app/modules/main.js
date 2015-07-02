@@ -76,17 +76,38 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
   //about me
   $scope.reasons = [{
     head: 'I’m a self-taught developer',
-    description: 'I studied Computer Science Education, Ecology and most recently Film, (see my <a target="_blank" href="http://midcut.com">film</a> portfolio). My video installation work lead me to development and my experience in other disciplines help me in my development work.'
+    description: 'I studied Computer Science Education, Ecology and most recently Film, (see my <a target="_blank" href="http://midcut.com">film</a> portfolio). My video installation work lead me to development and my experience in other disciplines help me in my development work. I’m a fast learner and I love learning.'
   },{
     head: 'I’m a doer',
-    description: 'I take great pride in translating challenging design concepts into working applications and love seeing the result of many hours of work online.'
+    description: 'I take great pride in translating challenging design concepts into working applications and love seeing the result of many hours of work online. I strive for consistency and clarity in code and if the project is on tight time frame, I can be pragmatic.'
   },{
     head: 'I’m a team player',
-    description: 'I respect my client’s interest and I love working on a team together to build great products.'
+    description: 'I can help you and your team with my knowledge in current web technologies remotely or on location. I learn fast and I adapt to new environments easily. I respect your expertise and value your opinion. I’ve learned from my colleague designers to pay attention to details. Understanding that a product is ultimately for the end-users, I always keep them in mind.'
   },{
     head: 'I’m a perfectionist',
     description: 'I do extensive research, prototyping, testing and iteration. A project is finished once I have seen the result, have had a wrap-up with involved parties and drawn lessons for the next job.'
   }];
+  
+  // technical expertise
+  
+  $scope.expertise = [
+    {
+      category: "Backend framework",
+      tech: "Express (Node.js)"
+      },{
+      category: "Frontend libraries",
+      tech: "AngularJS, jQuery, Foundation, D3, Raphaël"
+    },{
+      category: "CMS",
+      tech: "WordPress, custom CMS with MEAN stack (Mongo Express Angular Node)"
+    },{
+      category: "Tools",
+      tech: "Git, Grunt, Bower"
+    },{
+      category: "Languages",
+      tech: "Javascript, HTML5, CSS3/SCSS/SASS, PHP"
+    }
+  ];
   
   //recent projects  
   $scope.projects = [{
@@ -108,7 +129,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
         link: " "
       }
     ],
-    image: 'media/lml/lml.jpg',
+    image: 'media/lml/lml-3.jpg',
     link:'http://levin-monsigny.eu/',
     techstack: 'AngularJS, WordPress, RequireJS, Grunt, angular-translate, angular-isotope, angular-carousel, jQuery, Foundation, SASS'
   },{
@@ -125,7 +146,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
         link: " "
       }      
     ],
-    image: 'media/cityandhome/city2.jpg',
+    image: 'media/cityandhome/city-and-home.jpg',
     link:'http://city-and-home.de/#/',
     techstack: 'AngularJS, WordPress, RequireJS, Grunt, owlcarousel, angularjs-slider, angular-scroll, jQuery, Foundation, SASS'
   },{
@@ -144,7 +165,7 @@ angular.module("trangApp").controller('AppController', ['$scope', '$location', '
         role: "WordPress & Angular Development"
       } 
     ],
-    image: 'media/randomembassy/random1.jpg',
+    image: 'media/randomembassy/random-embassy.jpg',
     link:'http://randomembassy.com/#/',
     techstack: 'AngularJS, ngInfiniteScroll, WordPress, jQuery, Foundation, SASS'
   }];  

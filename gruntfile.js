@@ -109,7 +109,7 @@ module.exports = function (grunt) {
 
 				src: ["**/*", "!modules/main.js.map", "!modules/main.js.src",
 					//TODO - remove folder names manually, update grunt-manifest to have it done automatically
-					"!js", "!css", "!images", "!images/favicon", "!fonts", "!fonts/icons", "!images/build", "!modules"],
+					"!js", "!css", "!images", "!images/favicon", "!fonts", "!fonts/icons", "!images/build", "!media", "!media/lml", "!media/cityandhome", "!media/randomembassy", "!modules"],
 				dest: "<%= pkg.folders.build + pkg.name + '-' + pkg.version + '/' + pkg.name %>.manifest"
 			}
 		},
@@ -256,7 +256,7 @@ module.exports = function (grunt) {
 		cssmin: {
 			css: {
 				files: {
-					'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%= pkg.name %>.css': [
+					'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/<%=pkg.name %>.css': [
 							//include all css files in correct order, add new files in desired order
 							'<%=pkg.folders.build + pkg.name + "-" + pkg.version %>/css/app.css'
 						]
@@ -311,7 +311,7 @@ module.exports = function (grunt) {
 //      grunt.task.run("bower");			
       grunt.task.run("concat");
       grunt.task.run("uglify");
-//			grunt.task.run("copy:images");
+			grunt.task.run("copy:images");
 			grunt.task.run("copy:media");
 			grunt.task.run("copy:fonts");
 			grunt.task.run("copy:htaccess");
@@ -322,7 +322,7 @@ module.exports = function (grunt) {
 			grunt.task.run("clean:css");
 			//			grunt.task.run("autoprefixer:production");
 			grunt.task.run("manifest");
-			grunt.task.run("compress");
+//			grunt.task.run("compress");
 		}
 	);
 
