@@ -15,7 +15,7 @@ $highlighter: rgb(214,170,81);
      -moz-user-select: none;
       -ms-user-select: none;
        -o-user-select: none;
-          user-select: none; 
+          user-select: none;
 }
 
 @mixin border-radius($radius) {
@@ -32,18 +32,29 @@ html, body {
 }
 
 .row{
-  max-width: 80% !important;
-}
-
-article {
-  margin-bottom: $globalspacing * 5 !important;
   @media #{$medium-up} {
-    margin-bottom: $globalspacing * 10 !important;
+    max-width: 80% !important;
   }
 }
 
+article {
+  background-color: darken($body-bg, 4%);
+  padding-top: $globalspacing * 2.8;
+  padding-bottom: $globalspacing * 2.8;
+  margin-bottom: $globalspacing * 2.8 !important;
+
+  @media #{$medium-up} {
+    margin-bottom: $globalspacing * 6 !important;
+  }
+}
+
+section {
+  padding-top: $globalspacing * 4;
+  padding-bottom: $globalspacing * 4;
+}
+
 .cta {
-  
+
   a {
 //    text-transform: uppercase;
 //    font-weight: 700;
@@ -58,22 +69,25 @@ article {
 
 .logo {
   position:fixed;
-  top:$globalspacing / 2;
+  top:0;
   left:0;
   z-index:99;
+
+  border-top:8px solid $highlighter;
+
   h1 {
     font-weight: 700;
-    
-    border-radius: 0px 0px 6px 6px;
-    -moz-border-radius: 0px 0px 6px 6px;
-    -webkit-border-radius: 0px 0px 6px 6px;
-    
+
     border: 1px solid $highlighter;
+    border-radius: 0px 0px 8px 8px;
+    -moz-border-radius: 0px 0px 8px 8px;
+    -webkit-border-radius: 0px 0px 8px 8px;
+
     display:inline;
     padding: $globalspacing;
-    background-color:$body-bg;
+    background-color:$highlighter;
   }
-  
+
   &.menuOpen {
     position:fixed;
     top:70px;
@@ -81,7 +95,7 @@ article {
     height:70px;
     min-height:70px;
     z-index:99;
-  
+
   }
 }
 
@@ -91,28 +105,48 @@ article {
   left:0;
   height:70px;
   min-height:70px;
-  background-color: rgba(0,0,0,0.75);
-  
+  //background-color: rgba(0,0,0,0.75);
+  background-color: rgba(214,170,81,1);
+
   ul {
-    list-style-type: none; 
+    list-style-type: none;
     text-align: center;
     padding-top: $globalspacing * 2;
-    li { 
+    li {
       display: inline-block;
-      padding-right: $globalspacing;
+      padding-right: $globalspacing / 2;
       font-size: ($h1-font-size - remcalc(1));
-      
+
       @media #{$large-up} {
-        padding-right: $globalspacing * 6;
+        padding-right: $globalspacing;
       }
-      
+
     }
     a {
       text-decoration: none;
-      color: $highlighter !important;
+      color: $black !important;
+      padding: 8px 8px;
+      border: 1px solid darken($highlighter, 10%);
+      border-radius: 8px;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+
+      @media #{$large-up} {
+        padding: 8px 20px;
+      }
+
+
     }
   }
   z-index:99;
+}
+
+#work {
+  //background-color: darken($body-bg, 4%);
+
+  h1 {
+    padding-bottom: $globalspacing * 3;
+  }
 }
 
 a.highlighter {
@@ -121,16 +155,18 @@ a.highlighter {
 
 .motto-container {
   padding-top:$globalspacing * 6 !important;
-  min-height: $globalspacing * 18;
-  
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  height: 24em; /* 1 */
+  justify-content: center;
+
   @media #{$small-only} {
-    min-height: $globalspacing * 24;
+    min-height: 85vh;
   }
-  
-  @media #{$medium-only} {
-    min-height: $globalspacing * 32;
-  }
-  
+
+
   .motto {
 
     @media #{$medium-up} {
@@ -139,8 +175,10 @@ a.highlighter {
       padding-right:$globalspacing * 4 !important;
     }
   }
-  
+
   h1.motto {
+
+    margin: 0 auto;
     font-size: $h3-font-size + rem-calc(4);
     @media #{$medium-up} {
       font-size: $h2-font-size;
@@ -150,14 +188,14 @@ a.highlighter {
 
 #me-intro {
   h1 {
-    padding-top: $globalspacing * 2;
+    padding-top: 0;
     line-height: 1.4;
   }
   .more {
     color: $black;
     font-weight: 700;
   }
-  
+
   .intro {
     padding-bottom: $globalspacing * 3;
   }
@@ -167,15 +205,18 @@ a.highlighter {
   ul {
    list-style-type: none;
    margin-left: 0;
-   
+
    li {
      padding: ($globalspacing / 4);
      border-top: 1px solid $mediumgrey;
      &:last-of-type {
        border-bottom: 1px solid $mediumgrey;
-     }     
+     }
+     @media #{$medium-up} {
+       font-size: $h3-font-size;
+     }
    }
-   
+
    li span{
      color: darken( $mediumgrey, 15% );
    }
@@ -183,7 +224,7 @@ a.highlighter {
   a {
     color: $black;
     padding: 0;
-    text-decoration: none;       
+    text-decoration: none;
   }
   span.highlighter {
     color: darken( $highlighter, 15% );
@@ -233,17 +274,16 @@ span.my-tech{
     font-weight: 700;
 //    text-decoration:underline;
 
-    
+
 //    transition: background-color 2s linear 2s;
 //    &[class*="-add"] {
 //        background-color: yellow;
 //    }
 }
-div.project {
-  
-}
+
 
 .project {
+
   h2 {
     padding-top: $globalspacing * 1.5;
     padding-bottom: $globalspacing;
@@ -262,7 +302,7 @@ div.project {
 #project-desc {
 
   h2 {
-    padding-top: $globalspacing;    
+    padding-top: $globalspacing;
   }
 }
 
@@ -270,15 +310,15 @@ div.project {
   ul {
    list-style-type: none;
    margin-left: 0;
-   
+
    li {
      padding: ($globalspacing / 4);
      border-top: 1px solid $mediumgrey;
      &:last-of-type {
        border-bottom: 1px solid $mediumgrey;
-     }     
+     }
    }
-   
+
    li span{
      color: darken( $mediumgrey, 15% );
    }
@@ -286,7 +326,7 @@ div.project {
   a {
     color: $black;
     padding: 0;
-    text-decoration: none;       
+    text-decoration: none;
   }
   a.highlighter {
     color: darken( $highlighter, 15% );
@@ -297,7 +337,7 @@ div.project {
 
   padding-top: $globalspacing;
   padding-bottom: $globalspacing * 4;
-  
+
   ul.inline-list li {
     margin-left: 0;
     margin-right: $globalspacing;

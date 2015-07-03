@@ -2,10 +2,10 @@
 <!-- Made by Roman Bejnar, SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="mail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 400 400" enable-background="new 0 0 300 300" xml:space="preserve">
-<path fill="none" stroke="#000000" stroke-width="1" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" d="M100.6,122.4h199.5c6,0,10.9,4.9,10.9,10.9v134
+<path fill="none" stroke="#d6aa51" stroke-width="4" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" d="M100.6,122.4h199.5c6,0,10.9,4.9,10.9,10.9v134
 	c0,6-4.9,10.9-10.9,10.9H100.6c-6,0-10.9-4.9-10.9-10.9v-134C89.7,127.3,94.6,122.4,100.6,122.4z"/>
-<path fill="none" stroke="#000000" stroke-width="1" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" d="M92.9,125.6l81.1,74.7l17.6,16.3
+<path fill="none" stroke="#d6aa51" stroke-width="4" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" d="M92.9,125.6l81.1,74.7l17.6,16.3
 	c4.3,4,11,4.1,15.4,0.1l101.2-90.5"/>
-<line fill="none" stroke="#000000" stroke-width="1" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" x1="92" y1="274" x2="175.5" y2="201.7"/>
-<line fill="none" stroke="#000000" stroke-width="1" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" x1="308.3" y1="274.4" x2="225.4" y2="200.3"/>
+<line fill="none" stroke="#d6aa51" stroke-width="4" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" x1="92" y1="274" x2="175.5" y2="201.7"/>
+<line fill="none" stroke="#d6aa51" stroke-width="4" vector-effect="non-scaling-stroke"  stroke-miterlimit="10" x1="308.3" y1="274.4" x2="225.4" y2="200.3"/>
 </svg>
