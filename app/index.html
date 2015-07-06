@@ -52,9 +52,9 @@
       <div id="mainNav" class="small-12 columns text-center" ng-show="menuOpen">
         <ul>
           <li><a class="more" href="#me-intro" du-smooth-scroll du-scrollspy duration="500" ng-click="menuOpen =!menuOpen" >Home</a></li>
-          <li><a class="more" href="#about" du-smooth-scroll du-scrollspy duration="500" ng-click="menuOpen =!menuOpen">About</a></li>
           <li><a class="more" href="#work" du-smooth-scroll du-scrollspy duration="500" ng-click="menuOpen =!menuOpen">Work</a></li>
-          <li><a class="more" href="#contact" du-smooth-scroll du-scrollspy duration="500" ng-click="menuOpen =!menuOpen">Contact</a></li>
+					<li><a class="more" href="#about" du-smooth-scroll du-scrollspy duration="500" ng-click="menuOpen =!menuOpen">About</a></li>
+					<li><a class="more" href="#contact" du-smooth-scroll du-scrollspy duration="500" ng-click="menuOpen =!menuOpen">Contact</a></li>
         </ul>
       </div>
 
@@ -65,29 +65,21 @@
 		  </div>
 
 
-      <div id="about" class="small-12 columns" >
-
-				<h3>My expertise</h3>
+      <div class="small-12 columns" >
 				<div id="expertise">
+					<h1 class="text-center">My expertise</h1>
 	        <ul>
 	          <li ng-repeat="obj in expertise">
 	             <span class="highlighter">{{obj.category}}<span> {{obj.tech}}
 	          </li>
 	        </ul>
 				</div>
-
-        <ul id="reasons" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4 end">
-          <li ng-repeat="reason in reasons">
-            <h5>{{reason.head}}</h5>
-            <p compile="reason.description"></p>
-          </li>
-        </ul>
       </div>
     </section>
 
     <section id="work">
       <div class="row text-center">
-        <h1 class="small-12 large-12 columns"> Recent works</h1>
+        <h1 class="small-12 large-12 columns">Recent works</h1>
       </div>
       <article class="row project" ng-repeat="project in projects" id="{{project.id}}">
         <div class="small-12 columns" >
@@ -115,12 +107,25 @@
 
     </section>
 
-    <img id="contact" src="images/trang-banner.jpg">
 
-    <section class="row text-center cta">
-      <h1 class="small-12 columns">Thanks for stopping by.<br>
-				I’m looking for new projects.<br>
-       Get in touch!</h1>
+
+    <section id="about">
+			<img src="images/trang-banner.jpg">
+			<div class="row">
+				<div class="small-12 large-12 columns">
+		      <h1 class="text-center">About me</h1>
+					<ul id="reasons" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4 end">
+						<li ng-repeat="reason in reasons">
+							<h5>{{reason.head}}</h5>
+							<p compile="reason.description"></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="row text-center cta">
+      <h1 class="small-12 columns">Get in touch</h1>
       <div class="small-6 medium-3 columns"><a target="_blank" href="mailto:trang@trangnguyen.de"><img src="fonts/icons/mail.svg"/>Email</a></div>
       <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
       <div class="small-6 medium-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>

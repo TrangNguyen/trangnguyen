@@ -9,6 +9,9 @@ $globalspacing: rem-calc(10);
 $lightgrey:    rgba(202,202,202,1);
 $mediumgrey:   rgba(165,165,165,1);
 $highlighter: rgb(214,170,81);
+//$highlighter: rgb(98, 212, 223);
+//$highlighter: rgb(126, 201, 205);
+//$highlighter: rgb(255, 176, 0);
 
 @mixin noselect() {
   -webkit-user-select: none;
@@ -105,8 +108,7 @@ section {
   left:0;
   height:70px;
   min-height:70px;
-  //background-color: rgba(0,0,0,0.75);
-  background-color: rgba(214,170,81,1);
+  background-color: $highlighter;
 
   ul {
     list-style-type: none;
@@ -202,6 +204,11 @@ a.highlighter {
 }
 
 #expertise {
+
+  h1 {
+    padding-bottom: $globalspacing * 3;
+  }
+
   ul {
    list-style-type: none;
    margin-left: 0;
@@ -333,6 +340,15 @@ span.my-tech{
     border-bottom:  1px solid $highlighter;
   }
 }
+
+#about {
+  h1 {
+    padding-top: $globalspacing * 4;
+    padding-bottom: $globalspacing;
+  }
+}
+
+
 #contact {
 
   padding-top: $globalspacing;
