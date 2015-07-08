@@ -1,5 +1,5 @@
-<filesMatch ".(jpg|jpeg|png|gif|css|js|manifest|html)$">
-Header set Cache-Control "max-age=1, must-revalidate"
+<filesMatch ".(jpg|jpeg|svg|png|gif|css|js|manifest|html)$">
+Header set Cache-Control "max-age=120, must-revalidate"
 </filesMatch>
 
 # Apache .htaccess

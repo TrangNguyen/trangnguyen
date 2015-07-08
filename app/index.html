@@ -13,6 +13,7 @@
 		  <!-- Load filson pro fonts -->
 		  <script src="//use.typekit.net/ghc4jmy.js"></script>
 		  <script>try{Typekit.load();}catch(e){}</script>
+		  
 
       <!-- build:css css/trangnguyen.css-->
         <link rel="stylesheet" href="css/app.css">
@@ -48,6 +49,8 @@
 		  <div class="small-12 columns text-center logo" ng-class="{'menuOpen':menuOpen}">
 		    <h1><a ng-click="menuOpen =!menuOpen">Trang Nguyen</a></h1>
 		  </div>
+
+		  <div id="menuClose" ng-click="menuOpen =!menuOpen" ng-class="{'hide':!menuOpen}" ></div>
 
       <div id="mainNav" class="small-12 columns text-center" ng-show="menuOpen">
         <ul>
@@ -123,13 +126,16 @@
 				</div>
 			</div>
 		</section>
-
-		<section id="contact" class="row text-center cta">
+    
+    <section id="contact" class="row text-center cta">
+    
       <h1 class="small-12 columns">Get in touch</h1>
+      
       <div class="small-6 medium-3 columns"><a target="_blank" href="mailto:trang@trangnguyen.de"><img src="fonts/icons/mail.svg"/>Email</a></div>
-      <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>
+      <div class="small-6 medium-3 columns"><a target="_blank" href="skype://trangnguyen80?chat"><img src="fonts/icons/chat.svg"/>Skype</a></div>  
       <div class="small-6 medium-3 columns"><a target="_blank" href="https://github.com/TrangNguyen"><img src="fonts/icons/git.svg"/>GitHub</a></div>
       <div class="small-6 medium-3 columns"><a target="_blank" href="https://de.linkedin.com/in/trangnguyenDE"><img src="fonts/icons/profile.svg"/>LinkedIn</a></div>
+      
     </section>
 
     <!-- Footer -->
@@ -137,7 +143,7 @@
       <div class="small-12 columns">
         &copy; 2015 Trang Nguyen | All rights reserved
       </div>
-    </footer>
+    </footer>    
 		<!-- build:js main.js -->
 		<script src="../bower_components/angular/angular.min.js"></script>
 		<script src="../bower_components/angular-scroll/angular-scroll.min.js"></script>
