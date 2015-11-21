@@ -307,8 +307,7 @@ module.exports = function (grunt) {
 	grunt.registerTask("install", "Create a deployable artifact for server environments",
 		function () {
 			grunt.task.run("jshint");
-			grunt.task.run("clean:all");
-//      grunt.task.run("bower");			
+			grunt.task.run("clean:all");			
       grunt.task.run("concat");
       grunt.task.run("uglify");
 			grunt.task.run("copy:images");
@@ -320,9 +319,7 @@ module.exports = function (grunt) {
 			grunt.task.run("dataUri");
 			grunt.task.run("cssmin");
 			grunt.task.run("clean:css");
-			//			grunt.task.run("autoprefixer:production");
 			grunt.task.run("manifest");
-//			grunt.task.run("compress");
 		}
 	);
 
